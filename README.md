@@ -1,0 +1,2 @@
+# accessibility
+Static web page
