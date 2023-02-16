@@ -54,7 +54,9 @@ export default function Accordion() {
       target.querySelectorAll('.a-accordion__item-button')
     );
 
-    let index = [...target.children].indexOf(document.activeElement.closest('.a-accordion__item'))
+    // Fix for shadow root - keeping the original line for reference
+    // let index = [...target.children].indexOf(document.activeElement.closest('.a-accordion__item'))
+    let index = [...target.children].indexOf(document.activeElement.shadowRoot.activeElement.closest('.a-accordion__item'))
 
     if (item === 'last') {
       index = items.length - 1;

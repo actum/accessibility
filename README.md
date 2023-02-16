@@ -1,6 +1,8 @@
-# Website
+# ACTUM Digital Accessibility
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+A portal of ACTUM Digital projects dedicated to web accessibility.
+
+The website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
 ### Installation
 
@@ -26,16 +28,8 @@ This command generates static content into the `build` directory and can be serv
 
 ### Deployment
 
-Using SSH:
+The static build is automatically deployed on each push to the `main` branch - either directly or via the pull request.
 
-```
-$ USE_SSH=true yarn deploy
-```
+### Contribution
 
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+We appreciate any kind of contribution that helps us share the information about the web accessibility knowledge better. Should you have any suggestion on what to add, edit, or remove, please, create an issue.
