@@ -1,0 +1,67 @@
+@import '../../../../src/styles/mixins/dark-mode.scss';
+
+.a-radio-group {
+  display: flex;
+  flex-direction: column;
+
+  &__label {
+    margin: .4rem 0;
+    padding: .2rem 1rem .2rem 0;
+    width: max-content;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: outline-offset .4s;
+    border: 1px solid transparent;
+    border-radius: .2rem;
+
+    &:hover {
+      border: black;
+      background: #f2f2f2;
+      border: 1px solid transparent;
+
+      @include dark-mode() {
+        background: #494949;
+      }
+    }
+
+    &:focus-within {
+      background: #ddf1e5;
+      outline: .1rem solid black;
+      outline-offset: 0px;
+
+      @include dark-mode() {
+        background: #40643a;
+      }
+    }
+  }
+
+  &__input {
+    margin-right: .5rem;
+
+    &:focus-visible {
+      outline: transparent;
+    }
+  }
+
+  &__submit {
+    margin-top: 1.5rem;
+    padding: .5rem;
+    width: 100px;
+  }
+
+  &__alert {
+    padding: 1rem;
+    border: 1px solid #19542c;
+    border-radius: .2rem;
+    background-color: #ddf1e5;
+
+    @include dark-mode() {
+      background: #40643a;
+    }
+
+    span {
+      font-weight: 500;
+      font-size: 1.5rem;
+    }
+  }
+}

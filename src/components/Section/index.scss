@@ -1,0 +1,9 @@
+.section {
+  padding-top: var(--ifm-spacer-6);
+  padding-bottom: var(--ifm-spacer-6);
+
+  @include media-breakpoint-up(lg) {
+    padding-top: var(--ifm-spacer-8);
+    padding-bottom: var(--ifm-spacer-8);
+  }
+}

@@ -1,0 +1,53 @@
+@import '../../../src/styles/mixins/dark-mode.scss';
+
+.checkbox {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+  
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+    }
+  
+    &__box {
+      display: flex;
+      border: 1px solid black;
+      width: 18px;
+      height: 18px;
+      padding: 1px;
+  
+      @include dark-mode() {
+        border-color: white;
+      }
+
+      &:focus {
+        border-color: grey;
+        outline: none;
+
+        @include dark-mode() {
+          border-color: rgb(202, 202, 202);
+        }
+      }
+  
+      svg {
+        display: none;
+    
+        @include dark-mode() {
+          fill: white;
+        }
+      }
+  
+      &--checked {
+        svg {
+          display: block;
+        }
+      }
+    }
+  }
+  
+  .field {
+    display: flex;
+  }

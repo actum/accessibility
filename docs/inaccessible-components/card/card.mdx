@@ -1,0 +1,96 @@
+import Card from './'
+import AccessibleCard from './Accessible'
+import PreviewWrapper from './../../../src/components/PreviewWrapper'
+
+# Card
+
+This page contains the inaccessible version of the component including the description of issues, additional considerations, and also the more accessible version of the component for comparison.
+
+(future video slot)
+
+## Inaccessible Version
+
+<PreviewWrapper title="Inaccessible card" codeHref="https://codesandbox.io/s/inaccessible-card-0s4qbl">
+  <Card />
+</PreviewWrapper>
+
+### Issues
+
+<details>
+  <summary>Anchor wraps the whole card.</summary>
+  If the whole card should be clickable, it might seem like a good idea to wrap it whole in the anchor. But since the card contains multiple elements, such as a heading, text, and a link, the browser treats all these elements as a part of the link which is semantically incorrect. When screen reader users land on the card, everything inside the link is announced at once and when browsing element-by-element, it announces "link" before each element.
+</details>
+
+<details>
+  <summary>Anchor inside another anchor.</summary>
+  To place <code>&lt;a&gt;</code> into another <code>&lt;a&gt;</code> is forbidden in HTML specification, links cannot be nested, nor any other interactive content cannot be placed inside the link.
+</details>
+
+<details>
+  <summary>The heading is made as an image.</summary>
+  Images of text should be used only if it's essential (such as demonstrating a specific font family or using a company logo), or optionaly, if the desired styling is not possible to achieve with CSS. However, it is the most inclusive practice to not use images of text because users cannot change the text format to their needs (size, color, letter spacing, line height, even font family) and if the image does not have an alternative text, which should be the same as the text on the image, then screen reader users miss the information.
+</details>
+
+<details>
+  <summary>The heading image has the wrong accessible name.</summary>
+  The heading image has the correct text present in the <code>alt</code> attribute. However, it is overidden by another attribute - <code>aria-label</code>. The <code>alt</code> attribute is completely ignored by assistive technologies since the <code>aria-label</code> attribute has precedence in terms of computing the accessible name. So, it is like the alternative text is not there at all, and instead, the useless text "Card title" is used. There is no need to set the <code>aria-label</code> as <code>alt</code> attribute is the only thing images need to set the accessible name.
+</details>
+
+<details>
+  <summary>The link text "Read more" is not descriptive enough.</summary>
+  Sighted users will most likely recognize that the "Read more" link belongs to the specific card as it is visually included inside. However, users of assistive technologies who do not rely on their sight might not recognize that so easily. Also, when screen reader users view the list of links on the page (which is possible to do in most screen readers), there are multiple links with the same text and leading to different locations.
+  <br /><br />
+  Texts like "read more" or "more information" are mostly unclear to users. The purpose of the link should be identified from the link text alone. Optionally, the accessible name of the link can be extended by supplying more context in the <code>aria-label</code> attribute, such as <code>aria-label=&quot;Read more about Perceivable&quot;</code>.
+</details>
+
+<details>
+  <summary>Main image alternative text is redundant.</summary>
+  The main image of the card is decorative and no information would be lost if it would not be there. The card title together with the text conveys all the necessary information. But thanks to the <code>alt="Card image"</code> attribute, the image is treated as informative and is announced to screen reader users. Not only this text is completely useless as it does not bear any new information, but in this case, it is also not wanted as purely decorative images should be hidden from screen readers by providing the empty <code>alt=""</code> attribute.
+</details>
+
+<details>
+  <summary>The text description is made as a heading.</summary>
+  There is a textual description of the card wrapped inside the <code>&lt;h4&gt;</code> just below the card heading. Since this text content is a standard paragraph that is not a part of the page structure layout, it should be made as the <code>&lt;p&gt;</code> element. Currently, it makes the document structure extra verbose and the usage of the heading is not useful for users.
+</details>
+
+<details>
+  <summary>Links point to invalid URLs.</summary>
+  Having incorrect links on the page is a usability issue. Users expect to find relevant information by visiting the link, but when it leads to nowhere, they cannot access it.
+</details>
+
+<details>
+  <summary>The image can cause content jumping.</summary>
+  When images are not styled to preserve space before they load (such as by specifying the <code>aspect-ratio</code> or <code>height</code>), it can cause content jumping issues which is especially problematic for users with slower internet connections as they start to read the content, and suddenly the large image loads and shifts the content below. Users can easily get lost and need to find the place where they were reading the content again.
+
+  Read more about the content jumping at the article <a href="https://medium.com/life-at-apollo-division/how-we-treat-images-228545b1f125#42ca">How we treat images</a>.
+</details>
+
+### Considerations
+
+The usage of certain techniques depends on the circumstances. Expand each consideration to learn more.
+
+<details>
+  <summary>Consider making the whole card clickable while using only one link.</summary>
+  It is possible to make the whole card clickable by using the pseudo-element overlay on a single link as shown in the accessible version of the component. However, then all the text in the card becomes unselectable by default, creating potential barriers for users. The text can be made selectable again by CSS (<code>position: relative</code>), however, then the card is not clickable everywhere, only in places where there is no text.
+</details>
+
+<details>
+  <summary>Consider the usage of a list.</summary>
+  When there are multiple cards together, it is useful for screen reader users to know how many of them there are. When using <code>ul</code> and <code>li</code> elements, this is announced automatically.
+</details>
+
+<details>
+  <summary>Consider implementing a hover effect.</summary>
+  It is easier for sighted mouse users to perceive that the card is interactive when the UI reacts to the hover effect.
+</details>
+
+<details>
+  <summary>Consider adjusting the heading structure.</summary>
+  The component itself does not have the correct heading structure respective to this very page as the <code>&lt;h3&gt;</code> element is missing, however, the usage of heading levels will depend on where the component will actually be used, and in this project it is perceived to be out of context, serving just as an example.
+</details>
+
+## More Accessible Version
+
+<PreviewWrapper title="More accessible card" codeHref="https://codesandbox.io/s/accessible-card-id0t6z">
+  <AccessibleCard />
+</PreviewWrapper>

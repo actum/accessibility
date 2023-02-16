@@ -1,0 +1,26 @@
+// Convert px to rem
+// Accepts both numeric (4) and unit (4px) values
+// @param {Unit} value - Size of the pixels to be converted to rem
+// @returns {Unit} rem-size - Rem unit
+@use "sass:math";
+
+$header-footer-external-integration: 'false' !default;
+
+@function rem($value) {
+  $px-size: $value;
+  $base-font-size: 16;
+
+  @if unit($px-size)=='px' {
+    // Strip unit from number
+    $px-size: math.div($px-size, $px-size * 0 + 1);
+  }
+
+  @if ($header-footer-external-integration=='true') {
+    // External H/F integrations must use px as they're not working with rems
+    @return $px-size * 1px;
+  }
+
+  @else {
+    @return math.div($px-size, $base-font-size) * 1rem;
+  }
+}

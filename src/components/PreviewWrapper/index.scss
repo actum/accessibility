@@ -1,0 +1,24 @@
+.preview-wrapper {
+  // color: var(--prism-color);
+  margin-bottom: var(--ifm-leading);
+  border: 1px solid var(--ifm-color-emphasis-300);
+
+  &__title {
+    font-size: var(--ifm-code-font-size);
+    font-weight: 500;
+    background-color: var(--ifm-color-emphasis-200);
+  }
+
+  &__title,
+  &__content {
+    padding: .75rem var(--ifm-pre-padding);
+  }
+
+  &__content {
+    overflow: auto;
+  }
+
+  &__link {
+    display: inline-flex;
+  }
+}

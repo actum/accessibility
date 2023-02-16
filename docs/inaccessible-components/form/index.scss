@@ -1,0 +1,76 @@
+@import '../../../src/styles/mixins/dark-mode.scss';
+
+.form {
+  width: 500px;
+
+  &__row {
+    margin-bottom: 1rem;
+  }
+
+  &__control {
+    font-family: inherit;
+    font-size: inherit;
+    width: 100%;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    background: none;
+    border: 1px solid #9E9E9E;
+
+    &::placeholder {
+      color: #575757;
+      opacity: 1;
+    }
+
+    @include dark-mode() {
+      border-color: #5E5E5E;
+
+      &::placeholder {
+        color: #A6A6A6;
+      }
+    }
+
+    &--invalid {
+      border-color: #f00;
+
+      @include dark-mode() {
+        border-color: #f00;
+      }
+    }
+  }
+
+  &__help {
+    display: block;
+    margin-top: 0.25rem;
+  }
+
+  &__help {
+    color: #aaa;
+  }
+
+  &__btn {
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+}
+
+.message {
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+
+  &--success {
+    color: #75b798;
+    border: 1px solid #0f5132;
+    background: #051b11;
+  }
+
+  &--error {
+    color: #ea868f;
+    border: 1px solid #842029;
+    background: #2c0b0e;
+  }
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}

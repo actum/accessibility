@@ -1,0 +1,95 @@
+# 1.2.2 - Captions (Prerecorded) - A
+
+(future video slot)
+
+## Intent
+
+Enable people who are deaf or hard of hearing to understand the auditory information in prerecorded (not live) [synchronized media](#synchronized-media) by providing captions.
+
+## Who Benefits
+
+- People who **cannot hear** an audio content of a video can read synchronized captions to understand the content.
+- People who have **difficulties understanding** the language of the audio track in a video can benefit from reading the captions in parallel.
+- People in a **sound-sensitive environment** (such as a library or public transport) can understand the media content without audio.
+- People who want to **hear and read the content at the same** time to understand it better benefit from captions.
+
+## Synchronized Media
+
+Synchronized media is audio or video content synchronized with another format for presenting information, such as:
+- video + audio
+- video + captions
+- or video + [audio descriptions](/docs/wcag-documents/glossary-of-terms#audio-descriptions)
+
+## Text Alternatives for Synchronized Media
+
+Captions and subtitles are often considered the same thing, but there are some differences.
+
+### Subtitles
+
+<img src="/img/1.2.2-subtitles.png" srcSet="/img/1.2.2-subtitles.png 1x, /img/1.2.2-subtitles-2x.png 2x" alt="A video featuring a smiling character with outstretched arms, and subtites showing 'This is great.'." width="400" height="250" style={{aspectRatio: '400/250' }} />
+
+Subtitles convey the content of the spoken dialogue only. The purpose is to translate spoken audio into a language the viewer understands.
+
+### Captions
+
+<img src="/img/1.2.2-captions.png" srcSet="/img/1.2.2-captions.png 1x, /img/1.2.2-captions-2x.png 2x" alt="A video featuring a smiling character with outstretched arms, and captions showing '[thinking] This is great.'." width="400" height="250" style={{aspectRatio: '400/250' }} />
+
+Captions not only include the dialogue but also identify:
+
+- who is speaking
+- meaningful sound effects
+- non-speech information conveyed through sound
+
+There are two types of captions:
+
+#### Open Captions
+Open captions are part of the video and cannot be turned off.
+
+A live example of open captions in a YouTube video:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HQWlYYFXM2M" title="YouTube Video - You Guys Need Captions! - Pharrell 'Happy' Parody" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+
+#### Closed Captions
+Closed captions can be turned on and off by the viewer, usually with the possibility to change their color, size, position, and other styles.
+
+:::note
+If you turn off the sound of a video, you must not miss any important audio content.
+:::
+
+## Examples
+
+### Correct Usage
+
+The following examples show the correct usage or implementation of accessibility.
+
+#### Example 1: Captions
+
+A video about the life of pigs picturing a pig running over grass while squealing. The video has captions, so people relying on captions can understand the pig is squealing.
+
+<img src="/img/1.2.2-example-pig.png" srcSet="/img/1.2.2-example-pig.png 1x, /img/1.2.2-example-pig-2x.png 2x" alt="A video featuring a running, smiling pig, and captions showing '[pig squealing]'." width="400" height="250" style={{aspectRatio: '400/250' }} />
+
+### Incorrect Usage
+
+The following example shows incorrect usage or implementation of accessibility.
+
+#### Example 1: Missing Captions
+
+A video picturing a dialogue between two people. The dialogue is an essential part of the video, and because there are no available captions, users who rely on captions completely miss important auditory information.
+
+<img src="/img/1.2.2-example-captions.png" srcSet="/img/1.2.2-example-captions.png 1x, /img/1.2.2-example-captions-2x.png 2x" alt="A video with no available captions featuring characters having a conversation." width="400" height="250" style={{aspectRatio: '400/250' }} />
+
+## Test Your Knowledge
+
+<details>
+	<summary>Must captions contain the exact text as is spoken?</summary>
+  No, captions sometimes simplify the spoken text both to make it easier to read and to avoid forcing the viewer to read at a very high speed. This is a standard procedure and does not invalidate a caption.
+</details>
+
+<details>
+	<summary>Can captions contain information that is not present in the media?</summary>
+  No, captions presenting new information that is not available in the media itself are considered invalid.
+</details>
+
+<details>
+	<summary>Are captions required for the alternate presentation of information already available in text on the page?</summary>
+  No, captions are not required when the synchronized media is an alternate presentation of information that is already available in text on the page.
+</details>

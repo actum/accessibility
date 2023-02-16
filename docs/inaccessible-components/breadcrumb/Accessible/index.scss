@@ -1,0 +1,46 @@
+@import '../../../../src/styles/mixins/dark-mode.scss';
+
+.a-breadcrumb {
+  padding: 1rem;
+  color: #2e2d2c;
+
+  @include dark-mode() {
+    color: #dadde1;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 1rem;
+  }
+
+  &__separator {
+    margin-left: 1rem;
+  }
+
+  &__link {
+    color: #2e2d2c;
+    outline-offset: 8px;
+    transition: outline-offset .5s;
+
+    @include dark-mode() {
+      color: #dadde1;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:focus {
+      outline: 2px solid black;
+      outline-offset: 4px;
+
+      @include dark-mode() {
+        outline-color: white;
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "name": "accessibility",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "lint:fix": "yarn run prettier --write && yarn run eslint --fix && yarn run stylelint --fix",
+    "lint:analysis": "yarn run eslint && yarn run stylelint",
+    "lint:style": "yarn run prettier --check",
+    "prettier": "prettier --write src/**/*.js src/**/*.scss",
+    "configure-husky": "npx husky install && npx husky add .husky/pre-commit \"npx --no-install lint-staged\"",
+    "eslint": "eslint --ext src/**/*.js",
+    "stylelint": "stylelint \"**/*.scss\""
+  },
+  "dependencies": {
+    "@docusaurus/core": "^0.0.0-5396",
+    "@docusaurus/module-type-aliases": "^0.0.0-5396",
+    "@docusaurus/preset-classic": "^0.0.0-5396",
+    "@mdx-js/react": "^1.6.22",
+    "classnames": "^2.3.2",
+    "clsx": "^1.2.1",
+    "docusaurus-plugin-sass": "^0.2.2",
+    "focus-trap-react": "^10.0.0",
+    "prettier": "^2.7.1",
+    "prism-react-renderer": "^1.3.5",
+    "raw-loader": "^4.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-shadow-root": "^6.2.0",
+    "sass": "^1.54.4",
+    "sass-loader": "^13.1.0",
+    "stylelint": "^14.14.0",
+    "stylelint-config-concentric-order": "^5.1.0",
+    "stylelint-config-standard": "^29.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.1",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.31.10",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=16.14"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,json}": [
+      "eslint . --fix",
+      "prettier --write ."
+    ],
+    "*.scss": [
+      "stylelint --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}

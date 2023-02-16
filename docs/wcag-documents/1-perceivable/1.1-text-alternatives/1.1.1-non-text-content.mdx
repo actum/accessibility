@@ -1,0 +1,293 @@
+# 1.1.1 - Non-text Content - A
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VBdXiQZzK9I" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullscreen></iframe>
+
+## Intent
+
+Make [non-text](/docs/wcag-documents/glossary-of-terms#non-text-content) information accessible through text alternatives.
+
+## Who Benefits
+
+- People who **cannot see** an image can have a text alternative announced by a [screen reader](/docs/wcag-documents/glossary-of-terms#screen-reader).
+- People who **cannot hear** an audio track can read a text alternative.
+- People who **cannot both see and hear** can have a text alternative perceived through a [braille display](/docs/wcag-documents/glossary-of-terms#braille-display).
+- People having **difficulties understanding** the meaning of photographs, drawings, graphs, charts, animations, and other non-text content can benefit from the text alternatives.
+- People **searching for content** (primarily represented in non-text content) in search engines or on the page itself can find it thanks to the text alternatives.
+
+## Text alternatives
+
+There are different categories of text alternatives, and also different ways to provide them.
+
+### Short description
+
+A short description of the non-text content that is either:
+
+- included in `alt`, `aria-label`, or `title`
+- or referenced by the `aria-labelledby`
+
+```html title="Short description example"
+Close modal window
+```
+
+### Long description
+
+A long description of the non-text content that is referenced by the `aria-describedby`.
+
+```html title="Long description example"
+A photograph of three monkeys walking over a green field of grass with a red sunset behind. The image is taken from a distance, so the monkeys only take a small portion of the whole picture, while the sun takes around a third of the picture. All monkeys are photographed from their right side, going from left to right and looking straight.
+```
+
+### Transcript
+
+A text version of audio content.
+
+The transcript must have identified speakers (if there is more than one) and must cover all dialogues and important sound effects. It may also contain timestamps when necessary.
+
+```html title="Transcript example"
+[00:00:00] (John) Hello! In this video, we will cover keyboard access and visual focus.
+[00:00:05] Many people cannot use a mouse and rely on the keyboard to interact with web content.
+(the full transcript text continues...)
+```
+
+### `alt`
+
+Provides a short, alternative text for `<img>` and `<input type="image">` elements.
+
+:::note
+The textual description in `alt` should always describe an image in the current context, not necessarily just what is displayed there.
+:::
+
+```html title="alt example"
+<img alt="Two dogs chasing each other in a garden" src="dogs.jpg" />
+```
+
+### `aria-label`
+
+Defines a short, string value that labels the element.
+
+```html title="aria-label example"
+<button aria-label="Close modal window">X</button>
+```
+
+### `aria-labelledby`
+
+Lists the `id` attribute of one or multiple elements providing a short label for the object.
+
+```html title="aria-labelledby example"
+<button aria-labelledby="text__close">X</button>
+<span class="visually-hidden" id="text__close">Close modal window</span>
+```
+
+### `aria-describedby`
+
+Lists the `id` attribute of one or multiple elements providing a long description of the object.
+
+```html title="aria-describedby example"
+<button aria-label="Close modal window" aria-describedby="text__description-close">X</button>
+<p id="text__description-close">Closing this window will discard any information entered and
+return you to the main page</div>
+```
+
+### `title`
+
+A short description of the non-text content that:
+
+- should contain only additional information and not be the only bearer of the important message
+- is not accessible on mobile devices
+
+There are combinations of browsers and ATs that do not support the `title` as an [accessible name](/docs/wcag-documents/glossary-of-terms#accessible-name).
+
+```html title="title example"
+<a href="http://example.com" title="Read more about World Wide Web">WWW</a>
+```
+
+:::note
+`aria-label`, `aria-labelledby`, and `aria-describedby` do not work consistently with all HTML elements. Use them only with interactive elements or elements that have explicitly set the widget or landmark `role` attributes, or implicit roles: `a` with `href`, `audio`/`video` with `controls`, `input`, `select`, `button`, `textarea`, `header`, `footer`, `main`, `nav`, `aside`, `section`, `form`, `iframe`, and `img`.
+:::
+
+## Exceptions
+
+For certain types of content, text alternatives are handled differently or ignored completely.
+
+### Controls, input
+
+<img src="/img/1.1.1-controls-input.png" srcSet="/img/1.1.1-controls-input.png 1x, /img/1.1.1-controls-input-2x.png 2x" alt="A form input with the placeholder 'Search', and a 'Search by voice' button inside." loading="lazy" width="400" height="100" style={{ aspectRatio: '400/100'}} />
+
+Examples: Image buttons, image maps, and text inputs.
+
+An accessible name is provided to describe the purpose of the control.
+
+### Time-based media
+
+<img src="/img/1.1.1-time-based-media.png" srcSet="/img/1.1.1-time-based-media.png 1x, /img/1.1.1-time-based-media-2x.png 2x" alt="An audio player with the play button, elapsed and total time text, timeline slider, and the 'more options' button." width="400" height="100" style={{aspectRatio: '400/100' }} />
+
+Examples: Audio, video, or something that moves without user input.
+
+A text alternative describing or labeling the time-based media is provided so users know what it is and can decide what action to take.
+
+### Test/Exercise/Exam
+
+<img src="/img/1.1.1-test-exercise-exam.png" srcSet="/img/1.1.1-test-exercise-exam.png 1x, /img/1.1.1-test-exercise-exam-2x.png 2x" alt="An online hearing exam with the title 'Select the word you hear', the 'Play sound' button, and 3 options for the answer - dog, cat, and mouse." width="400" height="425" style={{aspectRatio: '400/425' }} />
+
+Something needed to be completed only by auditory or visual skills (such as a hearing or spelling exam) cannot have text alternatives as it would defeat their purpose.
+
+Text alternatives should be provided for the purpose of the test.
+
+### Decoration, formatting, invisible
+
+<img src="/img/1.1.1-decoration-formatting-invisible.png" srcSet="/img/1.1.1-decoration-formatting-invisible.png 1x, /img/1.1.1-decoration-formatting-invisible-2x.png 2x" alt="Purposely described decorative object with an array of abstract shapes that resemble a plant. The shapes are composed of flowing lines and organic forms, creating a sense of movement and growth. This is a purely decorative image that should have an empty alt text if used solely as a decoration." width="200" height="510" style={{aspectRatio: '200/510' }} />
+
+This type of content is implemented in a way assistive technologies ignore.
+
+### CAPTCHA
+
+<img src="/img/1.1.1-captcha.png" srcSet="/img/1.1.1-captcha.png 1x, /img/1.1.1-captcha-2x.png 2x" alt="A box containing image of random letters and numbers meant to be recognized by users, re-typed to the input field below and submitted. Also the refresh button to swap the characters and the audio button to listen to the characters are present." width="400" height="325" style={{aspectRatio: '400/325' }} />
+
+A text alternative needs to describe the purpose of the [CAPTCHA](/docs/wcag-documents/glossary-of-terms#captcha), and alternate forms using different modalities are provided to address the needs of people with different abilities.
+
+### Other Non-text Content
+
+<img src="/img/1.1.1-other-non-text-content.png" srcSet="/img/1.1.1-other-non-text-content.png 1x, /img/1.1.1-other-non-text-content-2x.png 2x" alt="A pie chart with the following values: 56 % text, 27 % image, 17 % audio." width="400" height="400" style={{aspectRatio: '400/400' }} />
+
+Examples: Charts, diagrams, audio recordings, pictures, animations, and other non-text content.
+
+Short and/or long text alternatives are provided to describe the non-text content.
+
+## Examples
+
+### Correct Usage
+
+The following examples show the correct usage or implementation of accessibility.
+
+#### Example 1: Image Inside Button
+
+A button with the visible text "Save" and an image of a floppy disk inside.
+
+The image of a floppy disk is purely decorative, and the text inside the button is meaningful. There is no need to provide a text alternative. However, the `alt` attribute must be present, although empty.
+
+```html title="Image inside button example"
+<button>
+  <img src="./floppy.png" alt="" />
+  Save
+</button>
+```
+
+#### Example 2: Company Logo
+
+An image of the ACTUM Digital company logo, with the text "ACTUM Digital logo" inside the `alt` attribute.
+
+The image in this scenario is informative, not decorative, and the only purpose of it is to show the logo.
+
+```html title="Company logo example"
+<img alt="ACTUM Digital logo" src="actum-digital-logo.png" />
+```
+
+#### Example 3: Decorative Image
+
+An image of a forest, with an empty `alt` attribute.
+
+The image in this scenario is decorative, not informative, and no information would be lost if the image was not there. The empty `alt` attribute makes it decorative.
+
+```html title="Decorative image example"
+<img alt="" src="forest.png" />
+```
+
+#### Example 4: Image as Div
+
+An image implemented as `div` element with `role="img"` attribute and with the text "W3C logo" in the `aria-label` attribute.
+
+The image in this scenario is informative, not decorative, and the only purpose of it is to show the logo. It is not implemented by the native `img` element but by the "img" role.
+
+Prefer using the semantic HTML elements whenever you can instead of re-inventing them with ARIA. The image can be implemented by the `img` element.
+
+```html title="Image as div example"
+<div
+	role="img"
+	aria-label="W3C logo"
+	style="width:52px; height:28px; background-image: url(/w3c-logo.png)"
+></div>
+```
+
+### Incorrect Usage
+
+The following examples show incorrect usage or implementation of accessibility.
+
+#### Example 1: Image Link
+
+A link without the text content inside and containing an image without the alternative text.
+
+Image links and buttons can be used without visible text content if a text alternative is provided. The image does not have any `alt` text, and the link does not have `aria-label` nor visually hidden text so blind users, for example, do not know where the link goes.
+
+Use image links and buttons only with images that are common for users, such as a magnifier icon for search. Users may not understand images they are not familiar with.
+
+```html title="Image link example"
+<a href="messages.html">
+  <img src="mail.png" />
+</a>
+```
+
+#### Example 2: Image Input
+
+An image input displaying a search icon, and with no alternative text.
+
+The missing alternative text makes the input inaccessible for blind users, for example, because there is no name/label/alternative text they can read.
+
+```html title="Image input example"
+<input type="image" name="search" src="search-icon.png" />
+```
+
+#### Example 3: Decorative Image
+
+An image of dog, and with `role="presentation"` and `tabindex="0"`.
+
+The image in this scenario is decorative, not informative, and no information would be lost if the image was not there. Thanks to the presentation role the image is ignored by assistive technologies.
+
+However, because of the `tabindex="0"` attribute, the image is focusable by keyboard, and without an alternative text, deafblind users, for example, would not know what they are focusing.
+
+```html title="Decorative image example"
+<img role="presentation" tabindex="0" src="dog.png" />
+```
+
+## Test Your Knowledge
+
+Check the following set of questions to test your knowledge. Reveal the answers by expanding on each question.
+
+<details>
+	<summary>Informative images MUST have an alternative text. What HTML attributes could you use to implement the text?</summary>
+	<ul>
+		<li><code>alt</code></li>
+		<li><code>aria-label</code></li>
+		<li><code>aria-labelledby</code></li>
+	</ul>
+</details>
+
+<details>
+	<summary>Decorative images should not have an alternative text. What methods could you use to implement the decorative image so that assistive technologies can ignore it?</summary>
+	<ul>
+		<li><code>alt=""</code></li>
+		<li><code>role="presentation"</code></li>
+		<li>CSS background</li>
+	</ul>
+</details>
+
+<details>
+	<summary>Complex images MUST have their purpose shortly described in an alternative text. Also, a text equivalent MUST be provided near, or on a separate page. What techniques could you use to provide such an equivalent?</summary>
+	<ul>
+		<li><code>aria-describedby</code></li>
+	</ul>
+</details>
+
+<details>
+	<summary>Does the audio and video content need to have a textual description (not captions)?</summary>
+	Yes, a text alternative describing or labeling the time-based media is provided so users know what it is and can decide what action to take.
+</details>
+
+<details>
+	<summary>What text alternative does an audio recording need except for the short description?</summary>
+	A text transcript that covers all the spoken content.
+</details>
+
+<details>
+	<summary>There is a picture showing how a knot is tied including arrows showing how the ropes go. No other instructions are provided in text form near the image. The picture has the alternative text saying "Instructions on how to tie a knot". Is this implemented with accessibility in mind?</summary>
+	No, because the intention here is to provide all users with instructions on how to tie a knot, not just what is displayed in the image. Blind users, for example, would not know the process without a text alternative describing it.
+</details>

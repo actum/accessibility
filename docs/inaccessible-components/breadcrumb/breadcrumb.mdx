@@ -1,0 +1,58 @@
+import Breadcrumb from './'
+import AccessibleBreadcrumb from './Accessible'
+import PreviewWrapper from './../../../src/components/PreviewWrapper'
+
+# Breadcrumb
+
+This page contains the inaccessible version of the component including the description of issues, and also the more accessible version of the component for comparison.
+
+(future video slot)
+
+## Inaccessible Version
+
+<PreviewWrapper title="Inaccessible breadcrumb" codeHref="https://codesandbox.io/s/inaccessible-breadcrumb-uvzlv4">
+  <Breadcrumb />
+</PreviewWrapper>
+
+### Issues
+
+Expand each issue to see the user impact.
+
+<details>
+  <summary>Breadcrumb links have no visual focus.</summary>
+  Although the breadcrumb links are accessible by keyboard, sighted keyboard users cannot see where they are focused as there is no visual focus indicator. They are lost in the darkness.
+</details>
+<details>
+  <summary>There is not enough contrast between links and the background colors.</summary>
+  Users with moderately low vision cannot read the text because they do not see it.
+</details>
+<details>
+  <summary>The set of links is structured using an unordered list.</summary>
+  Breadcrumb follows the page structure, so the order of links is important. The ordered list should be used instead so users know of the hierarchy.
+</details>
+<details>
+  <summary>The breadcrumb navigations is not easily located for <a href="/docs/wcag-documents/glossary-of-terms#screen-reader">screen reader</a> users.</summary>
+  The <code>nav</code> element with a proper label should be used to identify the breadcrumb as a navigation landmark.
+</details>
+<details>
+  <summary>The links separators create a redundant and potentially distracting verbosity for screen reader users.</summary>
+  To prevent screen readers announcement of the visual separators between links, they should be added via CSS or hidden from assistive technologies.
+</details>
+<details>
+  <summary>The <code>aria-label</code> attributes on links are unnecessary and invalid.</summary>
+  There is no reason to put the <code>aria-label</code> on the breadcrumb links as the title inside the link is descriptive enough. Also, because the <code>aria-label</code> (&quot;Breadcrumb 1 - Perceivable&quot;) does not start with the same text as the link title (&quot;1 - Perceivable&quot;), it is impossible for users using speech recognition to interact with the link by verbal control.
+</details>
+<details>
+  <summary>The last item in the breadcrumb is not marked as the currently active link.</summary>
+  The last link should have the <code>aria-current</code> attribute to indicate the current item within a set of related elements and let users know they are currently on this page.
+</details>
+<details>
+  <summary>The layout breaks on smaller resolutions.</summary>
+  The breadcrumb items do not wrap on smaller resolutions causing content overflow and a horizontal scrollbar appears.
+</details>
+
+## More Accessible Version
+
+<PreviewWrapper title="More accessible breadcrumb" codeHref="https://codesandbox.io/s/accessible-breadcrumb-6wf2dd">
+  <AccessibleBreadcrumb />
+</PreviewWrapper>

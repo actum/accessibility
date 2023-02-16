@@ -1,0 +1,36 @@
+@import '../../../src/styles/mixins/dark-mode.scss';
+
+.breadcrumb {
+  padding: 1rem;
+  color: #bec3c9;
+
+  @include dark-mode() {
+    color: #606770;
+  }
+
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 1rem;
+  }
+
+  &__link {
+    color: #bec3c9;
+    margin-right: 1rem;
+    outline: none;
+
+    @include dark-mode() {
+      color: #606770;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

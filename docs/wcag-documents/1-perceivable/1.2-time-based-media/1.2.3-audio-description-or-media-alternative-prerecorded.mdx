@@ -1,0 +1,94 @@
+# 1.2.3 - Audio Description or Media Alternative (Prerecorded) - A
+
+(future video slot)
+
+## Intent
+
+Enable people who are blind or visually impaired to understand the visual information in [synchronized media](/docs/wcag-documents/glossary-of-terms#synchronized-media) by providing [audio descriptions](#audio-descriptions) or [transcripts](/docs/wcag-documents/glossary-of-terms/#transcript).
+
+## Who Benefits
+
+- People who **cannot see** the video content of synchronized media can listen to the [audio description](/docs/wcag-documents/glossary-of-terms#audio-descriptions) to access the visual information.
+- People who **cannot both see and hear** can have the text alternative perceived by a [braille display](/docs/wcag-documents/glossary-of-terms#braille-display).
+- People who have **difficulties understanding** the language of the audio track in a video can benefit from reading the transcript in parallel.
+
+## Audio Descriptions
+
+<img src="/img/1.2.3-audio-descriptions.png" srcSet="/img/1.2.3-audio-descriptions.png 1x, /img/1.2.3-audio-descriptions-2x.png 2x" alt="" width="400" height="220" style={{aspectRatio: '400/220' }} />
+
+An audio track that narrates the relevant visual information contained in a video, such as actions, characters, scene changes, or on-screen text. That helps people with visual or intellectual disabilities to understand the content.
+The audio track can be made by voice actors or synthetic voices.
+
+### Techniques
+
+The following techniques for providing audio descriptions can be used:
+
+- **Provide a second, user-selectable soundtrack with audio descriptions** - users can turn the audio descriptions on and off
+- **Provide a second version of the video with "built-in" audio descriptions** - users can choose between a video without or with audio descriptions
+
+### Types
+
+Audio descriptions can be:
+
+- **Traditional** - description is narrated in between the dialogues when there’s no spoken content
+- **Extended** - the media is temporarily paused and description is narrated until the auditory information is conveyed
+
+### Exceptions
+
+Audio descriptions are not necessary when:
+
+- All of the information in the video track is already provided in the audio track
+- There are no important visual details (such as in a press conference or a government announcement)
+
+## Transcript
+
+<img src="/img/1.2.3-transcript.png" srcSet="/img/1.2.3-transcript.png 1x, /img/1.2.3-transcript-2x.png 2x" alt="" width="400" height="175" style={{aspectRatio: '400/175' }} />
+
+All of the information in the synchronized media is described in an adjacent or easily reachable text form and contains:
+
+- visual context
+- actions and expressions of actors
+- non-speech sounds (laughter, off-screen voices, etc.)
+- dialogues
+- and more information presented visually
+
+If the transcript is on a separate page, the link must be valid and there must be a functional link back.
+
+## Conformance
+
+Three WCAG criteria overlap with each other due to the conformance:
+
+- **1.2.3 - Audio Description or Media Alternative (Prerecorded) - Level A** - You can choose to include either the audio description or transcript
+- **1.2.5 - Audio Description (Prerecorded) - Level AA** - You must include the audio description
+- **1.2.8 - Media Alternative (Prerecorded) - Level AAA** - You must include the transcript
+
+## Examples
+
+### Correct Usage
+
+The following examples show the correct usage or implementation of accessibility.
+
+#### Example 1: Video Player with Audio Descriptions
+
+[Able Player](https://ableplayer.github.io/ableplayer/) is a fully accessible cross-browser media player. See the example [Audio description via video swap](https://ableplayer.github.io/ableplayer/demos/desc3.html).
+The example uses a separate video to deliver an audio description. If audio descriptions are toggled on, users get the described version; otherwise, they get the non-described version.
+
+### Incorrect Usage
+
+The following example shows incorrect usage or implementation of accessibility.
+
+#### Example 1: No Audio Descriptions
+
+Not including audio descriptions in a video that has a lot of visual actions, such as a silent movie or an opera performance, is excluding people who cannot see the video.
+
+## Test Your Knowledge
+
+<details>
+	<summary>Are audio descriptions required for the alternate presentation of information already available in text on the page?</summary>
+  No, audio descriptions are not required when the synchronized media is an alternate presentation of information that is already available in text on the page.
+</details>
+
+<details>
+	<summary>If there is only an audio description provided for the synchronized media without a transcript, would that conform to this WCAG criterion?</summary>
+  Yes, because the requirement is to provide an audio description OR the text alternative. However, audio descriptions are not accessible for deafblind people, so it is always better to include the transcript as well.
+</details>

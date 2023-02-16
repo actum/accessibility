@@ -1,0 +1,98 @@
+import Tabs from './'
+import AccessibleTabs from './Accessible'
+import PreviewWrapper from './../../../src/components/PreviewWrapper'
+
+# Tabs
+
+This page contains the inaccessible version of the component including the description of issues, additional considerations, and also the more accessible version of the component for comparison.
+
+(future video slot)
+
+## Inaccessible Version
+
+<PreviewWrapper title="Inaccessible tabs" codeHref="https://codesandbox.io/s/inaccessible-tabs-o3jvf9">
+  <Tabs />
+</PreviewWrapper>
+
+### Issues
+
+Expand each issue to see the user impact.
+
+<details>
+    <summary>The tab list and tab panel are not next to each other.</summary>
+    Both list and panel should be next to each other - both visually and in DOM. With screen magnification software or large zoom, it may be impossible to detect tab panel switching.
+</details>
+<details>
+    <summary>Tabs are focusable but not interactive.</summary>
+    Although it is possible to tab through tabs, it is not possible to activate the tab by a keyboard.
+</details>
+<details>
+    <summary>Tab panels are hidden only visually.</summary>
+    Inactive tab panels are still accessible by keyboard and their content is discoverable. This can confuse visual users and destroys the purpose of tabs for screen reader users in the first place.
+</details>
+<details>
+    <summary>Missing ARIA attributes.</summary>
+    Tabs are a custom JavaScript widget, there is no native HTML element to use for that. Therefore, a couple of attributes need to be added:
+    <ul>
+        <li><code>role=&quot;tablist&quot;</code> - a wrapper for the list of tabs</li>
+        <li><code>role=&quot;tab&quot;</code> - a tab control also providing a label for the connected tabpanel</li>
+        <li><code>role=&quot;tabpanel&quot;</code> - a wrapper for the tab panel content</li>
+        <li><code>aria-labelledby</code> on the tablist to provide an <a href="/docs/wcag-documents/glossary-of-terms#accessible-name">accessible name</a></li>
+        <li><code>aria-selected</code> on the tab to indicate selected tabs</li>
+        <li><code>aria-controls</code> on the tab to connect tab with tabpanel</li>
+        <li><code>tabindex</code> on the tab to control the tab sequence of tabs</li>
+        <li><code>aria-labelledby</code> on the tabpanel to provide an accessible name</li>
+    </ul>
+</details>
+<details>
+    <summary>Missing keyboard support.</summary>
+    To make the component accessible and convenient to use for keyboard users, the following key support should be added:
+    <br />
+    <ul>
+        <li>The <code>Tab</code> key - tabbing into the tablist should focus the selected tab, and tabbing again should leave the tablist.</li>
+        <li>The <code>Left arrow</code> and <code>Right arrow</code> keys - moving focus between tabs is done by arrows, not the <code>Tab</code> key.</li>
+        <li>The <code>Home</code> key moves the focus to the first tab.</li>
+        <li>The <code>End</code> key moves the focus to the last tab.</li>
+    </ul>
+    <br />
+    Note: Focusing the tab automatically activates it.
+</details>
+<details>
+    <summary>Wrong &quot;Google&quot; link location.</summary>
+    The Google link leads to apple.com, however, it should be leading to google.com.
+</details>
+<details>
+    <summary>The contrast of the currently selected tab is too low.</summary>
+    The color used to highlight the active tab against the inactive tabs is barely visible with low contrast.
+</details>
+<details>
+    <summary>Color is used alone to style links in the text.</summary>
+    Color alone is not a sufficient way to distinguish links from normal text. Low-vision or color-blind users would miss that completely, except for when the color contrast is very high.
+</details>
+<details>
+    <summary><code>max-height</code> is used on the tab panel.</summary>
+    The tab panel limits the height of the content inside even without using a vertical scrollbar. On smaller resolutions (or with more content), users would lose a part of the content.
+</details>
+
+### Considerations
+
+The usage of certain techniques depends on the circumstances. Expand each consideration to learn more.
+
+<details>
+    <summary>Consider changing the tab switch from hover to click event.</summary>
+    Hovering over something should not ideally cause a change in context, but there are exceptions. Tabs are usually switched either by activation or by selecting them by arrows.
+</details>
+<details>
+    <summary>Consider making the tabpanel focusable.</summary>
+    If there are no focusable elements in panels, users might miss the content in the panel. In such situations, it is recommended to put the <code>tabindex=&quot;0&quot;</code> to the tabpanel.
+</details>
+<details>
+    <summary>Consider using links or buttons as tabs.</summary>
+    Depending on the circumstances, tabs can also be developed as buttons or links (anchors). This should depend on the content importance and amount.
+</details>
+
+## More Accessible Version
+
+<PreviewWrapper title="More accessible tabs" codeHref="https://codesandbox.io/s/accessible-tabs-6d12b6">
+  <AccessibleTabs />
+</PreviewWrapper>

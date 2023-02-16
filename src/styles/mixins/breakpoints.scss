@@ -1,0 +1,118 @@
+$grid-breakpoints: (
+  sm: 0,
+  md: 577px,
+  lg: 997px,
+  xl: 1439px,
+);
+
+// Return the name of the next breakpoint
+// @param {String} name - Shortcut name of the breakpoint
+// @returns {String | null} - Breakpoint name | null for the last breakpoint
+
+@function breakpoint-next($name) {
+  $breakpoint-names: map-keys($grid-breakpoints);
+  $n: index($breakpoint-names, $name);
+
+  @return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+}
+
+// Return the minimum breakpoint width
+// @param {String} name - Shortcut name of the breakpoint
+// @returns {Unit | null} - Minimum value of the breakpoint in pixels, null for the smallest one
+
+@function breakpoint-min($name) {
+  $min: map-get($grid-breakpoints, $name);
+
+  @return if($min != 0, $min, null);
+}
+
+// Return the maximum breakpoint width
+// @param {String} name - Shortcut name of the breakpoint
+// @returns {Unit | null} - Maximum value of the breakpoint in pixels, null for the largest one
+
+@function breakpoint-max($name) {
+  $next: breakpoint-next($name);
+
+  @return if($next, breakpoint-min($next) - 1px, null);
+}
+
+// Return the breakpoint name with a dash infront. Useful for making responsive utilities
+// @param {String} name - Shortcut name of the breakpoint
+// @returns {String} - The name of the breakpoint with a dash infront, blank string if smallest breakpoint
+
+@function breakpoint-infix($name) {
+  @return if(breakpoint-min($name) == null, '', '-#{$name}');
+}
+
+// Return the content inside of the media of at least the minimum breakpoint width. No query for the smallest breakpoint
+// @param {String} name - Shortcut name of the breakpoint
+// @returns {Ruleset} - CSS rules passed into the @content
+
+@mixin media-breakpoint-up($name) {
+  $min: breakpoint-min($name);
+
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  }
+
+  @else {
+    @content;
+  }
+}
+
+// Return the content inside of the media of at at most the maximum breakpoint width. No query for the largest breakpoint
+// @param {String} name - Shortcut name of the breakpoint
+// @returns {Ruleset} - CSS rules passed into the @content
+
+@mixin media-breakpoint-down($name) {
+  $max: breakpoint-max($name);
+
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  }
+
+  @else {
+    @content;
+  }
+}
+
+// Return the content inside of the media that spans multiple breakpoint widths
+// @param {String} name - Shortcut name of the breakpoint
+// @returns {Ruleset} - CSS rules passed into the @content
+
+@mixin media-breakpoint-between($lower, $upper) {
+  $min: breakpoint-min($lower);
+  $max: breakpoint-max($upper);
+
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+// Return the content inside of the media between the breakpoint's minimum and maximum widths.
+// No minimum for the smallest breakpoint and no maximum for the largest one.
+// @param {String} name - Shortcut name of the breakpoint
+// @returns {Ruleset} - CSS rules passed into the @content
+
+@mixin media-breakpoint-only($name) {
+  $min: breakpoint-min($name);
+  $max: breakpoint-max($name);
+
+  @if $min != null and $max != null {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  }
+
+  @else if $max == null {
+    @include media-breakpoint-up($name);
+  }
+
+  @else if $min == null {
+    @include media-breakpoint-down($name);
+  }
+}

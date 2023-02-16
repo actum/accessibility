@@ -1,0 +1,83 @@
+import Checkbox from './'
+import AccessibleCheckbox from './Accessible'
+import AccessibleAriaCheckbox from './Accessible/ARIA'
+
+import PreviewWrapper from './../../../src/components/PreviewWrapper'
+
+# Checkbox
+
+This page contains the inaccessible version of the component including the description of issues, additional considerations, and also the more accessible version of the component for comparison.
+
+(future video slot)
+
+## Inaccessible Version
+
+<PreviewWrapper title="Inaccessible checkbox" codeHref="https://codesandbox.io/s/inaccessible-checkbox-78h12u">
+  <Checkbox />
+</PreviewWrapper>
+
+### Issues
+
+Expand each issue to see the user impact.
+
+<details>
+  <summary>Two checkboxes are used instead of one.</summary>
+  A custom checkbox can be created either by using a visually hidden native checkbox or using ARIA and JavaScript. But only one of these approaches should be used.
+  <br /><br />
+  When using the native checkbox, no JavaScript or ARIA (such as <code>aria-checked</code>) is needed because the checkbox is just hidden behind the box but still focusable and interactive, therefore its functionality is still available. When the state needs to be controlled for example in a React application, then utilize the <code>checked</code> attribute.
+  <br /><br />
+  When using ARIA with JavaScript, the element must have:
+
+  <ul>
+    <li><code>role=&quot;checkbox&quot;</code> for assistive technologies to treat it like a checkbox</li>
+    <li><code>tabindex=&quot;0&quot;</code> to be focusable</li>
+    <li><code>aria-checked</code> to represent the state</li>
+    <li><code>click</code> and <code>keydown</code> (Space character) events to be interactive</li>
+  </ul>
+</details>
+<details>
+  <summary>Input is missing the <code>id</code> attribute.</summary>
+  The <code>for</code> attribute of a <code>&lt;label&gt;</code> element expects an ID of an input field to provide an <a href="/docs/wcag-documents/glossary-of-terms#accessible-name">accessible name</a> and also make the label itself clickable. The input, however, uses only the <code>name</code> attribute, which does not create the relationship. The ID must be present on the input, otherwise, users of assistive technologies, such as <a href="/docs/wcag-documents/glossary-of-terms#screen-reader">screen readers</a>, would not know the checkbox label.
+</details>
+<details>
+  <summary><code>onClick</code> function is redundant.</summary>
+  When a <code>&lt;label&gt;</code> is connected to the input field with ID, then it becomes clickable automatically and controls the state of the checkbox.
+  <br /><br />
+  When the checkbox is made with ARIA, the accessible name is computed from the contents of the <code>&lt;div role=&quot;checkbox&quot;&gt;
+  </code>.
+</details>
+<details>
+  <summary>The focus indicator is not sufficient.</summary>
+  Changing the one-pixel wide input border to a grey color on focus is almost invisible indicator in this case.
+</details>
+<details>
+  <summary>The SVG tick icon is not visible in the dark version of a high-contrast mode.</summary>
+  All sighted users must see the tick icon to identify whether the checkbox is checked or not.
+</details>
+
+### Considerations
+
+The usage of certain techniques depends on the circumstances. Expand each consideration to learn more.
+
+<details>
+  <summary>Consider implementing a hover effect.</summary>
+  It is easier for sighted mouse users to perceive that checkboxes with labels are interactive when the user interface reacts to the hover effect. Changing the background color or border is usually a good indicator.
+</details>
+<details>
+  <summary>Consider the usage of relative units instead of pixels.</summary>
+  While not needed for conformance, if users change their text size, the checkbox size does not change. It might be also hard for users to select or find a small checkbox when the text size is very large. By using relative units instead of pixels, the size of the checkbox will adapt to the text size.
+</details>
+
+## More Accessible Version
+
+### Native Checkbox
+
+<PreviewWrapper title="More accessible native checkbox" codeHref="https://codesandbox.io/s/accessible-checkbox-lc0ytb">
+  <AccessibleCheckbox />
+</PreviewWrapper>
+
+### ARIA checkbox
+
+<PreviewWrapper title="More accessible ARIA checkbox" codeHref="https://codesandbox.io/s/accessible-aria-checkbox-kjmbkh">
+  <AccessibleAriaCheckbox />
+</PreviewWrapper>

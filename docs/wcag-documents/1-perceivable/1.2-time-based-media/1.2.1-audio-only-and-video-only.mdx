@@ -1,0 +1,111 @@
+# 1.2.1 - Audio-only and Video-only (Prerecorded) - A
+
+(future video slot)
+
+## Intent
+
+Make prerecorded (not live) audio-only and video-only content accessible through text or [media alternatives](/docs/wcag-documents/glossary-of-terms#media-alternative).
+
+## Who Benefits
+
+- People who **cannot see** a video can listen to an alternative audio track or can have the text alternative announced by a [screen reader](/docs/wcag-documents/glossary-of-terms#screen-reader).
+- People who **cannot hear** an audio track can read the text alternative.
+- People who **cannot both see and hear** can have the text alternative perceived by a [braille display](/docs/wcag-documents/glossary-of-terms#braille-display).
+- People who cannot play the audio because they are in a **noisy or quiet environment** where they can't hear it or don't want to disturb others can read the text alternative.
+- People having **difficulties understanding** audio or video information due to language or cognitive issues, for example, can benefit from reading the text alternative in parallel.
+- People **searching for content** in search engines or on the page benefit from having content text alternatives.
+- People who **won't spend the time to listen** to the audio or watch the video can just read the [transcript](/docs/wcag-documents/glossary-of-terms#transcript) or its parts quickly.
+- People with **low bandwidth connections** who don't want to download larger audio or video files or don't want to pay for bandwidth by downloading large files.
+- **SEO** (Search engine optimization) indexing is possible thanks to the text content.
+
+## Media Alternatives
+
+This criterion covers two types of media alternatives.
+
+### Audio-only
+
+<img src="/img/1.2.1-audio-only.png" srcSet="/img/1.2.1-audio-only.png 1x, /img/1.2.1-audio-only-2x.png 2x" alt="An audio player with the play button, elapsed and total time text, timeline slider, and the 'more options' button." width="400" height="100" style={{aspectRatio: '400/100' }} />
+
+Audio recordings of speeches, podcasts, ...
+
+Provide a **text transcript** that conveys the same information as the audio.
+
+```html
+<audio>
+	<source src="track.mp3" type="audio">
+</audio>
+
+<h3>Transcript</h3>
+<p>[00:00:00] (John) Hello! In this video, we will cover keyboard access and visual focus.</p>
+<p>[00:00:05] Many people cannot use a mouse and rely on the keyboard to interact with web content.</p>
+(the full transcript text continues...)
+```
+
+### Video-only
+
+<img src="/img/1.2.1-video-only.png" srcSet="/img/1.2.1-video-only.png 1x, /img/1.2.1-video-only-2x.png 2x" alt="An video player with the play buttons, elapsed and total time text, timeline slider, and the 'options', 'change view', 'fullscreen', and 'volume' buttons." width="400" height="250" style={{aspectRatio: '400/250' }} />
+
+Silent movies, animations, ...
+
+Provide a **text transcript** or **an audio track** that conveys the same information.
+
+```html
+<a href="mars-landing.mp4">Mars landing video</a>
+<a href="mars-landing-audio-description.mp3">Audio description of "Mars Landing"</a>
+```
+
+## Exceptions
+
+The alternative does not have to be provided if the content itself is the alternative.
+For instance, if video-only content has an audio track as an alternative, the audio track itself does not need to have a text alternative.
+
+## Examples
+
+### Correct Usage
+
+The following example shows the correct usage or implementation of accessibility.
+
+#### Example 1: Transcript of Podcast
+
+A button with a "play" icon and the visible text "Play Episode 1: Introduction to Web Accessibility" followed by a short description of the episode and a link to the transcript below followed by a download link and a share button.
+
+```html title="Podcast transcript example"
+<button class="btn--play">Play Episode 1: Introduction to Web Accessibility</button>
+
+<p>Get to know what web accessibility is and what impact it has.</p>
+
+<a href="/episode-01-transcript">Transcript</a>
+<a href="/episode-01.mp3">Download podcast as MP3 (1.45 MB)</a>
+<button>Share the episode</button>
+```
+
+### Incorrect Usage
+
+The following example shows incorrect usage or implementation of accessibility.
+
+#### Example 1: Transcript of Podcast
+
+A button with a "play" icon and the visible text "Play Episode 1: Introduction to Web Accessibility" followed by a short description of the episode, a download link, and a share button.
+
+There is no mention of a transcript anywhere, so the podcast is inaccessible to people who need the transcript.
+
+```html title="Podcast transcript example"
+<button class="btn--play">Play Episode 1: Introduction to Web Accessibility</button>
+
+<p>Get to know what web accessibility is and what impact it has.</p>
+
+<a href="/episode-01.mp3">Download podcast as MP3 (1.45 MB)</a>
+<button>Share the episode</button>
+```
+
+## Test Your Knowledge
+
+<details>
+	<summary>What are the requisites for the transcript’s content?</summary>
+	The transcript must have identified speakers (if there’s more than one) and must cover all dialogues and important sound effects. It may also contain timestamps when necessary.
+</details>
+
+<details>
+	<summary>What technique would you use to link media with the transcript?</summary>
+	Place a link to the transcript, or put the transcript itself as close as possible to the media content.
+</details>

@@ -1,0 +1,58 @@
+@import '../../../src/styles/mixins/dark-mode.scss';
+
+.modal {
+  &__wrapper {
+    position: fixed;
+    left: -100vw;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+
+    &--open {
+      display: flex;
+      opacity: 1;
+      left: 0vw;
+    }
+  }
+
+  &__content {
+    position: relative;
+    background: #fefefe;
+    width: 700px;
+    padding: 2rem;
+    border: 1px solid black;
+
+    @include dark-mode() {
+      background: #303030;
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+  }
+
+  &__close-btn {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 0.7rem;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+
+  a, button {
+    &:focus {
+      outline: none; // Turn off focus styles for better accessibility
+    }
+  }
+}
+
+button {
+  padding: 0.5rem;
+}
