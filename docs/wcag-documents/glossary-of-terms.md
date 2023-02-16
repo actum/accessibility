@@ -39,3 +39,12 @@ This page contains a list of terms that might not be immediately obvious to read
   <dt id="transcript">transcript</dt>
   <dd>a text version of audio content; it must have identified speakers (if there is more than one) and must cover all dialogues and important sound effects. It may also contain timestamps when necessary.</dd>
 </dl>
+
+<!--
+  Stop anchor navigation from scrolling page below the sticky header:
+-->
+<style dangerouslySetInnerHTML={{
+  __html: `html {
+  scroll-padding-top: 65px;
+}`
+}} />

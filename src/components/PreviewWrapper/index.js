@@ -33,7 +33,7 @@ const PreviewWrapper = ({title, codeHref, children}) => {
         </div>
       </div>
 
-      { codeHref && <Button label="Edit on Codesandbox" href={`${codeHref}?fontsize=14&hidenavigation=1&theme=dark`} /> }
+      { codeHref && <Button label="Edit on Codesandbox" ariaLabel={`Edit on Codesandbox - ${title}`} href={`${codeHref}?fontsize=14&hidenavigation=1&theme=dark`} /> }
     </>
   )
 }
