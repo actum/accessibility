@@ -10,7 +10,7 @@ WCAG Documents are simplified version of [Web Content Accessibility Guidelines](
 
 There are also videos (explaining the guidelines) available for each document. Check the following video that gives you an introduction to the project.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VBdXiQZzK9I" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ir4JFADp1yk" title="Introduction - WCAG Documents" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
 ## Web Content Accessibility Guidelines
 

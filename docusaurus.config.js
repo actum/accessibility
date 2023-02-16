@@ -56,7 +56,7 @@ const lightCodeTheme = {
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'ACTUM Accessibility',
+  title: 'ACTUM Digital Accessibility',
   // tagline: 'Dinosaurs are cool',
   url: 'https://accessibility.actumdigital.com',
   baseUrl: '/',
@@ -243,6 +243,13 @@ const config = {
         content: '#ffffff',
       },
     },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'author',
+        content: 'ACTUM Digital'
+      }
+    }
   ],
   clientModules: [
     require.resolve('./global.js'),

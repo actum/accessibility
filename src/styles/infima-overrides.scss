@@ -56,7 +56,7 @@
   }
 
   &__link-item {
-    display: inline-flex;
+    display: inline-flex !important;
     align-items: center;
 
     @include dark-mode() {
@@ -80,7 +80,7 @@
   &__link-medium {
     &::before {
       content: "";
-      display: flex;
+      display: inline-flex;
       width: rem(20);
       height: rem(20);
       margin-right: var(--ifm-spacer-2);

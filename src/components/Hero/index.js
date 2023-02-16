@@ -4,7 +4,7 @@ const Hero = () =>
   <div className="hero row row--gap">
     <div className="col col--6">
       <h1 className="hero__heading">
-        <span className="hero__title--secondary">ACTUM</span>
+        <span className="hero__title--secondary">ACTUM Digital</span>
         <br />
         <span className="hero__title--primary">Accessibility</span>
       </h1>

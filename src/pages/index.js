@@ -6,8 +6,8 @@ import Button from '../components/Button'
 
 const Home = () => (
   <Layout
-    title="ACTUM Accessibility"
-    description="ACTUM Digital delivers accessible web applications."
+    title="Home"
+    description="A portal of ACTUM Digital projects dedicated to web accessibility."
   >
     <main>
       <Section>
