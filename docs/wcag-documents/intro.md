@@ -14,7 +14,7 @@ There are also videos (explaining the guidelines) available for each document. C
 
 ## Web Content Accessibility Guidelines
 
-The WCAG (Web Content Accessibility Guidelines) explain **how to make web content more accessible** to people with various abilities and disabilities. It is **a standardized set of principles, guidelines, and success criteria** that developers, quality assurance engineers, content editors, and anyone building websites should follow in order to be [conformant](/docs/wcag-documents/glossary-of-terms#conformance) with the rules and meet at least the minimum required level of accessibility of their websites.
+The WCAG (Web Content Accessibility Guidelines) explain **how to make web content more accessible** to people with various abilities and disabilities. It is **a standardized set of principles, guidelines, and success criteria** that developers, designers, quality assurance engineers, content editors, and anyone building websites should follow in order to be [conformant](/docs/wcag-documents/glossary-of-terms#conformance) with the rules and meet at least the minimum required level of accessibility of their websites.
 
 We encourage all who are responsible for web accessibility in their organization to study the topic on the official [WCAG overview website](https://www.w3.org/WAI/standards-guidelines/wcag/) and also from different sources to learn more.
 
