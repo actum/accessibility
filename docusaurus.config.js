@@ -103,6 +103,8 @@ const config = {
           alt: 'ACTUM Digital accessibility',
           src: 'img/actum-accessibility-logo.svg',
           srcDark: 'img/actum-accessibility-logo-dark.svg',
+          width: 240,
+          height: 36
         },
         items: [
           {

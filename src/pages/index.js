@@ -19,17 +19,17 @@ const Home = () => (
 
         <div className="row row--gap" style={{ justifyContent: 'center' }}>
           <div className="col" style={{ maxWidth: '500px'}}>
-            <img src="/img/knowledge-sharing.png" srcSet="/img/knowledge-sharing.png 1x, /img/knowledge-sharing-2x.png 2x" alt="" loading="lazy" width="300" style={{ margin: '0 auto 1rem', aspectRatio: '300/200'}} />
+            <img src="/img/knowledge-sharing.png" srcSet="/img/knowledge-sharing.png 1x, /img/knowledge-sharing-2x.png 2x" alt="" width="300" style={{ margin: '0 auto 1rem', aspectRatio: '300/200'}} />
             <h3>Knowledge Sharing</h3>
             <p>We want to share our knowledge about the web accessibility and also help people understand and experience differences between accessible and inaccessible web.</p>
           </div>
           <div className="col" style={{ maxWidth: '500px'}}>
-            <img src="/img/accessibility-awareness.png" srcSet="/img/accessibility-awareness.png 1x, /img/accessibility-awareness-2x.png 2x" alt="" loading="lazy" width="300" style={{ margin: '0 auto 1rem', aspectRatio: '300/200'}} />
+            <img src="/img/accessibility-awareness.png" srcSet="/img/accessibility-awareness.png 1x, /img/accessibility-awareness-2x.png 2x" alt="" width="300" style={{ margin: '0 auto 1rem', aspectRatio: '300/200'}} />
             <h3>Accessibility Awareness</h3>
             <p>We want to spread awareness about the web accessibility because we believe it is essential, not optional. A huge percent of websites are still inaccessible.</p>
           </div>
           <div className="col" style={{ maxWidth: '500px'}}>
-            <img src="/img/knowledge-base.png" srcSet="/img/knowledge-base.png 1x, /img/knowledge-base-2x.png 2x" alt="" loading="lazy" width="300" style={{ margin: '0 auto 1rem', aspectRatio: '300/200'}} />
+            <img src="/img/knowledge-base.png" srcSet="/img/knowledge-base.png 1x, /img/knowledge-base-2x.png 2x" alt="" width="300" style={{ margin: '0 auto 1rem', aspectRatio: '300/200'}} />
             <h3>Knowledge Base</h3>
             <p>We want to keep this project also as our knowledge base, reflecting our experience with the web accessibility, and progressively update it as we learn more.</p>
           </div>

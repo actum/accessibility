@@ -4,7 +4,7 @@ sidebar_position: 0
 
 # WCAG Documents
 
-<img src="/img/wcag-documents.png" srcSet="/img/wcag-documents.png 1x, /img/wcag-documents-2x.png 2x" alt="" width="600" height="400" style={{ aspectRatio: '600/400'}} />
+<img src="/img/wcag-documents.png" srcSet="/img/wcag-documents.png 1x, /img/wcag-documents-2x.png 2x" alt="" width="600" height="400" style={{ aspectRatio: '600/400'}} loading="eager" />
 
 WCAG Documents are simplified version of [Web Content Accessibility Guidelines](#web-content-accessibility-guidelines), and they explain the information from the official guidelines more briefly, sometimes in a different way, and are a **supportive source of study material of the web accessibility** topic. The documents can help you to learn the essential information to understand and develop more accessible websites.
 
