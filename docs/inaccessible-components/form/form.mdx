@@ -19,55 +19,55 @@ This page contains the inaccessible version of the component including the descr
 Expand each issue to see the user impact.
 
 <details>
-  <summary>Form field labels are missing.</summary>
+  <summary><span>Form field labels are missing.</span></summary>
   Every form field should be associated with the <code>&lt;label&gt;</code> element. There are exceptions, such as a "search" field that commonly does not have the visible label, however, it has the magnifier icon and programmatically associated accessible name. The label defines the accessible name of the form field, and also allows mouse users to focus the form field by clicking on the label too. The label should be placed close to the connected form field so sighted users understand the connection and users with magnification are able to see both of them. Currently, there are no <code>&lt;label&gt;</code> elements or another methods of providing accessible names and a visual indicators of the purpose of the form fields.
 </details>
 <details>
-  <summary>Form fields' border color has an insufficient color contrast.</summary>
+  <summary><span>Form fields' border color has an insufficient color contrast.</span></summary>
   Users with low vision may not distinguish the border of the form field because its color contrast against the background color is too low.
 </details>
 <details>
-  <summary>The form field description has an insufficient color contrast.</summary>
+  <summary><span>The form field description has an insufficient color contrast.</span></summary>
   Users with low vision may not be able to read the form field description text because its color contrast against the background color is too low.
 </details>
 <details>
-  <summary>The form field description relationship with the field itself is missing.</summary>
+  <summary><span>The form field description relationship with the field itself is missing.</span></summary>
   There is no programmatically associated relationship set between the form field and the form field description using <code>aria-describedby</code> so blind users, for instance, might completely miss the description as the screen reader would not even read it. That is because you are inside the form, or when tabbing through form fields, the screen reader is automatically put into the "forms" (or "focus") mode where only interactive elements are reachable. Standard text without any association is ignored.
 </details>
 <details>
-  <summary>The explanation of what the asterisk symbol (<code>*</code>) means is missing.</summary>
+  <summary><span>The explanation of what the asterisk symbol (<code>*</code>) means is missing.</span></summary>
   The required fields are marked with the asterisk sign (besides the <code>required</code> attribute in the code) but the explanation needs to be provided as not all users would understand it, even though it is considered to be sort of a standard.
 </details>
 <details>
-  <summary>The form submission message is not presented to assistive technologies.</summary>
+  <summary><span>The form submission message is not presented to assistive technologies.</span></summary>
   When the form is submitted, the error message or the success message is displayed above the form. However, screen reader users, for instance, might completely miss it as nothing is announced when the form is submitted.
 </details>
 <details>
-  <summary>The usage of the number input for the phone number is invalid.</summary>
+  <summary><span>The usage of the number input for the phone number is invalid.</span></summary>
   Number inputs should be used for amounts, such as count numbers or a price. The increment/decrement feature is useless for phone numbers, plus when using the telephone inputs, an appropriate keyboard is displayed for mobile users.
 </details>
 <details>
-  <summary>The usage of the <code>type</code> attribute on <code>textarea</code> is invalid.</summary>
+  <summary><span>The usage of the <code>type</code> attribute on <code>textarea</code> is invalid.</span></summary>
   The <code>type</code> attribute is relevant only for <code>&lt;input&gt;</code> elements. There is no support for that attribute there.
 </details>
 <details>
-  <summary>The form cannot be submitted by pressing the <code>Enter</code> key.</summary>
+  <summary><span>The form cannot be submitted by pressing the <code>Enter</code> key.</span></summary>
   Currently, the form can only be submitted by the submit button. However, it is also necessary to allow users to submit it by pressing the <code>Enter</code> key. When the submission handler is attached to the form instead of the button, the problem is solved (if the button has the submit type).
 </details>
 <details>
-  <summary>The <code>type</code> of the submit button is incorrect.</summary>
+  <summary><span>The <code>type</code> of the submit button is incorrect.</span></summary>
   In order to submit the form by pressing the <code>Enter</code> key (not just by pressing the button), either the button type must be <code>submit</code> or the <code>type</code> attribute omitted.
 </details>
 <details>
-  <summary>There is no focus change after the form submission.</summary>
+  <summary><span>There is no focus change after the form submission.</span></summary>
   If the form is invalid, it is necessary to let users know this information. For example, it is possible to move the user focus to the first invalid field, so they can immediately fix the error.
 </details>
 <details>
-  <summary>Invalid inputs are marked only with different border color.</summary>
+  <summary><span>Invalid inputs are marked only with different border color.</span></summary>
   Using the color only is not enough for users to know there is an error in the form. Users with low vision, color blindness, or total blindness would not see the color change at all, and also any users might have trouble figuring out what to do to fix the error. The error description containing the instructions on how to fix the error must be provided and programmatically associated with the relevant form field by the <code>aria-describedby</code> attribute.
 </details>
 <details>
-  <summary>The form has a fixed width.</summary>
+  <summary><span>The form has a fixed width.</span></summary>
   Using fixed width creates a horizontal scrollbar on smaller viewports which could make navigation difficult for some users, especially those using screen magnification.
 </details>
 
@@ -76,17 +76,17 @@ Expand each issue to see the user impact.
 The usage of certain techniques depends on the circumstances. Expand each consideration to learn more.
 
 <details>
-  <summary>Consider putting a word "required" to the label.</summary>
+  <summary><span>Consider putting a word "required" to the label.</span></summary>
   For instructions to be even more clear, the asterisk symbol can be avoided completely, and instead, the word "required" might be a part of the labels of all required fields. For instance, "Full name (required)".
 </details>
 
 <details>
-  <summary>Consider different focus locations when submitting invalid data.</summary>
+  <summary><span>Consider different focus locations when submitting invalid data.</span></summary>
   When the form is submitted and contains errors, the focus can be set also to the error message itself, instead of the first invalid field.
 </details>
 
 <details>
-  <summary>Consider listing all errors in the error message above the form.</summary>
+  <summary><span>Consider listing all errors in the error message above the form.</span></summary>
   For better clarity, maybe in larger forms, all the error messages can be listed together inside the error box to give users an overview of all errors they need to fix so they can submit the form.
 </details>
 

@@ -59,6 +59,24 @@ summary {
   &:focus {
     outline: none;
   }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: calc(var(--ifm-alert-padding-horizontal) * -1);
+    top: calc(var(--ifm-alert-padding-vertical) * -1);
+    right: 0;
+    bottom: 0;
+    width: calc(100% + var(--ifm-alert-padding-horizontal) * 2);
+    height: calc(100% + var(--ifm-alert-padding-vertical) * 2);
+    z-index: 0;
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 p {

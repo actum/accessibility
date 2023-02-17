@@ -26,30 +26,30 @@ This page contains the inaccessible version of the component including the descr
 Expand each issue to see the user impact.
 
 <details>
-  <summary>Accordion headers are not accessible by keyboard.</summary>
+  <summary><span>Accordion headers are not accessible by keyboard.</span></summary>
   Keyboard users cannot access the content by tabbing in the accordion because the accordion headers are
   not focusable.
 </details>
 <details>
-  <summary>The accordion is not operational by function keys.</summary>
+  <summary><span>The accordion is not operational by function keys.</span></summary>
   Keyboard users should be able to use several function keys for easier navigation between
   accordion items: <em>Arrow Up</em>, <em>Arrow Down</em>, <em>Home</em>, and <em>End</em>.
 </details>
 <details>
-  <summary>The keyboard event for interacting with the component is missing.</summary>
+  <summary><span>The keyboard event for interacting with the component is missing.</span></summary>
   There is only the <code>mouseDown</code> event implemented, which works for mouse users, but
   does not work for keyboard users, therefore there is no way for them how to open the
   accordion item by either <code>Space</code> or <code>Enter</code> keys.
 </details>
 <details>
-  <summary>Contents of accordion items are hidden visually but still discoverable.</summary>
+  <summary><span>Contents of accordion items are hidden visually but still discoverable.</span></summary>
   When the accordion item is closed, its content should not be visible but also not operable - for example, keyboard users should not be able to tab into interactive elements inside, and screen
   reader users should not be able to read the content unless the panel is open.
 </details>
 <details>
-  <summary>
+  <summary><span>
     The usage of the <code>header</code> element is invalid in this case.
-  </summary>
+  </span></summary>
   The <code>header</code> should only be used inside other sectioning elements, such as <code>article</code> and <code>section</code>, to be scoped. Although there is an <code>article</code> element on this very page outside the component's wrapper, it is not a part of the component. If there would not be a <code>banner</code> landmark (the top-level <code>&lt;header&gt;</code> element) on the page, then the accordion header would be treated as such, confusing users of assistive technologies.
   <br />
   <a
@@ -69,7 +69,7 @@ Expand each issue to see the user impact.
   </a>.
 </details>
 <details>
-  <summary>The accordion has missing aria attributes.</summary>
+  <summary><span>The accordion has missing aria attributes.</span></summary>
   Although this does not work for all <a href="/docs/wcag-documents/glossary-of-terms#screen-reader">screen readers</a>, it is a good practice to create a
   relationship between the accordion header and content via <code>
     aria-controls
@@ -77,9 +77,9 @@ Expand each issue to see the user impact.
   controls.
 </details>
 <details>
-  <summary>
+  <summary><span>
     The usage of <code>aria-selected=&quot;true&quot;</code> on the header element is invalid.
-  </summary>
+  </span></summary>
   The <code>aria-selected=&quot;true&quot;</code> is only valid for <code>gridcell</code>,{' '}
   <code>option</code>, <code>row</code>, and <code>tab</code> roles.
   <br />
@@ -93,25 +93,25 @@ Expand each issue to see the user impact.
   .
 </details>
 <details>
-  <summary>Font size is set in pixels.</summary>
+  <summary><span>Font size is set in pixels.</span></summary>
   When font size is not set in relative units, such as <code>rem</code> or <code>em</code>,
   then increasing or decreasing font size settings in the browser will not have any effect.
   This is important for users who adjust their font size to their preferences.
 </details>
 <details>
-  <summary>The accordion has a fixed width.</summary>
+  <summary><span>The accordion has a fixed width.</span></summary>
   In this case, it is causing overflow issues with a horizontal scrollbar on mobile
   devices since the accordion is not responsive. Avoid horizontal scrollbars as it negatively affects user experience.
 </details>
 <details>
-  <summary>The accordion content has a fixed height.</summary>
+  <summary><span>The accordion content has a fixed height.</span></summary>
   This is an anti-pattern as the content text can overflow and be invisible to users.
 </details>
 <details>
-  <summary>
+  <summary><span>
     An order of the accordion header and accordion content is switched via the CSS{' '}
     <code>order</code> property.
-  </summary>
+  </span></summary>
   This is confusing for sighted keyboard users in general because the visual order does not
   follow the logical order and when tabbing through the page (considering the accordion would be focusable), they could confusingly jump around the layout.
   <br />
@@ -124,17 +124,17 @@ Expand each issue to see the user impact.
   </a>.
 </details>
 <details>
-  <summary>
+  <summary><span>
     The arrow SVG icon is invisible in the dark version of a high contrast mode.
-  </summary>
+  </span></summary>
   While it is not a critical issue in this case, users with the high-contrast mode turned
   on might not realize there is an accordion on the page because they cannot see the icon.
 </details>
 <details>
-  <summary>
+  <summary><span>
     The mouse pointer cursor is over the whole accordion item (including content), but the
     actual clickable area is much smaller.
-  </summary>
+  </span></summary>
   Again not a critical issue, however, users expect to see the pointer cursor to perform an
   action and when they click into an empty space, it does not do anything.
 </details>
@@ -144,18 +144,18 @@ Expand each issue to see the user impact.
 The usage of certain techniques depends on the circumstances. Expand each consideration to learn more.
 
 <details>
-  <summary>Consider the usage of a list.</summary>
+  <summary><span>Consider the usage of a list.</span></summary>
   When there are many accordion items, it is useful for screen reader users to know how many of
   them there are. When using <code>ul</code>/<code>ol</code> and <code>li</code> elements,
   this is announced automatically.
 </details>
 <details>
-  <summary>Consider the usage of headings.</summary>
+  <summary><span>Consider the usage of headings.</span></summary>
   Headings might be used for accordion items titles when it would make sense for these
   sections to be a part of the document structure.
 </details>
 <details>
-  <summary>Consider the usage of landmark regions.</summary>
+  <summary><span>Consider the usage of landmark regions.</span></summary>
   If the content sections inside accordion items are important subsections of a page, and
   users of assistive technologies should be able to navigate there directly anywhere from the page, use the{' '}
   <code>landmark</code> role (explicit or implicit) together with the{' '}

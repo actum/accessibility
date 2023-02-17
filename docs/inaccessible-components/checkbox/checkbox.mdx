@@ -21,7 +21,7 @@ This page contains the inaccessible version of the component including the descr
 Expand each issue to see the user impact.
 
 <details>
-  <summary>Two checkboxes are used instead of one.</summary>
+  <summary><span>Two checkboxes are used instead of one.</span></summary>
   A custom checkbox can be created either by using a visually hidden native checkbox or using ARIA and JavaScript. But only one of these approaches should be used.
   <br /><br />
   When using the native checkbox, no JavaScript or ARIA (such as <code>aria-checked</code>) is needed because the checkbox is just hidden behind the box but still focusable and interactive, therefore its functionality is still available. When the state needs to be controlled for example in a React application, then utilize the <code>checked</code> attribute.
@@ -36,22 +36,22 @@ Expand each issue to see the user impact.
   </ul>
 </details>
 <details>
-  <summary>Input is missing the <code>id</code> attribute.</summary>
+  <summary><span>Input is missing the <code>id</code> attribute.</span></summary>
   The <code>for</code> attribute of a <code>&lt;label&gt;</code> element expects an ID of an input field to provide an <a href="/docs/wcag-documents/glossary-of-terms#accessible-name">accessible name</a> and also make the label itself clickable. The input, however, uses only the <code>name</code> attribute, which does not create the relationship. The ID must be present on the input, otherwise, users of assistive technologies, such as <a href="/docs/wcag-documents/glossary-of-terms#screen-reader">screen readers</a>, would not know the checkbox label.
 </details>
 <details>
-  <summary><code>onClick</code> function is redundant.</summary>
+  <summary><span><code>onClick</code> function is redundant.</span></summary>
   When a <code>&lt;label&gt;</code> is connected to the input field with ID, then it becomes clickable automatically and controls the state of the checkbox.
   <br /><br />
   When the checkbox is made with ARIA, the accessible name is computed from the contents of the <code>&lt;div role=&quot;checkbox&quot;&gt;
   </code>.
 </details>
 <details>
-  <summary>The focus indicator is not sufficient.</summary>
+  <summary><span>The focus indicator is not sufficient.</span></summary>
   Changing the one-pixel wide input border to a grey color on focus is almost invisible indicator in this case.
 </details>
 <details>
-  <summary>The SVG tick icon is not visible in the dark version of a high-contrast mode.</summary>
+  <summary><span>The SVG tick icon is not visible in the dark version of a high-contrast mode.</span></summary>
   All sighted users must see the tick icon to identify whether the checkbox is checked or not.
 </details>
 
@@ -60,11 +60,11 @@ Expand each issue to see the user impact.
 The usage of certain techniques depends on the circumstances. Expand each consideration to learn more.
 
 <details>
-  <summary>Consider implementing a hover effect.</summary>
+  <summary><span>Consider implementing a hover effect.</span></summary>
   It is easier for sighted mouse users to perceive that checkboxes with labels are interactive when the user interface reacts to the hover effect. Changing the background color or border is usually a good indicator.
 </details>
 <details>
-  <summary>Consider the usage of relative units instead of pixels.</summary>
+  <summary><span>Consider the usage of relative units instead of pixels.</span></summary>
   While not needed for conformance, if users change their text size, the checkbox size does not change. It might be also hard for users to select or find a small checkbox when the text size is very large. By using relative units instead of pixels, the size of the checkbox will adapt to the text size.
 </details>
 
