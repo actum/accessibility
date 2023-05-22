@@ -8,7 +8,9 @@ sidebar_position: 0
 
 WCAG Documents are simplified version of [Web Content Accessibility Guidelines](#web-content-accessibility-guidelines), and they explain the information from the official guidelines more briefly, sometimes in a different way, and are a **supportive source of study material of the web accessibility** topic. The documents can help you to learn the essential information to understand and develop more accessible websites.
 
+:::note
 WCAG Documents are not trying to re-create WCAG, nor to improve it. The purpose of the project is to provide a brief introduction to WCAG for people who want to obtain the basic knowledge first, and then study it to the very detail at the official guidelines.
+:::
 
 There are also videos (explaining the guidelines) available for each document. Check the following video that gives you an introduction to the project.
 
@@ -57,9 +59,9 @@ Provide alternatives for time-based media.
 - [1.2.3 - Audio Description or Media Alternative (Prerecorded) - A](./1-perceivable/1.2-time-based-media/1.2.3-audio-description-or-media-alternative-prerecorded.mdx)
 - [1.2.4 - Captions (Live) - AA](./1-perceivable/1.2-time-based-media/1.2.4-captions-live.mdx)
 - [1.2.5 - Audio Description (Prerecorded) - AA](./1-perceivable/1.2-time-based-media/1.2.5-audio-description-prerecorded.mdx)
-- 1.2.6 - Sign Language (Prerecorded) - AAA (future link)
-- 1.2.7 - Extended Audio Description (Prerecorded) - AAA (future link)
-- 1.2.8 - Media Alternative (Prerecorded) - AAA (future link)
+- [1.2.6 - Sign Language (Prerecorded) - AAA](./1-perceivable/1.2-time-based-media/1.2.6-sign-language-prerecorded.mdx)
+- [1.2.7 - Extended Audio Description (Prerecorded) - AAA](./1-perceivable/1.2-time-based-media/1.2.7-extended-audio-description-prerecorded.mdx)
+- [1.2.8 - Media Alternative (Prerecorded) - AAA](./1-perceivable/1.2-time-based-media/1.2.8-media-alternative-prerecorded.mdx)
 - 1.2.9 - Audio-only (Live) - AAA (future link)
 
 ### 1.3 - Adaptable
