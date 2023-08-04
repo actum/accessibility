@@ -1,0 +1,121 @@
+# 1.3.1 - Info and Relationships - A
+
+(future video slot)
+
+## Intent
+
+Information, structure, and relationships conveyed through presentation can be [programmatically determined](/docs/wcag-documents/glossary-of-terms#programmatically-determined) or are available in text.
+
+## Who Benefits
+
+- When content structured and organized with headings, lists, tables, forms, or other structures is implemented by semantic markup and proper relationships, the following (and much more) people benefit:
+  - People who use **screen readers** can understand and navigate through these structures since the screen reader announces their presence.
+  - **Sighted people** who have **disabled CSS styles** can still recognize headings, links, and other structures thanks to the browser's default styles.
+- People who use **screen readers** benefit when information conveyed through color or other visual means is also available in text.
+- People who **cannot hear** benefit when information conveyed through audio (such as an error sound effect) is also provided by different modalities, such as text.
+
+## Presentation
+
+The presentation (in this context) means rendering the content in a form users can perceive, such as:
+- standard browser reading
+- browsing in the reader mode
+- browsing with disabled CSS styles
+- using a screen reader
+- and more
+
+## Information and Relationships
+
+Information and relationships implied by visual or auditory formatting must be preserved when the presentation format changes.
+
+For instance, putting text into the <code>&lt;h1&gt;</code> element allows the browser to style the text with a bigger font size and add it to the page heading outline, so sighted users can recognize the text as a heading thanks to its styles, and screen reader users can hear "heading level one" as screen readers can programmatically determine it from the markup.
+
+If it is not possible to preserve the formatting when the presentation format changes, supplement additional information with text. For instance, you may put a text description saying "All required fields are marked with an asterisk (*)" into the form instructions.
+
+:::note
+Use HTML elements according to their **meaning**, not because of the way they appear visually.
+:::
+
+## Examples
+
+### Correct Usage
+
+The following example shows the correct usage or implementation of accessibility.
+
+#### Example 1: Game List
+
+There is a title "Our Games" followed by a list of 3 game names. Because all elements are implemented semantically, using <code>&lt;h3&gt;</code>, <code>&lt;ul&gt;</code>, and <code>&lt;li&gt;</code> elements, users using different presentation formats can understand there is a heading and a list. Also, the first game in the list, the "Castle attack - 2023", is wrapped in the <code>&lt;strong&gt;</code> tag, putting an emphasis on it. Visually, the text will normally get bold, but because some screen readers cannot properly handle emphasis, there is also a text saying "new", indicating this game is the newest addition.
+
+```html title="A list of games produced by a gaming company"
+<h3>Our Games</h3>
+
+<ul>
+  <li><strong>Castle attack - 2023 (new)</strong></li>
+  <li>Speed racer - 2020</li>
+  <li>John's tale - 2018</li>
+</ul>
+```
+
+### Incorrect Usage
+
+The following example shows incorrect usage or implementation of accessibility.
+
+#### Example 1: Visual-only Heading
+
+A heading is implemented as a paragraph. The paragraph has a CSS class with styles that make it visually look like a heading, but because it is a <code>&lt;p&gt;</code> and not <code>&lt;h1&gt;</code> (or other heading levels) element, it is not programmatically determinable as a heading. Screen reader users, for instance, would not be able to detect this text as a heading and navigate through it.
+
+```html title="An excerpt from a document about web accessibility"
+<style>
+  .h1 {
+    font-family: Roboto;
+    font-size: 200%;
+    font-weight: bold;
+  }
+</style>
+
+<p class="h1">Introduction</p>
+<p>Web accessibility means that websites, tools, and technologies...</p>
+```
+
+#### Example 2: Span Link
+
+The intention here is to re-create a link functionality by using a <code>&lt;span&gt;</code> element instead of <code>&lt;a&gt;</code>. When users click on the text, they get redirected to another page thanks to the <code>&lt;onclick&gt;</code> functionality, however, there are several issues.
+
+First, the link is not programmatically determinable as it is not implemented as an anchor with the <code>href</code> attribute. Sighted users might be able to recognize the link due to a specific CSS styling but users of assistive technologies such as screen readers would not know there is a link.
+
+Second, keyboard users have no way of activating the link as now it is not focusable and works only on the click event.
+
+```html title="A simple link"
+<span onclick="location.href='newpage.html'">
+  Read more
+</span>
+```
+
+#### Example 3: Text-only Table
+
+The following data might visually resemble a table due to the whitespaces that are used to visually format it. It might look like there are columns of days and rows of time with school subjects connected to them.
+With this approach, screen reader users are not able to understand the connections of the table values and can only read a word after the word, as there is no table navigation for them. Also, when custom font styles are applied to the page, even this visual format might break. The same applies to cases when the browser window is too small and words start to break to another line. You can probably find more situations when people would be unable to understand this data.
+
+The table should be implemented as <code>&lt;table&gt;</code> element instead, with all the needed <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code>, and <code>&lt;td&gt;</code> elements.
+
+```html title="A schedule of elementary school subjects"
+          Monday    Tuesday    Wednesday
+          ------------------------------
+
+12:00  |  Math      Science    History
+       |
+14:00  |  Reading   Writing    Music
+       |
+16:00  |  Biology   Physics    Art
+```
+
+## Test Your Knowledge
+
+<details>
+	<summary><span>Using heading elements only for visual effects is considered a failure of this success criterion. True or false?</span></summary>
+	True, remember, use HTML elements according to their meaning, not because of the way they appear visually.
+</details>
+
+<details>
+	<summary><span>The term "programmatically determinable" refers to the ability of a computer program to automatically figure out the most likely outcome of a situation based on predefined rules and patterns, without human intervention. True or false?</span></summary>
+	False, if something is programmatically determinable, it implies that its structure, labeling, and relationships are designed in a way that allows various technologies to programmatically retrieve it and present it to users in different ways based on their presentation format.
+</details>

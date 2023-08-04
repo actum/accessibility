@@ -62,13 +62,13 @@ Provide alternatives for time-based media.
 - [1.2.6 - Sign Language (Prerecorded) - AAA](./1-perceivable/1.2-time-based-media/1.2.6-sign-language-prerecorded.mdx)
 - [1.2.7 - Extended Audio Description (Prerecorded) - AAA](./1-perceivable/1.2-time-based-media/1.2.7-extended-audio-description-prerecorded.mdx)
 - [1.2.8 - Media Alternative (Prerecorded) - AAA](./1-perceivable/1.2-time-based-media/1.2.8-media-alternative-prerecorded.mdx)
-- 1.2.9 - Audio-only (Live) - AAA (future link)
+- [1.2.9 - Audio-only (Live) - AAA](./1-perceivable/1.2-time-based-media/1.2.9-audio-only-live.mdx)
 
 ### 1.3 - Adaptable
 
 Create content that can be presented in different ways (for example simpler layout) without losing information or structure.
 
-- 1.3.1 - Info and Relationships - A (future link)
+- [1.3.1 - Info and Relationships - A](./1-perceivable/1.3-adaptable/1.3.1-info-and-relationships.mdx)
 - 1.3.2 - Meaningful Sequence - A (future link)
 - 1.3.3 - Sensory Characteristics - A (future link)
 - 1.3.4 - Orientation - AA (future link)
