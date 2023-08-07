@@ -12,7 +12,9 @@ body {
   box-sizing: border-box;
 }
 
-:target {
+// TODO | Return this selector when Docusaurus fixes the routing issue
+// :target,
+.url-target {
   background: var(--ifm-color-yellow);
   box-shadow: 0 0 0 2px var(--ifm-color-yellow);
 
