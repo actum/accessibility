@@ -29,7 +29,7 @@ Information and relationships implied by visual or auditory formatting must be p
 
 For instance, putting text into the <code>&lt;h1&gt;</code> element allows the browser to style the text with a bigger font size and add it to the page heading outline, so sighted users can recognize the text as a heading thanks to its styles, and screen reader users can hear "heading level one" as screen readers can programmatically determine it from the markup.
 
-If it is not possible to preserve the formatting when the presentation format changes, supplement additional information with text. For instance, you may put a text description saying "All required fields are marked with an asterisk (*)" into the form instructions.
+If it is not possible to preserve the formatting when the presentation format changes, supplement additional information with text.
 
 :::note
 Use HTML elements according to their **meaning**, not because of the way they appear visually.
@@ -43,7 +43,7 @@ The following example shows the correct usage or implementation of accessibility
 
 #### Example 1: Game List
 
-There is a title "Our Games" followed by a list of 3 game names. Because all elements are implemented semantically, using <code>&lt;h3&gt;</code>, <code>&lt;ul&gt;</code>, and <code>&lt;li&gt;</code> elements, users using different presentation formats can understand there is a heading and a list. Also, the first game in the list, the "Castle attack - 2023", is wrapped in the <code>&lt;strong&gt;</code> tag, putting an emphasis on it. Visually, the text will normally get bold, but because some screen readers cannot properly handle emphasis, there is also a text saying "new", indicating this game is the newest addition.
+There is a headline "Our Games" followed by a list of 3 game names. Because all elements are implemented semantically, using <code>&lt;h3&gt;</code>, <code>&lt;ul&gt;</code>, and <code>&lt;li&gt;</code> elements, users using different presentation formats can understand there is a heading and a list. Also, the first game in the list, the "Castle attack - 2023", is wrapped in the <code>&lt;strong&gt;</code> tag, putting an emphasis on it. Visually, the text will normally get bold, but because some screen readers cannot properly handle emphasis, there is also a text saying "new", indicating this game is the newest addition.
 
 ```html title="A list of games produced by a gaming company"
 <h3>Our Games</h3>
@@ -78,7 +78,7 @@ A heading is implemented as a paragraph. The paragraph has a CSS class with styl
 
 #### Example 2: Span Link
 
-The intention here is to re-create a link functionality by using a <code>&lt;span&gt;</code> element instead of <code>&lt;a&gt;</code>. When users click on the text, they get redirected to another page thanks to the <code>&lt;onclick&gt;</code> functionality, however, there are several issues.
+The intention here is to re-create a link functionality by using a <code>&lt;span&gt;</code> element instead of <code>&lt;a&gt;</code> (which you should avoid!). When users click on the text, they get redirected to another page thanks to the <code>&lt;onclick&gt;</code> functionality, however, there are several issues.
 
 First, the link is not programmatically determinable as it is not implemented as an anchor with the <code>href</code> attribute. Sighted users might be able to recognize the link due to a specific CSS styling but users of assistive technologies such as screen readers would not know there is a link.
 
