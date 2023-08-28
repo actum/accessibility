@@ -120,6 +120,12 @@ const config = {
             label: 'Inaccessible Components',
           },
           {
+            type: 'doc',
+            docId: 'user-preferences/intro',
+            position: 'right',
+            label: 'User Preferences',
+          },
+          {
             href: 'https://github.com/actum/accessibility',
             label: 'GitHub',
             position: 'right',

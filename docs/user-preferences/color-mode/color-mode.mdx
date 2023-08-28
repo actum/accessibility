@@ -1,0 +1,86 @@
+import PreviewWrapper from './../../../src/components/PreviewWrapper'
+import ColorMode from './'
+
+# Color mode
+
+Color mode, often referred to as light mode and dark mode, is a design and user interface concept that allows users to choose between different color schemes for the appearance of applications, websites, operating systems, and other digital interfaces. These color modes are designed to enhance user experience based on their preferences and environmental conditions.
+
+:::note
+While dark mode is generally more accessible in low-light environments, it might not always be the case for everyone. Some individuals with specific visual impairments or sensitivities might find light mode more comfortable. It is therefore important not to force the dark mode on your website, but rather give users an option to decide what they want. Also, make sure colors in any mode have sufficient contrast ratios.
+:::
+
+## Benefits
+
+**Eye comfort**: Providing options for color modes can improve accessibility for individuals with visual impairments or sensitivity to bright lights. Dark mode can be less straining on the eyes, especially in low-light settings, potentially reducing eye fatigue.
+
+**Personalization**: Users can choose the mode that suits their preferences and the lighting conditions they are in. Some users just  prefer the aesthetic of one mode over the other, and having the option to switch can improve their overall satisfaction with the interface.
+
+**Battery Savings**: Dark mode can save battery life on devices with OLED or AMOLED screens, as they use less power to display darker colors than lighter ones.
+
+## Set a color mode in the system
+
+The ability to switch between dark mode and light mode is usually implemented in the settings or preferences section of the operating system, application, or website. The exact location can vary depending on the platform you are using.
+
+<details>
+  <summary><span>See the instructions on where to set the color mode.</span></summary>
+  <ul>
+    <li><strong>Windows 10/11</strong>: Open Settings > Personalization > Colors, then pick a pre-existing theme in Choose your mode option.</li>
+    <li><strong>macOS</strong>: Head to System Preferences > General and select the theme.</li>
+    <li><strong>iOS</strong>: Go to Settings > Display & Brightness, then tap the theme.</li>
+    <li><strong>Android</strong>: This will depend on your phone's manufacturer, but you can usually find it in the device's Display settings and choose the theme.</li>
+  </ul>
+
+  You should be able to find the settings at similar places as listed above when you use a different device, system, application, or version.
+</details>
+
+## Set color mode on the website
+
+If a website offers switching between light and dark mode options, you might usually find the toggle in the header or navigation bar, or sometimes in the user profile settings.
+
+## Real-world examples
+
+See how the following websites implemented the color mode switcher (in August 2023):
+
+- [Material UI](https://mui.com/) - sun and moon icons in the header
+- [React](https://react.dev/) - sun and moon icons in the header
+- [Duckduckgo](https://duckduckgo.com/) - 6 options to choose from the menu (burger menu icon) > Themes
+
+## Implementation
+
+The following example demonstrates how you can implement the color mode switcher and functionality. Users can benefit from their color mode system settings only when the website has implemented the support for it.
+
+<details>
+  <summary><span>See the implementation details.</span></summary>
+  There is a color mode button users can activate and reveal the list of options:
+
+  <ul>
+    <li>Light mode</li>
+    <li>Dark mode</li>
+    <li>Synchronize color mode with operating system mode</li>
+  </ul>
+
+  Setting either light or dark mode will switch the page to the respective theme mode. Setting the synchronize with operating system will set the same theme users have chosen in their operating system theme settings.
+
+  The theme value is read from/set to the localstorage. Also, the media query <code>prefers-color-mode</code> checks for user system preferences.
+
+  Toggling between the light and dark modes switches the value in the <code>data-color-mode</code> attribute, which would usually be put on <code>html</code> or <code>body</code> elements.
+
+  This creates a selector for CSS variables that switch color values for each mode, allowing multiple themes to have their own color settings. For instance:
+  ```
+[data-color-mode="light"] {
+    --color-text: #2e2d2c;
+    --color-bg: #fff;
+}
+
+[data-color-mode="dark"] {
+    --color-text: #f6f6f6;
+    --color-bg: #2e2d2c;
+}
+  ```
+
+This is a basic implementation of color modes.
+</details>
+
+<PreviewWrapper title="Color mode implementation example" codeHref="https://codesandbox.io/s/color-mode-zmgmrx">
+  <ColorMode />
+</PreviewWrapper>
