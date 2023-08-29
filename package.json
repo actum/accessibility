@@ -21,9 +21,9 @@
     "stylelint": "stylelint \"**/*.scss\""
   },
   "dependencies": {
-    "@docusaurus/core": "^0.0.0-5490",
-    "@docusaurus/module-type-aliases": "^0.0.0-5490",
-    "@docusaurus/preset-classic": "^0.0.0-5490",
+    "@docusaurus/core": "^2.4.1",
+    "@docusaurus/module-type-aliases": "^2.4.1",
+    "@docusaurus/preset-classic": "^2.4.1",
     "@mdx-js/react": "^1.6.22",
     "classnames": "^2.3.2",
     "clsx": "^1.2.1",
