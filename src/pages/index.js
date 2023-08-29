@@ -46,7 +46,7 @@ const Home = () => (
             <h2>WCAG Documents</h2>
             <p>WCAG (Web Content Accessibility Guidelines) documents published by the Web Accessibility Initiative (WAI) of the World Wide Web Consortium (W3C) explain how to make web content more accessible to people with various abilities and disabilities.</p>
             <p>Our simplified WCAG documents can help you to learn the essential information to understand and develop more accessible websites.</p>
-            <p>There are also videos (explaining the guidelines) available for each document.</p>
+            <p>There are also videos (explaining the guidelines) available for the documents - the videos and documents are made progressively.</p>
 
             <Button label="Browse WCAG documents" href="/docs/wcag-documents/intro" />
           </div>
@@ -62,7 +62,7 @@ const Home = () => (
             <h2>Inaccessible Components</h2>
             <p>A collection of inaccessible components demonstrates common accessibility and usability issues developers create (mostly unintentionally) when building websites.</p>
             <p>Our inaccessible components show common bad practices in web development so you can avoid them.</p>
-            <p>There are also videos (explaining the issues) available for each component.</p>
+            <p>There are also videos (explaining the issues) available for the components - the videos are made progressively.</p>
 
             <Button label="Browse inaccessible components" href="/docs/inaccessible-components/intro" />
           </div>
