@@ -44,6 +44,8 @@ export function onRouteDidUpdate({location, previousLocation}) {
   return undefined;
 }
 
-window.addEventListener("hashchange", () => {
-  handleHashChange()
-});
+if (ExecutionEnvironment.canUseDOM) {
+  window.addEventListener("hashchange", () => {
+    handleHashChange()
+  });
+}
