@@ -77,7 +77,9 @@ Components and styles inside the `src` folder are used across the whole website,
 
 ### Adding new Content
 
-When creating new MDX docs, reuse existing patterns to achieve consistency and prevent bugs - sometimes, working with MDX can create not obvious issues. For example, if you want to use a code block (by wrapping the code inside the <code>\`\`\`</code> characters) inside the `<details>` element, there must be an empty line before the code block in order for the code to render properly.
+When creating new MDX docs, reuse existing patterns to achieve consistency and prevent bugs - sometimes, working with MDX can create not obvious issues, such as:
+- To use a code block (by wrapping the code between the <code>\`\`\`</code> characters) inside the `<details>` element, there must be an empty line before the code block in order for the code to render properly.
+- To use an inline code block (by wrapping the code between the <code>\`</code> characters) inside the `<details>` element, you must use the <code>code</code> element, as backticks syntax will not work.
 
 When adding new WCAG Documents criterion, make sure to create links to it on all relevant places (there is no automation for now):
 - [WCAG Documents intro page](./docs/wcag-documents/intro.md)
@@ -91,3 +93,40 @@ Code in CodeSandbox is essentialy the same as in this project but with a few dif
 - importing and propagating styles in the component
 - paths to assets
 - extra `body` styles
+
+### Shooting Videos
+
+We sometimes show images of code snippets in our YouTube videos. The images are made through https://carbon.now.sh/ with the following config (make sure to import it under Settings -> Misc -> Import config):
+
+```json
+{
+  "paddingVertical": "50px",
+  "paddingHorizontal": "56px",
+  "backgroundImage": null,
+  "backgroundImageSelection": null,
+  "backgroundMode": "color",
+  "backgroundColor": "rgba(0,0,0,1)",
+  "dropShadow": false,
+  "dropShadowOffsetY": "20px",
+  "dropShadowBlurRadius": "68px",
+  "theme": "one-dark",
+  "windowTheme": "boxy",
+  "language": "htmlmixed",
+  "fontFamily": "Hack",
+  "fontSize": "14px",
+  "lineHeight": "133%",
+  "windowControls": false,
+  "widthAdjustment": true,
+  "lineNumbers": false,
+  "firstLineNumber": 1,
+  "exportSize": "2x",
+  "watermark": false,
+  "squaredImage": false,
+  "hiddenCharacters": false,
+  "name": "",
+  "width": 600,
+  "highlights": null
+}
+```
+
+The color settings might be changed by video editors later.

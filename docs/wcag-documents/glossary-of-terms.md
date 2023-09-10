@@ -7,7 +7,7 @@ This page contains a list of terms that might not be immediately obvious to read
   <dd>a subset of the DOM (Document Object Model) tree containing elements exposed to assistive technologies. Only elements that can have, for instance, accessible name, role, and value are included there. As an example, the <code>&lt;div&gt;</code> element without defined role is not present in the accessibility tree.</dd>
 
   <dt id="accessible-name">accessible name</dt>
-  <dd>a <a href="#programmaticaly-determined">programmaticaly determined</a> name of a user interface element that is included in the <a href="#accessibility-tree">accessibility tree</a>. The accessible name of the <code>&lt;button&gt;</code> element, for example, can be determined from the text content inside, <code>aria-label</code> attribute, or <code>aria-labelledby</code> attribute reference.</dd>
+  <dd>a <a href="#programmatically-determined">programmatically determined</a> name of a user interface element that is included in the <a href="#accessibility-tree">accessibility tree</a>. The accessible name of the <code>&lt;button&gt;</code> element, for example, can be determined from the text content inside, <code>aria-label</code> attribute, or <code>aria-labelledby</code> attribute reference.</dd>
 
   <dt id="audio-descriptions">audio descriptions</dt>
   <dd>an audio track that narrates the relevant visual information contained in a video, such as actions, characters, scene changes, or on-screen text.</dd>
@@ -27,8 +27,8 @@ This page contains a list of terms that might not be immediately obvious to read
   <dt id="non-text-content">non-text content</dt>
   <dd>any content that is not a sequence of characters - for instance, images, charts, graphs, or audio/video content.</dd>
 
-  <dt id="programmaticaly-determined">programmaticaly determined</dt>
-  <dd>marked up content having semantic structure and relationships that allows various technologies to programmaticaly retrieve it and present it to users in different ways. For instance, putting text into the <code>&lt;h1&gt;</code> element allows the browser to create the page heading outline, CSS to apply different styles to it, and screen readers to announce the element as "heading level one".</dd>
+  <dt id="programmatically-determined">programmatically determined</dt>
+  <dd>marked up content having semantic structure and relationships that allows various technologies to programmatically retrieve it and present it to users in different ways. For instance, putting text into the <code>&lt;h1&gt;</code> element allows the browser to create the page heading outline, CSS to apply different styles to it, and screen readers to announce the element as "heading level one".</dd>
 
   <dt id="screen-reader">screen reader</dt>
   <dd>an assistive technology software that renders text and image content as speech or braille output.</dd>
