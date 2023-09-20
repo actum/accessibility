@@ -170,6 +170,7 @@
 .pagination-nav {
   &__link {
     color: var(--ifm-font-color-base);
+    border-color: var(--ifm-color-emphasis-500);
 
     @include dark-mode() {
       color: var(--ifm-font-color-base);
@@ -334,6 +335,10 @@
 }
 
 // Alert
+.alert a {
+  font-weight: bold;
+}
+
 [class*="admonition"] {
   border-width: 1px 1px 1px var(--ifm-alert-border-left-width);
   background-color: var(--ifm-color-emphasis-100);

@@ -9,10 +9,10 @@ sidebar_position: 0
 WCAG Documents are simplified version of [Web Content Accessibility Guidelines](#web-content-accessibility-guidelines), and they explain the information from the official guidelines more briefly, sometimes in a different way, and are a **supportive source of study material of the web accessibility** topic. The documents can help you to learn the essential information to understand and develop more accessible websites.
 
 :::note
-WCAG Documents are not trying to re-create WCAG, nor to improve it. The purpose of the project is to provide a brief introduction to WCAG for people who want to obtain the basic knowledge first, and then study it to the very detail at the official guidelines.
+WCAG Documents are not trying to re-create WCAG, nor to improve it. The purpose of the project is to provide a brief introduction to WCAG for people who want to obtain the basic knowledge first, and then study it to the very detail at the official guidelines. We also want to help those who are better auditory and visual learners to learn from videos.
 :::
 
-There are also videos (explaining the guidelines) available for each document. Check the following video that gives you an introduction to the project.
+There are also videos (explaining the guidelines) available for the documents - the videos and documents are made progressively. Check the following video that gives you an introduction to the project.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/dJ_gbwrlftc" title="Introduction - WCAG Documents" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
@@ -69,7 +69,7 @@ Provide alternatives for time-based media.
 Create content that can be presented in different ways (for example simpler layout) without losing information or structure.
 
 - [1.3.1 - Info and Relationships - A](./1-perceivable/1.3-adaptable/1.3.1-info-and-relationships.mdx)
-- 1.3.2 - Meaningful Sequence - A (future link)
+- [1.3.2 - Meaningful Sequence - A](./1-perceivable/1.3-adaptable/1.3.2-meaningful-sequence.mdx)
 - 1.3.3 - Sensory Characteristics - A (future link)
 - 1.3.4 - Orientation - AA (future link)
 - 1.3.5	- Identify Input Purpose (future link)

@@ -1,0 +1,116 @@
+# 1.3.2 - Meaningful Sequence - A
+
+## Intent
+
+When the sequence in which content is presented affects its meaning, a correct reading sequence can be [programmatically determined](/docs/wcag-documents/glossary-of-terms#programmatically-determined).
+
+## Who Benefits
+
+- Users of **assistive technologies** can understand the meaning of content that is presented to them in a correct, logical sequence
+- People who **copy-paste** content like tables or text columns into text editors can preserve the correct formatting and structure thanks to the meaningful sequence.
+
+## Meaningful Sequence
+
+Meaningful sequence means that the content on a webpage is arranged in a way that makes sense and is easy to understand. It's like reading a book from start to finish; you expect the chapters to be in a certain order so the story makes sense. Similarly, on a webpage, text, images, and other elements should be organized logically so that everyone, including people using special tools to access the web, can easily follow along.
+
+Meaningful sequence matters if the content requires order to make sense. The correct order of the content must be clear for all users. If the content does not follow a meaningful sequence, it can be confusing for users. This is especially true for those using assistive technology that reads out the content, or when the look of the webpage is changed through different styles or formats.
+
+## Tips
+
+- **Avoid using CSS to change the visual order of content in a way that does not match the DOM order**. Especially when the content inside contains focusable elements. When users navigate a webpage using a keyboard, the focus order follows the DOM structure, not the visual layout. If you have used CSS to rearrange the visual order (for example, with flexbox order or grid-layout styling), keyboard users may experience a confusing or illogical tabbing sequence.
+- **Avoid using `tabindex` with other values than `0` and `-1` to force a tab order**. Using positive numbers for tabindex not only disrupts the natural keyboard navigation but also makes those elements the first focusable items on the webpage, leading to an out-of-order tab flow. This becomes especially problematic when dynamic content is added, as new elements would also need specific tabindex values to maintain the intended tab order, making the user experience confusing and maintenance cumbersome.
+- **Ensure the meaningful sequence is preserved when the CSS is turned off**. It guarantees that the content remains logically organized and accessible, even without visual styling.
+- **Write HTML first, then style it with CSS**. This ensures that the content structure is logical and accessible before any visual design elements are added.
+
+## Examples
+
+### Correct Usage
+
+The following examples show the correct usage or implementation of accessibility.
+
+#### Example 1: Letter Spacing
+
+A heading is formatted to have an increased spacing between letters. Instead of inserting whitespaces between characters of the heading, CSS is used to achieve this. This does not disrupt the meaning of the content when the presentation changes.
+
+```html
+<style>
+	h2 { letter-spacing: 0.2rem; }
+</style>
+
+<h2>Products</h2>
+```
+
+#### Example 2: List of Steps
+
+Steps explaining how to compress an image on the website. The ordered list with list items is used here because the sequence of these steps matters.
+
+```html
+<p>Follow these steps to compress an image:</p>
+
+<ol>
+	<li>Upload an image file</li>
+	<li>Select the desired compression method from the list</li>
+	<li>Press the COMPRESS button and wait for the compression to finish</li>
+	<li>Press the DOWNLOAD button to download your compressed image</li>
+</ol>
+```
+
+### Incorrect Usage
+
+The following examples show incorrect usage or implementation of accessibility.
+
+#### Example 1: Letter spaces
+
+A heading is visually formatted to have an increased spacing between letters by inserting a whitespace between the characters of the heading. This type of formatting disrupts the meaningful sequence and readability of the text, making it less accessible and potentially confusing for both assistive technologies and typical users. Use CSS to adjust letter spacing.
+
+```html
+<h1>A c c e s s i b i l i t y</h1>
+```
+
+#### Example 2: Columns of Text
+
+A block of text visually divided into two columns that are made using whitespaces to manually align words so it resembles two columns, however, the text does not make sense when read in a sequence.
+
+Visually, the first part of the text may read "When websites and web tools are properly designed and coded, people with disabilities can use them." in the first column. But mobile users, screen reader users, or users who make adjustments to their font settings would read "When websites and web tools are properly for some people to use. Making designed and coded, people with the web accessible benefits individuals".
+
+Avoid formatting content by using whitespaces, line breaks, or other characters.
+
+```html
+<p>
+	When websites and web tools are properly     for some people to use. Making
+	designed and coded, people with              the web accessible benefits individuals,
+	disabilities can use them. However,          businesses, and society. International
+	currently many sites and tools are           web standards define what is needed for
+	developed with accessibility barriers        accessibility.
+	that make them difficult or impossible
+</p>
+```
+
+#### Example 3: Right to Left Language
+
+A sentence "Accessibility benefits everyone" wrapped inside the paragraph with the `dir="rtl"` attribute. This is an incorrectly marked text in English. The right-to-left direction should be used for languages written from the right to left (like Arabic, for instance).
+
+Natural reading order is from left to right and top to bottom in most countries. However, in right-to-left or mixed directional text, a `dir` attribute or unicode left-to-right (`&lrm;`) and right-to-left (`&rlm;`) marks can be used to indicate the text directionality.
+
+```html
+<p dir="rtl">
+	Accessibility benefits everyone
+</p>
+```
+
+## Test your knowledge
+
+<details>
+	<summary><span>If a webpage has a Q&A section, is it important for the answer to immediately follow its corresponding question?</span></summary>
+	Yes, having the answer follow the question directly ensures that the information is presented in a meaningful and logical sequence.
+</details>
+
+<details>
+	<summary><span>Is meaningful sequence only important for text-based content?</span></summary>
+	No, the meaningful sequence is important for all types of content, including images, videos, and interactive elements, to ensure a coherent and accessible user experience.
+</details>
+
+<details>
+	<summary><span>It is a good practice to use positive numbers for <code>tabindex</code> for better focus order management. True or false?</span></summary>
+	False, using positive numbers for <code>tabindex</code> disrupts the natural keyboard navigation and makes those elements the first focusable items on the webpage, leading to an out-of-order tab flow.
+</details>

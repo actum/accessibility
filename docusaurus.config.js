@@ -100,7 +100,7 @@ const config = {
     ({
       navbar: {
         logo: {
-          alt: 'ACTUM Digital accessibility',
+          alt: 'Homepage - ACTUM Digital accessibility',
           src: 'img/actum-accessibility-logo.svg',
           srcDark: 'img/actum-accessibility-logo-dark.svg',
           width: 240,
