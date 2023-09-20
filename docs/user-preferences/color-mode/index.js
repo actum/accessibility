@@ -18,8 +18,8 @@ const modes = {
     label: "dark mode",
     icon: IconDarkMode,
   },
-  syncWithOS: {
-    label: "synchronize color mode with operating system",
+  systemSetting: {
+    label: "use system setting",
     icon: IconSync,
   }
 };
@@ -29,7 +29,7 @@ export default function ColorMode() {
   const switchButtonRef = useRef(null);
   const modeRefs = generateModeRefsArray(Object.keys(modes).length);
 
-  const [activeMode, setActiveMode] = useState("light"); // For selected button - can be light/dark/syncWithOS
+  const [activeMode, setActiveMode] = useState("light"); // For selected button - can be light/dark/systemSetting
   const [pageTheme, setPageTheme] = useState("light"); // For CSS - can be only light/dark now
   const [isButtonExpanded, setIsButtonExpanded] = useState(false);
   const [focusIndex, setFocusIndex] = useState(-1);
@@ -44,7 +44,7 @@ export default function ColorMode() {
     if (storedMode) {
       setActiveMode(storedMode);
     } else if (window.matchMedia && (window.matchMedia('(prefers-color-scheme: light)').matches) || window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setActiveMode('syncWithOS');
+      setActiveMode('systemSetting');
     } else {
       setActiveMode('light');
     }
@@ -55,7 +55,7 @@ export default function ColorMode() {
 
     let isDarkMode = activeMode === "dark"
 
-    if (activeMode === "syncWithOS") {
+    if (activeMode === "systemSetting") {
       isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
     }
 
