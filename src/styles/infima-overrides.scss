@@ -170,6 +170,7 @@
 .pagination-nav {
   &__link {
     color: var(--ifm-font-color-base);
+    border-color: var(--ifm-color-emphasis-500);
 
     @include dark-mode() {
       color: var(--ifm-font-color-base);
