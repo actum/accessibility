@@ -4,18 +4,18 @@
 
 ## Intent
 
-Make prerecorded (not live) audio-only and video-only content accessible through text or [media alternatives](/docs/wcag-documents/glossary-of-terms#media-alternative).
+Make prerecorded (not live-streamed) audio-only and video-only content accessible through text [transcript](/docs/wcag-documents/glossary-of-terms#transcript) or [media alternatives](/docs/wcag-documents/glossary-of-terms#media-alternative).
 
 ## Who Benefits
 
-- People who **cannot see** a video can listen to an alternative audio track or can have the text alternative announced by a [screen reader](/docs/wcag-documents/glossary-of-terms#screen-reader).
-- People who **cannot hear** an audio track can read the text alternative.
-- People who **cannot both see and hear** can have the text alternative perceived by a [braille display](/docs/wcag-documents/glossary-of-terms#braille-display).
-- People who cannot play the audio because they are in a **noisy or quiet environment** where they can't hear it or don't want to disturb others can read the text alternative.
-- People having **difficulties understanding** audio or video information due to language or cognitive issues, for example, can benefit from reading the text alternative in parallel.
-- People **searching for content** in search engines or on the page benefit from having content text alternatives.
-- People who **won't spend the time to listen** to the audio or watch the video can just read the [transcript](/docs/wcag-documents/glossary-of-terms#transcript) or its parts quickly.
-- People with **low bandwidth connections** who don't want to download larger audio or video files or don't want to pay for bandwidth by downloading large files.
+- People who **cannot see** a video can listen to an alternative audio track or can have the transcript announced by a [screen reader](/docs/wcag-documents/glossary-of-terms#screen-reader).
+- People who **cannot hear** an audio track can read the transcript.
+- People who **cannot both see and hear** can have the transcript perceived through a [braille display](/docs/wcag-documents/glossary-of-terms#braille-display).
+- People who cannot play the audio because they are in a **noisy or quiet environment** where they cannot hear it or do not want to disturb others can read the transcript.
+- People having **difficulties understanding** audio or video information due to language or cognitive issues, for example, can benefit from reading the transcript in parallel.
+- People **searching for audio or video content** in search engines or on the page itself can find it thanks to the transcript.
+- People who **do not want to spend time** listening to the audio or watching the video can just read the [transcript](/docs/wcag-documents/glossary-of-terms#transcript) or its parts.
+- People with **low connection speed** who do not want to download larger audio or video files or to pay for bandwidth by downloading large files can read the transcript.
 
 ## Media Alternatives
 
@@ -25,9 +25,9 @@ This criterion covers two types of media alternatives.
 
 <img src="/img/1.2.1-audio-only.png" srcSet="/img/1.2.1-audio-only.png 1x, /img/1.2.1-audio-only-2x.png 2x" alt="An audio player with the play button, elapsed and total time text, timeline slider, and the 'more options' button." width="400" height="100" style={{aspectRatio: '400/100' }} />
 
-Audio recordings of speeches, podcasts, ...
+Audio recordings of speeches, podcasts, songs, or other sounds.
 
-Provide a **text transcript** that conveys the same information as the audio.
+Provide a **text transcript** that conveys the same information as the audio, so people who cannot hear, for example, can read it and understand the information they cannot get from the audio, such as dialogues, important sound effects, or even timestamps.
 
 ```html
 <audio>
@@ -44,9 +44,9 @@ Provide a **text transcript** that conveys the same information as the audio.
 
 <img src="/img/1.2.1-video-only.png" srcSet="/img/1.2.1-video-only.png 1x, /img/1.2.1-video-only-2x.png 2x" alt="An video player with the play buttons, elapsed and total time text, timeline slider, and the 'options', 'change view', 'fullscreen', and 'volume' buttons." width="400" height="250" style={{aspectRatio: '400/250' }} />
 
-Silent movies, animations, ...
+Silent movies, animations, or other video content without sound.
 
-Provide a **text transcript** or **an audio track** that conveys the same information.
+Provide a **text transcript** or an **audio description** that conveys the same information as the video. People who cannot see, for example, can listen to a screen reader announcing the transcript, so they can listen to the text content. Or, they can listen to the audio description that describes all the relevant visual information in the video, such as actions, characters, scene changes, or on-screen text.
 
 ```html
 <a href="mars-landing.mp4">Mars landing video</a>
@@ -56,7 +56,7 @@ Provide a **text transcript** or **an audio track** that conveys the same inform
 ## Exceptions
 
 The alternative does not have to be provided if the content itself is the alternative.
-For instance, if video-only content has an audio track as an alternative, the audio track itself does not need to have a text alternative.
+For instance, if video-only content has an audio track as an alternative, the audio track itself does not need to have a transcript.
 
 ## Examples
 
@@ -100,8 +100,8 @@ There is no mention of a transcript anywhere, so the podcast is inaccessible to 
 ## Test Your Knowledge
 
 <details>
-	<summary><span>What are the requisites for the transcript’s content?</span></summary>
-	The transcript must have identified speakers (if there’s more than one) and must cover all dialogues and important sound effects. It may also contain timestamps when necessary.
+	<summary><span>What are the requisites for the transcript's content?</span></summary>
+	The transcript must have identified speakers (if there is more than one) and must cover all dialogues and important sound effects. It may also contain timestamps when necessary.
 </details>
 
 <details>
