@@ -78,7 +78,7 @@ const Home = () => (
             <h2>User preferences</h2>
 
             <p>Users have many options how to customize their web-browsing experience today. While certain user preferences take effect across all websites once set in the operating system (such as zoom or resolution changes), others require implementation from developers to function appropriately - light, dark, or high-contrast (forced colors) mode, reduced motion mode, or font size preferences.</p>
-            <p>Learn about these user preferences, how to support them with some implementation tips, and what it could mean for users if they are not respected.</p>
+            <p>Learn about these user preferences, how to support them with some implementation tips, and what it could mean for users if the preferences are not respected.</p>
             <p>There are also videos (explaining the issues) available for each component.</p>
 
             <Button label="Browse user preferences" href="/docs/user-preferences/intro" />

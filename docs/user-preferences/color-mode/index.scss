@@ -2,9 +2,10 @@
   --color-text: #2e2d2c;
   --color-bg: #fff;
   --color-control-1: #f0f0f0;
-  --color-control-2: #d7d7d7;
+  --color-control-2: #bfbfbf;
   --color-focus: #1459db;
   --color-surface: #d3e4ff;
+  --color-outline: rgba(0,0,0,.5);
 }
 
 [data-color-mode="dark"] {
@@ -14,6 +15,7 @@
   --color-control-2: #2e2d2c;
   --color-focus: #75a5ff;
   --color-surface: #475264;
+  --color-outline: rgba(255,255,255,.5);
 }
 
 *:focus-visible {
@@ -90,7 +92,7 @@
     margin: 0;
     padding: .4rem;
     border-radius: 2rem;
-    outline: 2px solid rgba(0,0,0,.5);
+    outline: 2px solid var(--color-outline);
   }
 }
 
