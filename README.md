@@ -94,6 +94,8 @@ Code in CodeSandbox is essentialy the same as in this project but with a few dif
 - paths to assets
 - extra `body` styles
 
+Images in the project should be consistent and have the same style. When you want to add a new one, request it from the Apollo Visual Library (contact the main developer to get there). Follow the same pattern of adding images, e.g. images have 1x and 2x DPR versions, most of them are 400px wide, and so on. Also, make sure they work in the dark mode too - draw a white outline around the border of all dark outer colors.
+
 ### Shooting Videos
 
 We sometimes show images of code snippets in our YouTube videos. The images are made through https://carbon.now.sh/ with the following config (make sure to import it under Settings -> Misc -> Import config):
