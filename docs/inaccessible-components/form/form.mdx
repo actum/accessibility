@@ -20,7 +20,7 @@ Expand each issue to see the user impact.
 
 <details>
   <summary><span>Form field labels are missing.</span></summary>
-  Every form field should be associated with the <code>&lt;label&gt;</code> element. There are exceptions, such as a "search" field that commonly does not have the visible label, however, it has the magnifier icon and programmatically associated accessible name. The label defines the accessible name of the form field, and also allows mouse users to focus the form field by clicking on the label too. The label should be placed close to the connected form field so sighted users understand the connection and users with magnification are able to see both of them. Currently, there are no <code>&lt;label&gt;</code> elements or another methods of providing accessible names and a visual indicators of the purpose of the form fields.
+  Every form field should be associated with the <code>&lt;label&gt;</code> element. There are exceptions, such as a "search" field that commonly does not have the visible label, however, it has the magnifier icon and programmatically associated <a href="/docs/wcag-documents/glossary-of-terms#accessible-name">accessible name</a>. The label defines the accessible name of the form field, and also allows mouse users to focus the form field by clicking on the label too. The label should be placed close to the connected form field so sighted users understand the connection and users with magnification are able to see both of them. Currently, there are no <code>&lt;label&gt;</code> elements or another methods of providing accessible names and a visual indicators of the purpose of the form fields.
 </details>
 <details>
   <summary><span>Form fields' border color has an insufficient color contrast.</span></summary>
@@ -32,7 +32,7 @@ Expand each issue to see the user impact.
 </details>
 <details>
   <summary><span>The form field description relationship with the field itself is missing.</span></summary>
-  There is no programmatically associated relationship set between the form field and the form field description using <code>aria-describedby</code> so blind users, for instance, might completely miss the description as the screen reader would not even read it. That is because you are inside the form, or when tabbing through form fields, the screen reader is automatically put into the "forms" (or "focus") mode where only interactive elements are reachable. Standard text without any association is ignored.
+  There is no programmatically associated relationship set between the form field and the form field description using <code>aria-describedby</code> so blind users, for instance, might completely miss the description as the <a href="/docs/wcag-documents/glossary-of-terms#screen-reader">screen reader</a> would not even read it. That is because you are inside the form, or when tabbing through form fields, the screen reader is automatically put into the "forms" (or "focus") mode where only interactive elements are reachable. Standard text without any association is ignored.
 </details>
 <details>
   <summary><span>The explanation of what the asterisk symbol (<code>*</code>) means is missing.</span></summary>

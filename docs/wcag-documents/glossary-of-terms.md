@@ -4,7 +4,7 @@ This page contains a list of terms that might not be immediately obvious to read
 
 <dl>
   <dt id="accessibility-tree">accessibility tree</dt>
-  <dd>a subset of the DOM (Document Object Model) tree containing elements exposed to assistive technologies. Only elements that can have, for instance, accessible name, role, and value are included there. As an example, the <code>&lt;div&gt;</code> element without defined role is not present in the accessibility tree.</dd>
+  <dd>a subset of the DOM (Document Object Model) tree containing elements exposed to assistive technologies. Only elements that can have, for instance, <a href="#accessible-name">accessible name</a>, role, and value are included there. As an example, the <code>&lt;div&gt;</code> element without defined role is not present in the accessibility tree.</dd>
 
   <dt id="accessible-name">accessible name</dt>
   <dd>a <a href="#programmatically-determined">programmatically determined</a> name of a user interface element that is included in the <a href="#accessibility-tree">accessibility tree</a>. The accessible name of the <code>&lt;button&gt;</code> element, for example, can be determined from the text content inside, <code>aria-label</code> attribute, or <code>aria-labelledby</code> attribute reference.</dd>

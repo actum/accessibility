@@ -18,7 +18,7 @@ This page contains the inaccessible version of the component including the descr
 
 <details>
   <summary><span>Anchor wraps the whole card.</span></summary>
-  If the whole card should be clickable, it might seem like a good idea to wrap it whole in the anchor. But since the card contains multiple elements, such as a heading, text, and a link, the browser treats all these elements as a part of the link which is semantically incorrect. When screen reader users land on the card, everything inside the link is announced at once and when browsing element-by-element, it announces "link" before each element.
+  If the whole card should be clickable, it might seem like a good idea to wrap it whole in the anchor. But since the card contains multiple elements, such as a heading, text, and a link, the browser treats all these elements as a part of the link which is semantically incorrect. When <a href="/docs/wcag-documents/glossary-of-terms#screen-reader">screen reader</a> users land on the card, everything inside the link is announced at once and when browsing element-by-element, it announces "link" before each element.
 </details>
 
 <details>
@@ -32,7 +32,7 @@ This page contains the inaccessible version of the component including the descr
 </details>
 
 <details>
-  <summary><span>The heading image has the wrong accessible name.</span></summary>
+  <summary><span>The heading image has the wrong <a href="/docs/wcag-documents/glossary-of-terms#accessible-name">accessible name</a>.</span></summary>
   The heading image has the correct text present in the <code>alt</code> attribute. However, it is overidden by another attribute - <code>aria-label</code>. The <code>alt</code> attribute is completely ignored by assistive technologies since the <code>aria-label</code> attribute has precedence in terms of computing the accessible name. So, it is like the alternative text is not there at all, and instead, the useless text "Card title" is used. There is no need to set the <code>aria-label</code> as <code>alt</code> attribute is the only thing images need to set the accessible name.
 </details>
 
