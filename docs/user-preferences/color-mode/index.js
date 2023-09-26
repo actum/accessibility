@@ -189,7 +189,7 @@ export default function ColorMode() {
 
         <div className="sample-icon">
           <span>Sample icon:</span>
-          <IconLightMode />
+          <IconLightMode aria-label="Sun icon" />
         </div>
       </div>
     </>
