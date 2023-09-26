@@ -15,7 +15,7 @@ export default function AccordionPanel({ title, text }) {
         onMouseDown={handleMouseDown}
       >
         <p className="accordion__item-text">{title}</p>
-        <IconArrow className="accordion__item-icon"/>
+        <IconArrow className="accordion__item-icon" aria-hidden="true"/>
       </header>
     </div>
   )
