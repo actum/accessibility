@@ -70,7 +70,7 @@ Create content that can be presented in different ways (for example simpler layo
 
 - [1.3.1 - Info and Relationships - A](./1-perceivable/1.3-adaptable/1.3.1-info-and-relationships.mdx)
 - [1.3.2 - Meaningful Sequence - A](./1-perceivable/1.3-adaptable/1.3.2-meaningful-sequence.mdx)
-- 1.3.3 - Sensory Characteristics - A (future link)
+- [1.3.3 - Sensory Characteristics - A](./1-perceivable/1.3-adaptable/1.3.3-sensory-characteristics.mdx)
 - 1.3.4 - Orientation - AA (future link)
 - 1.3.5	- Identify Input Purpose (future link)
 - 1.3.6	- Identify Purpose (future link)
