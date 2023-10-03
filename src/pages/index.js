@@ -84,7 +84,7 @@ const Home = () => (
             <Button label="Browse user preferences" href="/docs/user-preferences/intro" />
           </div>
           <div className="col col--6">
-            <img src="/img/inaccessible-components.png" srcSet="/img/inaccessible-components.png 1x, /img/inaccessible-components-2x.png 2x" alt="" loading="lazy" width="600" height="400" style={{ aspectRatio: '600/400'}} />
+            <img src="/img/user-preferences.png" srcSet="/img/user-preferences.png 1x, /img/user-preferences-2x.png 2x" alt="" loading="lazy" width="600" height="400" style={{ aspectRatio: '600/400'}} />
           </div>
         </div>
       </Section>
