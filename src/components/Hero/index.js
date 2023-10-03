@@ -11,7 +11,7 @@ const Hero = () =>
       <p className="hero__subtitle">Essential for some, useful for all.</p>
     </div>
     <div className="col col--6">
-      <img src="/img/actum-accessibility.png" srcSet="/img/actum-accessibility.png 1x, /img/actum-accessibility-2x.png 2x" alt="" width="600" height="400" style={{ aspectRatio: '600/400'}} />
+      <img src="/img/actum-accessibility.png" srcSet="/img/actum-accessibility.png 1x, /img/actum-accessibility-2x.png 2x" alt="" width="600" height="400" style={{ aspectRatio: '600/400', margin: "auto"}} />
     </div>
   </div>
 
