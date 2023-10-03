@@ -24,7 +24,7 @@ WCAG (Web Content Accessibility Guidelines) documents published by the Web Acces
 
 Our simplified WCAG documents can help you to learn the essential information to understand and develop more accessible websites.
 
-There are also videos (explaining the guidelines) available for each document.
+There are also videos (explaining the guidelines) available for each document - the videos and documents are made progressively.
 
 ### Inaccessible Components
 
@@ -32,7 +32,15 @@ A collection of inaccessible components demonstrates common accessibility and us
 
 Our inaccessible components show common bad practices in web development so you can avoid them.
 
-There are also videos (explaining the issues) available for each component.
+There are also videos (explaining the issues) available for each component - the videos are made progressively.
+
+### User Preferences
+
+Users have many options how to customize their web-browsing experience today. While certain user preferences take effect across all websites once set in the operating system (such as zoom or resolution changes), others require implementation from developers to function appropriately - light, dark, or high-contrast (forced colors) mode, reduced motion mode, or font size preferences.
+
+Learn about these user preferences, how to support them with some implementation tips, and what it could mean for users if the preferences are not respected.
+
+There are also videos (explaining the details) available for each user preference - the videos and documents are made progressively.
 
 ## Technical Information
 
