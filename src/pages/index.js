@@ -71,6 +71,23 @@ const Home = () => (
           </div>
         </div>
       </Section>
+
+      <Section>
+        <div className="row row--align-center row--gap">
+          <div className="col col--6">
+            <h2>User preferences</h2>
+
+            <p>Users have many options how to customize their web-browsing experience today. While certain user preferences take effect across all websites once set in the operating system (such as zoom or resolution changes), others require implementation from developers to function appropriately - light, dark, or high-contrast (forced colors) mode, reduced motion mode, or font size preferences.</p>
+            <p>Learn about these user preferences, how to support them with some implementation tips, and what it could mean for users if the preferences are not respected.</p>
+            <p>There are also videos (explaining the issues) available for each component.</p>
+
+            <Button label="Browse user preferences" href="/docs/user-preferences/intro" />
+          </div>
+          <div className="col col--6">
+            <img src="/img/user-preferences.png" srcSet="/img/user-preferences.png 1x, /img/user-preferences-2x.png 2x" alt="" loading="lazy" width="600" height="400" style={{ aspectRatio: '600/400'}} />
+          </div>
+        </div>
+      </Section>
     </main>
   </Layout>
 )
