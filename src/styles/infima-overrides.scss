@@ -5,13 +5,30 @@
   height: auto;
   min-height: var(--ifm-spacer-9);
   border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  font-size: .889rem; // 16px
+
+  &__inner {
+    flex-wrap: nowrap;
+
+    @include media-breakpoint-up(lg) {
+      flex-wrap: wrap;
+    }
+
+    .navbar__brand {
+      margin-right: 3rem;
+      @include media-breakpoint-up(lg) {
+        margin-right: 1rem;
+      }
+    }
+  }
 
   &__logo {
     width: 100%;
   }
 
   &__items {
-    gap: var(--ifm-spacer-4);
+    gap: var(--ifm-spacer-1);
+    flex: 1 1 auto;
   }
 
   &__link {
@@ -317,7 +334,41 @@
 
 // Site search
 [class*="searchBox"] {
-  display: none;
+  kbd {
+    color: #454545;
+    font-weight: bold;
+
+    @include dark-mode() {
+      color: #929DAA;
+    }
+  }
+
+  .DocSearch-Button-Placeholder {
+    font-size: .889rem; // 16px
+  }
+}
+
+[class*="searchResultItem"] {
+  .search-result-match {
+    background: var(--ifm-color-yellow);
+
+    @include dark-mode() {
+      color: var(--ifm-color-darkgrey);
+    }
+  }
+
+  .breadcrumbs__item {
+    color: inherit;
+  }
+}
+
+.DocSearch-Logo {
+  path,
+  rect {
+    @include dark-mode() {
+      fill: white;
+    }
+  }
 }
 
 // Code blocks

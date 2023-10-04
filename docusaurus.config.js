@@ -125,11 +125,11 @@ const config = {
             position: 'right',
             label: 'User Preferences',
           },
-          {
-            href: 'https://github.com/actum/accessibility',
-            label: 'GitHub',
-            position: 'right',
-          },
+          // {
+          //   href: 'https://github.com/actum/accessibility',
+          //   label: 'GitHub',
+          //   position: 'right',
+          // },
         ],
       },
       footer: {
@@ -192,6 +192,39 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+      },
+      algolia: {
+        // The application ID provided by Algolia
+        appId: '6C73ZS6EPH',
+
+        // Public API key: it is safe to commit it
+        apiKey: '425b9078e080ee6de123ae924813a735',
+
+        indexName: 'accessibility-actumdigital',
+
+        insights: true,
+
+        container: "div",
+
+        // Optional: see doc section below
+        contextualSearch: true,
+
+        // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
+        // externalUrlRegex: 'external\\.com|domain\\.com',
+
+        // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
+        // replaceSearchResultPathname: {
+        //   from: '/docs/', // or as RegExp: /\/docs\//
+        //   to: '/',
+        // },
+
+        // Optional: Algolia search parameters
+        // searchParameters: {},
+
+        // Optional: path for search page that enabled by default (`false` to disable it)
+        // searchPagePath: 'search',
+
+        //... other Algolia params
       },
     }),
   plugins: ['docusaurus-plugin-sass'],
@@ -257,7 +290,14 @@ const config = {
         name: 'author',
         content: 'ACTUM Digital'
       }
-    }
+    },
+    // {
+    //   tagName: "link",
+    //   attributes: {
+    //     rel: "stylesheet",
+    //     href: "https://cdn.jsdelivr.net/npm/@docsearch/css@3",
+    //   }
+    // }
   ],
   clientModules: [
     require.resolve('./global.js'),
