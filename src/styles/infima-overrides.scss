@@ -7,6 +7,14 @@
   border-bottom: 1px solid var(--ifm-color-emphasis-300);
   font-size: .889rem; // 16px
 
+  &--fixed-top {
+    position: static;
+
+    @include media-breakpoint-up(lg) {
+      position: sticky;
+    }
+  }
+
   &__inner {
     flex-wrap: nowrap;
 
@@ -161,6 +169,7 @@
 
   &__link {
     color: var(--ifm-color-content-secondary);
+    font-size: .889rem; // 16px
 
     @include dark-mode() {
       color: inherit;
