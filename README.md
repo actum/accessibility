@@ -20,7 +20,7 @@ We want to keep this project also as our knowledge base, reflecting our experien
 
 ### WCAG Documents
 
-WCAG (Web Content Accessibility Guidelines) documents published by the Web Accessibility Initiative (WAI) of the World Wide Web Consortium (W3C) explain how to make web content more accessible to people with various abilities and disabilities.
+WCAG (Web Content Accessibility Guidelines) documents published by the Web Accessibility Initiative (WAI) of the World Wide Web Consortium (W3C) explain how to make the web content more accessible to people with various abilities and disabilities.
 
 Our simplified WCAG documents can help you to learn the essential information to understand and develop more accessible websites.
 
@@ -90,8 +90,8 @@ When creating new MDX docs, reuse existing patterns to achieve consistency and p
 - To use an inline code block (by wrapping the code between the <code>\`</code> characters) inside the `<details>` element, you must use the <code>code</code> element, as backticks syntax will not work.
 
 When adding new WCAG Documents criterion, make sure to create links to it on all relevant places (there is no automation for now):
-- [WCAG Documents intro page](./docs/wcag-documents/intro.md)
-- [Glossary of Terms](./docs/wcag-documents/glossary-of-terms.md) if any terms are used on the page (only link the first occurance)
+- [WCAG Documents intro page](./docs/wcag-documents/intro.mdx)
+- [Glossary of Terms](./docs/wcag-documents/glossary-of-terms.mdx) if any terms are used on the page (only link the first occurance)
 - Principles, such as [Perceivable](./docs/wcag-documents/1-perceivable/1-perceivable.mdx)
 - Guidelines, such as [Text Alternatives](./docs/wcag-documents/1-perceivable/1.1-text-alternatives/1.1-text-alternatives.mdx)
 
