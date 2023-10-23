@@ -355,6 +355,30 @@
   .DocSearch-Button-Placeholder {
     font-size: .889rem; // 16px
   }
+
+  .DocSearch-Button {
+    outline-offset: 6px;
+    transition-property: background, outline-offset !important;
+    transition-duration: .5s !important;
+
+    &:focus {
+      outline: 2px solid var(--ifm-color-focus);
+      outline-offset: 2px;
+      box-shadow: none;
+      background: var(--docsearch-searchbox-background);
+    }
+  }
+}
+
+.DocSearch-Form {
+  outline-offset: 6px;
+  transition-property: background, outline-offset !important;
+  transition-duration: .5s !important;
+
+  &:focus-within {
+    outline: 2px solid var(--ifm-color-focus);
+    outline-offset: 2px;
+  }
 }
 
 [class*="searchResultItem"] {
