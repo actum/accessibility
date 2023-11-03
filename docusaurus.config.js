@@ -226,6 +226,7 @@ const config = {
 
         //... other Algolia params
       },
+      image: "/img/actum-accessibility-2x.png"
     }),
   plugins: ['docusaurus-plugin-sass'],
   headTags: [
