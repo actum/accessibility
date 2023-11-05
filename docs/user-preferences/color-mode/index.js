@@ -141,9 +141,14 @@ export default function ColorMode() {
               className="color-mode-switcher__menu"
               role="menu"
               onBlur={(e) => {
-                if (!modeRefs.some(ref => ref.current === e.relatedTarget)) {
-                  setIsButtonExpanded(false)
-                }
+                // A setTimeout hack as some specific browsers (such as Chrome/Safari on iPhone 13 mini)
+                // always return e.relatedTarget as null and click/touch on buttons cannot propagate.
+
+                setTimeout(() => {
+                  if (!modeRefs.some(ref => ref.current === e.relatedTarget)) {
+                    setIsButtonExpanded(false)
+                  }
+                }, 10)
               }}
             >
               {Object.entries(modes).map(([key, mode], index) => {
