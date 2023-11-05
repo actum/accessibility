@@ -187,7 +187,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} ACTUM Digital. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} <a href="https://actumdigital.com/" target="_blank" rel="noreferrer noopener">ACTUM Digital</a>. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
