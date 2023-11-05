@@ -67,10 +67,6 @@ Expand each issue to see the user impact.
     While <code>aria-describedby</code> might optionally be used on the element with the <code>role=&quot;dialog&quot;</code> to provide more information about the modal content, in this case, it is targetting the button, which is invalid. Instead, there should be the <code>aria-labelledby</code> attribute pointing to the modal heading so screen reader users have the title announced when they open and get focused on the modal window.
 </details>
 <details>
-    <summary><span>The modal window is invisibly overlapping content on smaller resolutions.</span></summary>
-    On mobile resolutions, the inactive modal window with <code>opacity: 0</code> is overlapping a part of the content, so the &quot;Go to Homepage&quot; link is not clickable, and the text is not user-selectable.
-</details>
-<details>
     <summary><span>A part of the opened modal window&apos;s content is invisible on smaller resolutions.</span></summary>
     On mobile resolutions, the opened modal window width is larger than the viewport, so a part of the content is invisible.
 </details>
