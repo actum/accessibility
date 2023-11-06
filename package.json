@@ -21,19 +21,19 @@
     "stylelint": "stylelint \"**/*.scss\""
   },
   "dependencies": {
-    "@docusaurus/core": "^2.4.1",
-    "@docusaurus/module-type-aliases": "^2.4.1",
-    "@docusaurus/preset-classic": "^2.4.1",
-    "@mdx-js/react": "^1.6.22",
+    "@docusaurus/core": "^3.0.0",
+    "@docusaurus/module-type-aliases": "^3.0.0",
+    "@docusaurus/preset-classic": "^3.0.0",
+    "@mdx-js/react": "^3.0.0",
     "classnames": "^2.3.2",
     "clsx": "^1.2.1",
     "docusaurus-plugin-sass": "^0.2.2",
     "focus-trap-react": "^10.0.0",
     "prettier": "^2.7.1",
-    "prism-react-renderer": "^1.3.5",
+    "prism-react-renderer": "^2.1.0",
     "raw-loader": "^4.0.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-shadow-root": "^6.2.0",
     "sass": "^1.54.4",
     "sass-loader": "^13.1.0",
@@ -64,7 +64,7 @@
     ]
   },
   "engines": {
-    "node": ">=16.14"
+    "node": ">=18.0"
   },
   "lint-staged": {
     "**/*.{js,jsx,json}": [
