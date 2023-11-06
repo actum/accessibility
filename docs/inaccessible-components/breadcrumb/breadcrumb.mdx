@@ -26,51 +26,63 @@ This page contains the inaccessible version of the component including the descr
 Expand each issue to see the user impact.
 
 <details>
-  <summary><span>Breadcrumb links have no visual focus.</span></summary>
+  <summary>
+    <span>Breadcrumb links have no visual focus.</span>
+  </summary>
   Although the breadcrumb links are accessible by keyboard, sighted keyboard users cannot see where they are focused as there is no visual focus indicator. They are lost in the darkness.
 </details>
 <details>
-  <summary><span>There is not enough contrast between links and the background colors.</span></summary>
+  <summary>
+    <span>There is not enough contrast between links and the background colors.</span>
+  </summary>
   Users with moderately low vision cannot read the text because they do not see it.
   <br />
   <a
     href="https://dequeuniversity.com/checklists/web/color-contrast"
     target="_blank"
     rel="noreferrer noopener"
-  >
-    Read more about the color contrast
-  </a> to learn about the minimum and recommended contrast ratios.
+  >Read more about the color contrast</a> to learn about the minimum and recommended contrast ratios.
 </details>
 <details>
-  <summary><span>The set of links is structured using an unordered list.</span></summary>
+  <summary>
+    <span>The set of links is structured using an unordered list.</span>
+  </summary>
   Breadcrumb links follow the site structure, so the order of links is important. The ordered list should be used instead so users know of the hierarchy.
 </details>
 <details>
-  <summary><span>The breadcrumb navigation is not easily located for <a href="/docs/wcag-documents/glossary-of-terms#screen-reader">screen reader</a> users.</span></summary>
+  <summary>
+    <span>The breadcrumb navigation is not easily located for <a href="/docs/wcag-documents/glossary-of-terms#screen-reader">screen reader</a> users.</span>
+  </summary>
   The <code>nav</code> element with a proper label should be used to identify the breadcrumb as a navigation landmark.
 </details>
 <details>
-  <summary><span>The link separators create a redundant and potentially distracting verbosity for screen reader users.</span></summary>
+  <summary>
+    <span>The link separators create a redundant and potentially distracting verbosity for screen reader users.</span>
+  </summary>
   To prevent screen readers' announcement of the visual separators between links, they should be added via CSS or hidden from assistive technologies.
 </details>
 <details>
-  <summary><span>The <code>aria-label</code> attributes on links are unnecessary and invalid.</span></summary>
+  <summary>
+    <span>The <code>aria-label</code> attributes on links are unnecessary and invalid.</span>
+  </summary>
   There is no reason to put the <code>aria-label</code> on the breadcrumb links as the title inside the link is descriptive enough.
 </details>
 <details>
-  <summary><span>The last item in the breadcrumb is not marked as the currently active link.</span></summary>
+  <summary>
+    <span>The last item in the breadcrumb is not marked as the currently active link.</span>
+  </summary>
   The last link should have the <code>aria-current</code> attribute to indicate the current item within a set of related elements and let users know they are currently on this page.
   <br />
   <a
     href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-current"
     target="_blank"
     rel="noreferrer noopener"
-  >
-    Read more about the aria-current attribute
-  </a>.
+  >Read more about the aria-current attribute</a>.
 </details>
 <details>
-  <summary><span>The layout breaks on smaller resolutions.</span></summary>
+  <summary>
+    <span>The layout breaks on smaller resolutions.</span>
+  </summary>
   The breadcrumb items do not wrap on smaller resolutions causing content overflow and a horizontal scrollbar appears.
 </details>
 
@@ -79,7 +91,9 @@ Expand each issue to see the user impact.
 The usage of certain techniques depends on the circumstances. Expand each consideration to learn more.
 
 <details>
-  <summary><span>Consider shortening the breadcrumb trail on small resolutions.</span></summary>
+  <summary>
+    <span>Consider shortening the breadcrumb trail on small resolutions.</span>
+  </summary>
   Sometimes, a single breadcrumb pointing up one level on smaller resolutions or mobile screens might be sufficient for key user goals. For instance, on an e-commerce site, a product-detail page could have a breadcrumb leading to the parent category, helping users explore related products without taking up excessive screen space.
 </details>
 

@@ -199,9 +199,9 @@ Prefer using the semantic HTML elements whenever you can instead of re-inventing
 
 ```html title="Image as div example"
 <div
-	role="img"
-	aria-label="W3C logo"
-	style="width:52px; height:28px; background-image: url(/w3c-logo.png)"
+  role="img"
+  aria-label="W3C logo"
+  style="width:52px; height:28px; background-image: url(/w3c-logo.png)"
 ></div>
 ```
 
@@ -259,7 +259,9 @@ Check the following set of questions to test your knowledge. Reveal the answers 
 </details>
 
 <details>
-	<summary><span>Decorative images should not have an alternative text. What methods could you use to implement the decorative image so that assistive technologies can ignore it?</span></summary>
+	<summary>
+    <span>Decorative images should not have an alternative text. What methods could you use to implement the decorative image so that assistive technologies can ignore it?</span>
+  </summary>
 	<ul>
 		<li><code>alt=""</code></li>
 		<li><code>role="presentation"</code></li>
@@ -268,23 +270,31 @@ Check the following set of questions to test your knowledge. Reveal the answers 
 </details>
 
 <details>
-	<summary><span>Complex images MUST have their purpose shortly described in an alternative text. Also, a text equivalent MUST be provided near, or on a separate page. What techniques could you use to provide such an equivalent?</span></summary>
+	<summary>
+    <span>Complex images MUST have their purpose shortly described in an alternative text. Also, a text equivalent MUST be provided near, or on a separate page. What techniques could you use to provide such an equivalent?</span>
+  </summary>
 	<ul>
 		<li><code>aria-describedby</code></li>
 	</ul>
 </details>
 
 <details>
-	<summary><span>Does the audio and video content need to have a textual description (not captions)?</span></summary>
+	<summary>
+    <span>Does the audio and video content need to have a textual description (not captions)?</span>
+  </summary>
 	Yes, a text alternative describing or labeling the time-based media is provided so users know what it is and can decide what action to take.
 </details>
 
 <details>
-	<summary><span>What text alternative does an audio recording need except for the short description?</span></summary>
+	<summary>
+    <span>What text alternative does an audio recording need except for the short description?</span>
+  </summary>
 	A text transcript that covers all the spoken content.
 </details>
 
 <details>
-	<summary><span>There is a picture showing how a knot is tied including arrows showing how the ropes go. No other instructions are provided in text form near the image. The picture has the alternative text saying "Instructions on how to tie a knot". Is this implemented with accessibility in mind?</span></summary>
+	<summary>
+    <span>There is a picture showing how a knot is tied including arrows showing how the ropes go. No other instructions are provided in text form near the image. The picture has the alternative text saying "Instructions on how to tie a knot". Is this implemented with accessibility in mind?</span>
+  </summary>
 	No, because the intention here is to provide all users with instructions on how to tie a knot, not just what is displayed in the image. Blind users, for example, would not know the process without a text alternative describing it.
 </details>

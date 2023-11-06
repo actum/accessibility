@@ -19,7 +19,9 @@ This page contains the inaccessible version of the component including the descr
 Expand each issue to see the user impact.
 
 <details>
-    <summary><span>Form instructions are not associated with radio buttons.</span></summary>
+    <summary>
+    <span>Form instructions are not associated with radio buttons.</span>
+  </summary>
     Users of assistive technologies, such as <a href="/docs/wcag-documents/glossary-of-terms#screen-reader">screen readers</a>, navigate forms mostly by tabbing. When they focus on the radio button, they would miss the form instructions saying "Please select your preferred contact method", because it is not associated with the inputs in code, for instance by using the <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code> elements.
     <br /><br />
 
@@ -28,19 +30,27 @@ If you do not like the default <code>fieldset</code> and <code>legend</code> bor
 :::
 </details>
 <details>
-    <summary><span>Radio buttons are missing a connection to labels.</span></summary>
+    <summary>
+    <span>Radio buttons are missing a connection to labels.</span>
+  </summary>
     When users of assistive technologies, such as screen readers, are navigating on the radio buttons, the screen reader basically announces just "radio button" without any information about its label. The users then do not know what they are selecting.
 </details>
 <details>
-    <summary><span>Radio buttons in the group have different names.</span></summary>
+    <summary>
+    <span>Radio buttons in the group have different names.</span>
+  </summary>
     A radio group is defined by giving each of the radio buttons in the group the same name. When submitting the form with a radio group, the submission will not contain multiple radio buttons, but just one with the selected value. This is more of an implementation issue.
 </details>
 <details>
-    <summary><span>There is not enough contrast between the text and the background colors.</span></summary>
+    <summary>
+    <span>There is not enough contrast between the text and the background colors.</span>
+  </summary>
     Users with moderately low vision cannot read the text because they do not see it.
 </details>
 <details>
-    <summary><span>Missing keyboard support.</span></summary>
+    <summary>
+    <span>Missing keyboard support.</span>
+  </summary>
     To make the component accessible and convenient to use for keyboard users, the following key support should be added:
     <ul>
         <li>
@@ -61,15 +71,21 @@ If you do not like the default <code>fieldset</code> and <code>legend</code> bor
     </ul>
 </details>
 <details>
-    <summary><span>Radio buttons are hard to select by mouse or touch.</span></summary>
+    <summary>
+    <span>Radio buttons are hard to select by mouse or touch.</span>
+  </summary>
     Sighted mouse or touch users can have a hard time selecting the small radio button. To increase the interactive area, the radio button can be associated with its label by introducing the <code>for=&quot;input-id&quot;</code> attribute on the <code>label</code>, and the <code>id=&quot;input-id&quot;</code> attribute on the input, which also makes the label interactive, and users can click/touch it in order to select the radio button. It would be also good to add some padding for the radio button so even the little circle has a bigger interactive area.
 </details>
 <details>
-  <summary><span>Consider implementing a hover effect.</span></summary>
+  <summary>
+    <span>Consider implementing a hover effect.</span>
+  </summary>
   It is easier for sighted mouse users to perceive that radio buttons with labels are interactive when the user interface reacts to the hover effect. Changing the background color or border is usually a good indicator.
 </details>
 <details>
-    <summary><span>The submit button has an incorrect <code>type</code>.</span></summary>
+    <summary>
+    <span>The submit button has an incorrect <code>type</code>.</span>
+  </summary>
     Without the JavaScript validation, a button with the <code>type=&quot;button&quot;</code> behaves as a standard button and would not trigger the form submission. Instead, we should set <code>type=&quot;submit&quot;</code>, which is a good practice even when the form submission is controlled by JavaScript because it is a clear button definition.
 </details>
 
@@ -78,11 +94,15 @@ If you do not like the default <code>fieldset</code> and <code>legend</code> bor
 The usage of certain techniques depends on the circumstances. Expand each consideration to learn more.
 
 <details>
-    <summary><span>Consider adding the default value.</span></summary>
+    <summary>
+    <span>Consider adding the default value.</span>
+  </summary>
     It is fairly uncommon to allow the form to be submitted without any of the radio buttons in a group selected, so it is usually good to have one checked by default.
 </details>
 <details>
-    <summary><span>Consider wrapping the radio group with a form tag.</span></summary>
+    <summary>
+    <span>Consider wrapping the radio group with a form tag.</span>
+  </summary>
     If the form collects user input, it should be wrapped in the <code>form</code> element to group related fields, and also for better semantics and SEO.
 </details>
 

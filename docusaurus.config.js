@@ -1,4 +1,4 @@
-const darkCodeTheme = require('prism-react-renderer/themes/vsDark')
+import { themes } from 'prism-react-renderer';
 
 const lightCodeTheme = {
   plain: {
@@ -191,7 +191,7 @@ const config = {
       },
       prism: {
         theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        darkTheme: themes.vsDark,
       },
       algolia: {
         // The application ID provided by Algolia

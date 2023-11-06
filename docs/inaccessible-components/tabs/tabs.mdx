@@ -19,19 +19,27 @@ This page contains the inaccessible version of the component including the descr
 Expand each issue to see the user impact.
 
 <details>
-    <summary><span>The tab list and tab panel are not next to each other.</span></summary>
+    <summary>
+    <span>The tab list and tab panel are not next to each other.</span>
+  </summary>
     Both list and panel should be next to each other - both visually and in DOM. With screen magnification software or large zoom, it may be impossible to detect tab panel switching.
 </details>
 <details>
-    <summary><span>Tabs are focusable but not interactive.</span></summary>
+    <summary>
+    <span>Tabs are focusable but not interactive.</span>
+  </summary>
     Although it is possible to tab through tabs, it is not possible to activate the tab by a keyboard.
 </details>
 <details>
-    <summary><span>Tab panels are hidden only visually.</span></summary>
+    <summary>
+    <span>Tab panels are hidden only visually.</span>
+  </summary>
     Inactive tab panels are still accessible by keyboard and their content is discoverable. This can confuse visual users and destroys the purpose of tabs for <a href="/docs/wcag-documents/glossary-of-terms#screen-reader">screen reader</a> users in the first place.
 </details>
 <details>
-    <summary><span>Missing ARIA attributes.</span></summary>
+    <summary>
+    <span>Missing ARIA attributes.</span>
+  </summary>
     Tabs are a custom JavaScript widget, there is no native HTML element to use for that. Therefore, a couple of attributes need to be added:
     <ul>
         <li><code>role=&quot;tablist&quot;</code> - a wrapper for the list of tabs</li>
@@ -45,7 +53,9 @@ Expand each issue to see the user impact.
     </ul>
 </details>
 <details>
-    <summary><span>Missing keyboard support.</span></summary>
+    <summary>
+    <span>Missing keyboard support.</span>
+  </summary>
     To make the component accessible and convenient to use for keyboard users, the following key support should be added:
     <br />
     <ul>
@@ -58,19 +68,27 @@ Expand each issue to see the user impact.
     Note: Focusing the tab automatically activates it.
 </details>
 <details>
-    <summary><span>Wrong &quot;Google&quot; link location.</span></summary>
+    <summary>
+    <span>Wrong &quot;Google&quot; link location.</span>
+  </summary>
     The Google link leads to apple.com, however, it should be leading to google.com.
 </details>
 <details>
-    <summary><span>The contrast of the currently selected tab is too low.</span></summary>
+    <summary>
+    <span>The contrast of the currently selected tab is too low.</span>
+  </summary>
     The color used to highlight the active tab against the inactive tabs is barely visible with low contrast.
 </details>
 <details>
-    <summary><span>Color is used alone to style links in the text.</span></summary>
+    <summary>
+    <span>Color is used alone to style links in the text.</span>
+  </summary>
     Color alone is not a sufficient way to distinguish links from normal text. Low-vision or color-blind users would miss that completely, except for when the color contrast is very high.
 </details>
 <details>
-    <summary><span><code>max-height</code> is used on the tab panel.</span></summary>
+    <summary>
+    <span><code>max-height</code> is used on the tab panel.</span>
+  </summary>
     The tab panel limits the height of the content inside even without using a vertical scrollbar. On smaller resolutions (or with more content), users would lose a part of the content.
 </details>
 
@@ -79,15 +97,21 @@ Expand each issue to see the user impact.
 The usage of certain techniques depends on the circumstances. Expand each consideration to learn more.
 
 <details>
-    <summary><span>Consider changing the tab switch from hover to click event.</span></summary>
+    <summary>
+    <span>Consider changing the tab switch from hover to click event.</span>
+  </summary>
     Hovering over something should not ideally cause a change in context, but there are exceptions. Tabs are usually switched either by activation or by selecting them by arrows.
 </details>
 <details>
-    <summary><span>Consider making the tabpanel focusable.</span></summary>
+    <summary>
+    <span>Consider making the tabpanel focusable.</span>
+  </summary>
     If there are no focusable elements in panels, users might miss the content in the panel. In such situations, it is recommended to put the <code>tabindex=&quot;0&quot;</code> to the tabpanel.
 </details>
 <details>
-    <summary><span>Consider using links or buttons as tabs.</span></summary>
+    <summary>
+    <span>Consider using links or buttons as tabs.</span>
+  </summary>
     Depending on the circumstances, tabs can also be developed as buttons or links (anchors). This should depend on the content importance and amount.
 </details>
 

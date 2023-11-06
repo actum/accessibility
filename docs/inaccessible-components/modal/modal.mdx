@@ -19,63 +19,93 @@ This page contains the inaccessible version of the component including the descr
 Expand each issue to see the user impact.
 
 <details>
-    <summary><span>The modal window has no background overlay.</span></summary>
+    <summary>
+    <span>The modal window has no background overlay.</span>
+  </summary>
     Modal windows should usually have a dark overlay in the background so users are focused on the information in the modal window while not being able to interact with the outside content.
 </details>
 <details>
-    <summary><span>The close button is too small.</span></summary>
+    <summary>
+    <span>The close button is too small.</span>
+  </summary>
     It is very difficult for mouse users (especially for those with tremors) to activate the close button. The interactive area should be much bigger.
 </details>
 <details>
-    <summary><span>The close button is missing an <a href="/docs/wcag-documents/glossary-of-terms#accessible-name">accessible name</a>.</span></summary>
+    <summary>
+    <span>The close button is missing an <a href="/docs/wcag-documents/glossary-of-terms#accessible-name">accessible name</a>.</span>
+  </summary>
     Visually impaired users of assistive technologies do not know what the button is for, as <a href="/docs/wcag-documents/glossary-of-terms#screen-reader">screen readers</a> would announce only the &quot;X button&quot;. While this can be clear to some users, it is not clear to all.
 </details>
 <details>
-    <summary><span>Users can scroll while the modal window is opened.</span></summary>
+    <summary>
+    <span>Users can scroll while the modal window is opened.</span>
+  </summary>
     The page should prevent users from scrolling when the modal window is opened as they should not be able to interact with the rest of the page.
 </details>
 <details>
-    <summary><span>Interactive elements inside the modal window have no focus styles.</span></summary>
+    <summary>
+    <span>Interactive elements inside the modal window have no focus styles.</span>
+  </summary>
     Sighted keyboard users cannot see what element inside the modal window is currently focused.
 </details>
 <details>
-    <summary><span>Users can interact with the rest of the page while the modal window is opened.</span></summary>
+    <summary>
+    <span>Users can interact with the rest of the page while the modal window is opened.</span>
+  </summary>
     Users should focus only on the modal window before they close it. Otherwise, keyboard users might not realize they are already away from the modal window.
 </details>
 <details>
-    <summary><span>After the modal window is opened, the focus is not set inside.</span></summary>
+    <summary>
+    <span>After the modal window is opened, the focus is not set inside.</span>
+  </summary>
     Without setting focus inside the modal window, keyboard users might never reach it as it can be hidden deep in the DOM. It is necessary to move focus on certain user interactions, such as opening the modal window.
 </details>
 <details>
-    <summary><span>After the modal window is closed, the focus is not set back to the button that opened it.</span></summary>
+    <summary>
+    <span>After the modal window is closed, the focus is not set back to the button that opened it.</span>
+  </summary>
     The modal window is a temporary stop for users. Keyboard users should be able to continue their journey from the point where they got into the modal window.
 </details>
 <details>
-    <summary><span>The modal window is reachable even when it is closed.</span></summary>
+    <summary>
+    <span>The modal window is reachable even when it is closed.</span>
+  </summary>
     The inactive modal window must be hidden (or not rendered at all) from both assistive technology and sighted users. Focusing on the invisible place is an anti-pattern.
 </details>
 <details>
-    <summary><span>The usage of the <code>role</code> attribute is wrong.</span></summary>
+    <summary>
+    <span>The usage of the <code>role</code> attribute is wrong.</span>
+  </summary>
     There is no <code>modal</code> role. Instead, the <code>dialog</code> role should be used to help assistive technologies with the identification of the dialog.
 </details>
 <details>
-    <summary><span>The modal window cannot be closed with the <code>Escape</code> key.</span></summary>
+    <summary>
+    <span>The modal window cannot be closed with the <code>Escape</code> key.</span>
+  </summary>
     Keyboard users must be able to close the opened modal window with the <code>Escape</code> key.
 </details>
 <details>
-    <summary><span>The usage of the <code>aria-describedby</code> attribute is wrong.</span></summary>
+    <summary>
+    <span>The usage of the <code>aria-describedby</code> attribute is wrong.</span>
+  </summary>
     While <code>aria-describedby</code> might optionally be used on the element with the <code>role=&quot;dialog&quot;</code> to provide more information about the modal content, in this case, it is targetting the button, which is invalid. Instead, there should be the <code>aria-labelledby</code> attribute pointing to the modal heading so screen reader users have the title announced when they open and get focused on the modal window.
 </details>
 <details>
-    <summary><span>A part of the opened modal window&apos;s content is invisible on smaller resolutions.</span></summary>
+    <summary>
+    <span>A part of the opened modal window&apos;s content is invisible on smaller resolutions.</span>
+  </summary>
     On mobile resolutions, the opened modal window width is larger than the viewport, so a part of the content is invisible.
 </details>
 <details>
-    <summary><span>The <code>marquee</code> element is distracting and deprecated.</span></summary>
+    <summary>
+    <span>The <code>marquee</code> element is distracting and deprecated.</span>
+  </summary>
     The moving content inside the <code>marquee</code> element is distracting, can be difficult to read and interact with, and the element itself is deprecated.
 </details>
 <details>
-    <summary><span>The link inside the modal window content does not have clear text.</span></summary>
+    <summary>
+    <span>The link inside the modal window content does not have clear text.</span>
+  </summary>
     Links with text like &quot;click here&quot;, &quot;read more&quot;, and so on do not provide enough information for users of assistive technologies who tab through the interactive content. Each link should make sense if presented alone without the surrounding context.
 </details>
 
@@ -84,19 +114,27 @@ Expand each issue to see the user impact.
 The usage of certain techniques depends on the circumstances. Expand each consideration to learn more.
 
 <details>
-    <summary><span>Consider the usage of the <code>aria-modal=&quot;true&quot;</code> attribute.</span></summary>
+    <summary>
+    <span>Consider the usage of the <code>aria-modal=&quot;true&quot;</code> attribute.</span>
+  </summary>
     Some screen readers, when navigating by arrows, allow navigating outside the dialog even with the active focus trap. Using <code>aria-modal=&quot;true&quot;</code> will increase the chances that users will not leave the dialog by browsing.
 </details>
 <details>
-    <summary><span>Consider focusing the element with <code>role=&quot;dialog&quot;</code>.</span></summary>
+    <summary>
+    <span>Consider focusing the element with <code>role=&quot;dialog&quot;</code>.</span>
+  </summary>
     Sometimes, focusing the first focusable element straight away might not be wanted, and the focus can go directly to the element with <code>role=&quot;dialog&quot;</code>, if it has an <a href="/docs/wcag-documents/glossary-of-terms#accessible-name">accessible name</a> via <code>aria-label</code> or <code>aria-labelledby</code>.
 </details>
 <details>
-    <summary><span>Consider options for closing the modal window.</span></summary>
+    <summary>
+    <span>Consider options for closing the modal window.</span>
+  </summary>
     There are multiple types of modal windows. For instance, closing the modal with the <code>Escape</code> key, clicking the close button, or clicking the overlay is not wanted when you need users to confirm the message, agree to terms, or similar interactions when they can for example choose from proceeding with or canceling an action.
 </details>
 <details>
-    <summary><span>Consider specifying the <code>type</code> of <code>button</code>.</span></summary>
+    <summary>
+    <span>Consider specifying the <code>type</code> of <code>button</code>.</span>
+  </summary>
     A <code>button</code> without the <code>type</code> attribute defaults to the <code>type=&quot;submit&quot;</code>. While this is important for forms, it is the best practice to always specify the <code>type</code> as it clearly defines what the <code>button</code> does no matter where it is.
 </details>
 
