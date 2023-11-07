@@ -44,7 +44,7 @@ There are also videos (explaining the details) available for each user preferenc
 
 ## Technical Information
 
-The website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+The website is built using [Docusaurus 3](https://docusaurus.io/), a modern static website generator.
 
 ### Installation
 
@@ -91,7 +91,7 @@ When creating new MDX docs, reuse existing patterns to achieve consistency and p
 
 When adding new WCAG Documents criterion, make sure to create links to it on all relevant places (there is no automation for now):
 - [WCAG Documents intro page](./docs/wcag-documents/intro.mdx)
-- [Glossary of Terms](./docs/wcag-documents/glossary-of-terms.mdx) if any terms are used on the page (only link the first occurance)
+- [Glossary of Terms](./docs/wcag-documents/glossary-of-terms.mdx) if any terms are used on the page (only link the first occurence)
 - Principles, such as [Perceivable](./docs/wcag-documents/1-perceivable/1-perceivable.mdx)
 - Guidelines, such as [Text Alternatives](./docs/wcag-documents/1-perceivable/1.1-text-alternatives/1.1-text-alternatives.mdx)
 
