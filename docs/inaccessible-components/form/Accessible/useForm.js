@@ -21,16 +21,14 @@ export const useForm = (
     [values],
   )
 
-  const validate = () => {
+  const validate = useCallback(() => {
     setErrors(
-      Object.assign(
+      Object.entries(values).reduce(
+        (acc, [key, value]) => ({ ...acc, ...validationSchema(key, value) }),
         {},
-        ...Object.entries(values).map(([key, value]) =>
-          validationSchema(key, value),
-        ),
       ),
     )
-  }
+  }, [])
 
   const handleSubmit = event => {
     event.preventDefault()
