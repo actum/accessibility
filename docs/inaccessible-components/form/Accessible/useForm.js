@@ -8,8 +8,8 @@ export const useForm = (
 ) => {
   const [values, setValues] = useState(initialValues)
   const [errors, setErrors] = useState(initialErrors)
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const isValid = Object.values(errors).findIndex(error => !!error) < 0
-  let isSubmitting = false
 
   const handleChange = useCallback(
     (event, id) => {
@@ -35,8 +35,7 @@ export const useForm = (
   const handleSubmit = event => {
     event.preventDefault()
 
-    isSubmitting = true
-
+    setIsSubmitting(true)
     validate()
 
     if (onSubmitCallback) {
