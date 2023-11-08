@@ -21,9 +21,9 @@ export const useForm = (
     [values],
   )
 
-  const validate = useCallback(() => {
+  const validate = useCallback(nextValues => {
     setErrors(
-      Object.entries(values).reduce(
+      Object.entries(nextValues).reduce(
         (acc, [key, value]) => ({ ...acc, ...validationSchema(key, value) }),
         {},
       ),
@@ -34,7 +34,7 @@ export const useForm = (
     event.preventDefault()
 
     setIsSubmitting(true)
-    validate()
+    validate(values)
 
     if (onSubmitCallback) {
       onSubmitCallback(values, isValid)

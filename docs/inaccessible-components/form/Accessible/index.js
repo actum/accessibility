@@ -10,12 +10,7 @@ const initialValues = {
   message: '',
 }
 
-const initialErrors = {
-  fullName: false,
-  email: false,
-  phoneNumber: false,
-  message: false,
-}
+const initialErrors = initialValues
 
 const validateEmail = email =>
   !new RegExp(
@@ -30,17 +25,23 @@ const validatePhoneNumber = phoneNumber => {
   ).test(phoneNumber)
 }
 
-// validation schema returns errors as booleans
+// validation schema returns errors as err messages in string
 const validationSchema = (id, value) => {
   let errors = {}
   if (id === 'fullName') {
-    errors.fullName = !value
-  } else if (id === 'phoneNumber') {
+    errors.fullName = !value ? 'Please enter your full name.' : ''
+  } else if (id === 'phoneNumber' && value) {
     errors.phoneNumber = validatePhoneNumber(value)
+      ? 'Please enter your phone number in the correct format.'
+      : ''
   } else if (id === 'email') {
-    errors.email = validateEmail(value)
+    errors.email = !validateEmail(value)
+      ? ''
+      : !value
+      ? 'Please enter your email address.'
+      : 'Please enter your email address in the correct format.'
   } else if (id === 'message') {
-    errors.message = !value
+    errors.message = !value ? 'Please enter your message.' : ''
   }
 
   return errors
@@ -106,11 +107,10 @@ export default function Form() {
             </div>
           )}
         </div>
-        <p>All fields marked with * are required.</p>
         <form className="form" onSubmit={onSubmit} ref={formRef} noValidate>
           <div className="form__row">
             <label className="form__label" htmlFor="fullName">
-              Full name *
+              Full name
             </label>
             <input
               type="text"
@@ -130,14 +130,14 @@ export default function Form() {
             />
             {errors.fullName && (
               <span className="form__error" id="fullNameError">
-                Please enter your full name.
+                {errors.fullName}
               </span>
             )}
           </div>
 
           <div className="form__row">
             <label className="form__label" htmlFor="email">
-              Email *
+              Email
             </label>
             <input
               type="email"
@@ -155,16 +155,14 @@ export default function Form() {
             />
             {errors.email && (
               <span className="form__error" id="emailError">
-                {values.email === ''
-                  ? 'Please enter your email address.'
-                  : 'Please enter your email address in the correct format.'}
+                {errors.email}
               </span>
             )}
           </div>
 
           <div className="form__row">
             <label className="form__label" htmlFor="phoneNumber">
-              Phone number
+              Phone number (optional)
             </label>
             <input
               type="tel"
@@ -185,7 +183,7 @@ export default function Form() {
             />
             {errors.phoneNumber && (
               <span className="form__error" id="phoneNumberError">
-                Please enter your phone number in the correct format.
+                {errors.phoneNumber}
               </span>
             )}
             <span className="form__help" id="phoneNumberHelp">
@@ -196,7 +194,7 @@ export default function Form() {
 
           <div className="form__row">
             <label className="form__label" htmlFor="message">
-              Your message *
+              Your message
             </label>
             <textarea
               id="message"
@@ -216,7 +214,7 @@ export default function Form() {
             ></textarea>
             {errors.message && (
               <span className="form__error" id="messageError">
-                Please enter your message.
+                {errors.message}
               </span>
             )}
           </div>
