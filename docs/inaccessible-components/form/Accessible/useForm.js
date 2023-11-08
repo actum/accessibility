@@ -44,6 +44,8 @@ export const useForm = (
   const handleReset = event => {
     event.preventDefault()
     setValues(initialValues)
+    setErrors(initialErrors)
+    setIsSubmitting(false)
   }
 
   return {
