@@ -1,35 +1,62 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState } from 'react'
 
-export const useForm = (initialValues, onSubmitCallback) => {
-  const [values, setValues] = useState(initialValues);
+export const useForm = (
+  initialValues,
+  initialErrors,
+  validationSchema,
+  onSubmitCallback,
+) => {
+  const [values, setValues] = useState(initialValues)
+  const [errors, setErrors] = useState(initialErrors)
+  const isValid = Object.values(errors).findIndex(error => !!error) < 0
+  let isSubmitting = false
 
-  const handleInputChange = useCallback(
+  const handleChange = useCallback(
     (event, id) => {
       setValues({
         ...values,
-        [id ? id : event.target.id]: event.target.value
-      });
+        [id ? id : event.target.id]: event.target.value,
+      })
     },
-    [values]
-  );
+    [values],
+  )
 
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
+  const validate = () => {
+    setErrors(
+      Object.assign(
+        {},
+        ...Object.entries(values).map(([key, value]) =>
+          validationSchema(key, value),
+        ),
+      ),
+    )
+  }
+
+  const handleSubmit = event => {
+    event.preventDefault()
+
+    isSubmitting = true
+
+    validate()
+
     if (onSubmitCallback) {
-      onSubmitCallback(values);
+      onSubmitCallback(values, isValid)
     }
-  };
+  }
 
-  const handleFormReset = (event) => {
-    event.preventDefault();
-    setValues(initialValues);
-  };
+  const handleReset = event => {
+    event.preventDefault()
+    setValues(initialValues)
+  }
 
   return {
     values,
-    handleInputChange,
-    handleFormSubmit,
-    handleFormReset,
-    setValues
-  };
-};
+    errors,
+    isValid,
+    isSubmitting,
+    onChange: handleChange,
+    onSubmit: handleSubmit,
+    onFormReset: handleReset,
+    setValues,
+  }
+}
