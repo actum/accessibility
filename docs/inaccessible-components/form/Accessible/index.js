@@ -10,19 +10,24 @@ const initialValues = {
   message: '',
 }
 
-const initialErrors = initialValues
+const initialErrors = {
+  fullName: null,
+  email: null,
+  phoneNumber: null,
+  message: null,
+}
 
 const validateEmail = email =>
-  !new RegExp(
+  !email.match(
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-  ).test(email)
+  )
 
 const validatePhoneNumber = phoneNumber => {
   if (phoneNumber === '') return true
 
-  return !new RegExp(
+  return !phoneNumber.match(
     /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/,
-  ).test(phoneNumber)
+  )
 }
 
 // validation schema returns errors as err messages in string
@@ -120,7 +125,7 @@ export default function Form() {
                 form__control: true,
                 'form__control--invalid': errors.fullName,
               })}
-              aria-invalid={errors.fullName}
+              aria-invalid={!!errors.fullName}
               required
               value={values.fullName}
               onChange={handleChange}
@@ -147,7 +152,7 @@ export default function Form() {
                 form__control: true,
                 'form__control--invalid': errors.email,
               })}
-              aria-invalid={errors.email}
+              aria-invalid={!!errors.email}
               required
               value={values.email}
               onChange={handleChange}
@@ -172,7 +177,7 @@ export default function Form() {
                 form__control: true,
                 'form__control--invalid': errors.phoneNumber,
               })}
-              aria-invalid={errors.phoneNumber}
+              aria-invalid={!!errors.phoneNumber}
               placeholder="+420 123 456 789"
               aria-describedby="phoneNumberHelp"
               value={values.phoneNumber}
@@ -204,7 +209,7 @@ export default function Form() {
                 form__control: true,
                 'form__control--invalid': errors.message,
               })}
-              aria-invalid={errors.message}
+              aria-invalid={!!errors.message}
               required
               value={values.message}
               onChange={handleChange}
