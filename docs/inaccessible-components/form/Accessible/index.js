@@ -18,14 +18,14 @@ const initialErrors = {
 }
 
 const validateEmail = email =>
-  !email.match(
+  !!email.match(
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
   )
 
 const validatePhoneNumber = phoneNumber => {
   if (phoneNumber === '') return true
 
-  return !phoneNumber.match(
+  return !!phoneNumber.match(
     /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/,
   )
 }
@@ -37,10 +37,10 @@ const validationSchema = (id, value) => {
     errors.fullName = !value ? 'Please enter your full name.' : ''
   } else if (id === 'phoneNumber' && value) {
     errors.phoneNumber = validatePhoneNumber(value)
-      ? 'Please enter your phone number in the correct format.'
-      : ''
+      ? ''
+      : 'Please enter your phone number in the correct format.'
   } else if (id === 'email') {
-    errors.email = !validateEmail(value)
+    errors.email = validateEmail(value)
       ? ''
       : !value
       ? 'Please enter your email address.'
