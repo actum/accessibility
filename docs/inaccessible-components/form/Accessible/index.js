@@ -54,17 +54,13 @@ const validationSchema = (id, value) => {
 
 export default function Form() {
   const formRef = useRef(null)
-  const errorMessageRef = useRef(null)
   const successMessageRef = useRef(null)
 
   const handleSubmit = useCallback((_values, isFormValid) => {
     if (isFormValid) {
-      successMessageRef.current.focus()
       // sends request with values
     } else {
-      // move focus to the error message
-      errorMessageRef.current.focus()
-      // or move focus to the first invalid field
+      // move focus to the first invalid field
       focusFirstInvalidField()
     }
   }, [])
@@ -82,8 +78,10 @@ export default function Form() {
     if (isSubmitting && !isValid) {
       // move focus to the first invalid field
       focusFirstInvalidField()
+    } else if (isSubmitting && isValid) {
+      successMessageRef.current.focus()
     }
-  }, [isSubmitting, isValid])
+  }, [isSubmitting, isValid, onSubmit])
 
   const focusFirstInvalidField = () => {
     const firstInvalidField = formRef.current.querySelector(
@@ -104,7 +102,7 @@ export default function Form() {
             </div>
           )}
         </div>
-        <div ref={errorMessageRef} tabIndex={-1}>
+        <div tabIndex={-1}>
           {isSubmitting && !isValid && (
             <div className="message message--error" role="alert">
               The form contains one or more errors. Below each invalid field,
@@ -129,6 +127,7 @@ export default function Form() {
               required
               value={values.fullName}
               onChange={handleChange}
+              autoComplete="name"
               {...(errors.fullName
                 ? { 'aria-describedby': 'fullNameError' }
                 : {})}
@@ -156,6 +155,7 @@ export default function Form() {
               required
               value={values.email}
               onChange={handleChange}
+              autoComplete="email"
               {...(errors.email ? { 'aria-describedby': 'emailError' } : {})}
             />
             {errors.email && (
@@ -182,6 +182,7 @@ export default function Form() {
               aria-describedby="phoneNumberHelp"
               value={values.phoneNumber}
               onChange={handleChange}
+              autoComplete="tel"
               {...(errors.phoneNumber
                 ? { 'aria-describedby': 'phoneNumberError' }
                 : {})}
