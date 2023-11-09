@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback } from 'react'
+import React, { useRef } from 'react'
 import { useForm } from './useForm'
 import classNames from 'classnames'
 import styles from '!!raw-loader!sass-loader!./index.scss'
@@ -56,14 +56,21 @@ export default function Form() {
   const formRef = useRef(null)
   const successMessageRef = useRef(null)
 
-  const handleSubmit = useCallback((_values, isFormValid) => {
+  const handleSubmit = (_values, isFormValid) => {
     if (isFormValid) {
       // sends request with values
+      successMessageRef?.current?.focus()
     } else {
       // move focus to the first invalid field
-      focusFirstInvalidField()
+      const firstInvalidField = formRef.current.querySelector(
+        '[aria-invalid="true"]',
+      )
+
+      if (firstInvalidField) {
+        firstInvalidField.focus()
+      }
     }
-  }, [])
+  }
 
   const {
     values,
@@ -73,22 +80,6 @@ export default function Form() {
     onChange: handleChange,
     onSubmit,
   } = useForm(initialValues, initialErrors, validationSchema, handleSubmit)
-
-  useEffect(() => {
-    if (isSubmitting && !isValid) {
-      // move focus to the first invalid field
-      focusFirstInvalidField()
-    } else if (isSubmitting && isValid) {
-      successMessageRef.current.focus()
-    }
-  }, [isSubmitting, isValid, onSubmit])
-
-  const focusFirstInvalidField = () => {
-    const firstInvalidField = formRef.current.querySelector(
-      '[aria-invalid="true"]',
-    )
-    firstInvalidField && firstInvalidField.focus()
-  }
 
   return (
     <>

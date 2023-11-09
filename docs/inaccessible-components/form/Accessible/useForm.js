@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 export const useForm = (
   initialValues,
@@ -6,56 +6,67 @@ export const useForm = (
   validationSchema,
   onSubmitCallback,
 ) => {
-  const [values, setValues] = useState(initialValues)
-  const [errors, setErrors] = useState(initialErrors)
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const isValid = Object.values(errors).findIndex(error => !!error) < 0
+  const [state, setState] = useState({
+    values: initialValues,
+    errors: initialErrors,
+    isSubmitting: false,
+  })
+  const isValid = Object.values(state.errors).findIndex(error => !!error) < 0
 
   const handleChange = useCallback(
     (event, id) => {
-      setValues({
-        ...values,
-        [id ? id : event.target.id]: event.target.value,
-      })
+      setState(ps => ({
+        ...ps,
+        values: {
+          ...ps.values,
+          [id ? id : event.target.id]: event.target.value,
+        },
+      }))
     },
-    [values],
+    [state],
   )
 
-  const validate = useCallback(nextValues => {
-    setErrors(
-      Object.entries(nextValues).reduce(
-        (acc, [key, value]) => ({ ...acc, ...validationSchema(key, value) }),
-        {},
-      ),
-    )
+  const validate = useCallback(
+    (nextValues, options) => {
+      setState(ps => ({
+        ...ps,
+        ...options,
+        errors: Object.entries(nextValues).reduce(
+          (acc, [key, value]) => ({ ...acc, ...validationSchema(key, value) }),
+          {},
+        ),
+      }))
+    },
+    [state],
+  )
+
+  const handleSubmit = useCallback(
+    event => {
+      event.preventDefault()
+      validate(state.values, { isSubmitting: true })
+    },
+    [state],
+  )
+
+  const handleReset = useCallback(() => {
+    setState({
+      values: initialValues,
+      errors: initialErrors,
+      isSubmitting: false,
+    })
   }, [])
 
-  const handleSubmit = event => {
-    event.preventDefault()
-
-    setIsSubmitting(true)
-    validate(values)
-
-    if (onSubmitCallback) {
-      onSubmitCallback(values, isValid)
+  useEffect(() => {
+    if (onSubmitCallback && state.isSubmitting) {
+      onSubmitCallback(state.values, isValid)
     }
-  }
-
-  const handleReset = event => {
-    event.preventDefault()
-    setValues(initialValues)
-    setErrors(initialErrors)
-    setIsSubmitting(false)
-  }
+  }, [state.errors])
 
   return {
-    values,
-    errors,
+    ...state,
     isValid,
-    isSubmitting,
     onChange: handleChange,
     onSubmit: handleSubmit,
     onFormReset: handleReset,
-    setValues,
   }
 }
