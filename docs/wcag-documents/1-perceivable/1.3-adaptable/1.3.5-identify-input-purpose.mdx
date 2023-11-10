@@ -1,0 +1,77 @@
+# 1.3.5 - Identify Input Purpose - AA
+
+(future video slot)
+
+## Intent
+
+The purpose of each input field that collects information about the user can be [programmatically determined](/docs/wcag-documents/glossary-of-terms#programmatically-determined) to make filling forms easier.
+
+## Who Benefits
+
+- People who have difficulties with **language**, **memory**, or **making decisions** can benefit from the browser's autofill feature because they don't have to remember the information themselves.
+- People with **motor impairments** benefit from reducing the need for manual input when completing forms.
+- People who like the **convenience** of autofill.
+
+## Input Purpose
+
+<img src="/img/1.3.3-sensory-characteristics.png" srcSet="/img/1.3.3-sensory-characteristics.png 1x, /img/1.3.3-sensory-characteristics-2x.png 2x" alt="" width="400" height="424" style={{aspectRatio: '400/424' }} />
+
+It is important to offer extra information about form inputs (such as those for address, phone, or password) in a way that a computer can understand, making it possible to present this information in various ways to users.
+
+Simply providing a label and a <code>type</code> attribute for relevant input fields is not sufficient to meet this success criterion. The <code>type</code> attribute alone may not clearly indicate the purpose of the input field. For instance, <code>type="text"</code> does not specify what kind of information is expected from users. The label describes it, but the information must be programmatically determined to ensure accessibility.
+
+To establish this programmatic connection, use the <code>autocomplete</code> attribute with an appropriate value for the input field. You can refer to the [Section 7 of the WCAG Recommendation](https://www.w3.org/TR/WCAG21/#input-purposes), titled "Input Purposes for User Interface Components," to find a list of possible values to use for this attribute.
+
+Browsers and assistive technologies use this information to help the user in various ways, including automatically completing forms, filling in usernames and passwords, but also pairing custom icons with form elements for users who prefer using images for communication or who have trouble understanding words. For instance, the assistive technology may place a credit card image near the field requesting the credit card number input, making it easier for users to input the number.
+
+## Exceptions
+
+This criterion only applies to the data of the user filling out the form. Use the <code>autocomplete</code> attribute only for form inputs that collect the user's personal information, not information about other people. For example, on a shared calendar event form, where one user invites others, the <code>autocomplete</code> attribute can be used for the user's own email but not the guests' emails.
+
+## Examples
+
+### Correct Usage
+
+The following examples show the correct usage or implementation of accessibility.
+
+#### Example 1: A simple form
+
+The page contains a simple form with inputs for the first and last names. The <code>autocomplete</code> attribute has the value <code>given-name</code> for the first name input and <code>family-name</code> for the last name input. These are the correct values to use.
+
+```html title="A form with two inputs"
+<label for="first-name">First Name</label>
+<input autocomplete="given-name" type="text" id="first-name">
+
+<label for="last-name">Last Name</label>
+<input autocomplete="family-name" type="text" id="last-name">
+```
+
+### Incorrect Usage
+
+The following examples show incorrect usage or implementation of accessibility.
+
+#### Example 1: Missing and invalid values
+
+The page contains a simple form with inputs for the first and last names. The <code>autocomplete</code> attribute is missing for the first name input and has the value <code>familyName</code> (in the camel-case format) for the last name input.
+
+The first input is missing the programmatic association because the <code>autocomplete</code> attribute is missing. The second input has the incorrect programmatic association because the <code>autocomplete</code> value is in the wrong format - <code>familyName</code> (in camel-case) instead of <code>family-name</code> (in kebab-case).
+
+```html title="A form with two inputs"
+<label for="first-name">First Name</label>
+<input type="text" id="first-name">
+
+<label for="last-name">Last Name</label>
+<input autocomplete="familyName" type="text" id="last-name">
+```
+
+## Test your knowledge
+
+<details>
+	<summary><span>Should all form inputs collecting the user data have appropriate images or symbols next to them?</span></summary>
+  No, while you can use images or symbols to enhance accessibility, it is not required by this success criterion and is usually implemented by assistive technologies.
+</details>
+
+<details>
+	<summary><span>The <code>autofill</code> attribute should be used only for form inputs collecting the user's personal data. True or false?</span></summary>
+	False, the <code>autocomplete</code> attribute should be used for that.
+</details>
