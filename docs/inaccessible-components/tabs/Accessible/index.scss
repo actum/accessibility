@@ -13,11 +13,10 @@
   &__list-item {
     padding: 1rem;
     user-select: none;
-    border-bottom: 2px solid transparent;
-    outline: 1px solid black;
+    border: 1px solid black;
 
     @include dark-mode() {
-      outline-color: white;
+      border-color: white;
     }
 
     &:hover {
@@ -40,6 +39,7 @@
     &--active {
       color: white;
       background-color: black;
+      outline: 4px solid transparent; // High-contrast mode
 
       @include dark-mode() {
         background-color: white;
