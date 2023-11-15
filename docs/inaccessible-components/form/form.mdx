@@ -110,6 +110,13 @@ The usage of certain techniques depends on the circumstances. Expand each consid
 
 <details>
   <summary>
+    <span>Consider the validation type.</span>
+  </summary>
+  You can validate the form on any change in the input field, blur, and form submit. All methods have pros and cons, but we recommend the on-submit validation. Why? Some screen reader users first navigate through all the form fields to learn how many are there before they start filling out the form. Users may also accidentally click or tab into/from any form field. It might be obtrusive if errors are displayed immediately when users did not start filling the form.
+</details>
+
+<details>
+  <summary>
     <span>Consider different focus locations when submitting invalid data.</span>
   </summary>
   When the form is submitted and contains errors, the focus can be set also to the error message itself, instead of the first invalid field.
