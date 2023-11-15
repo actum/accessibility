@@ -1,35 +1,72 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from 'react'
 
-export const useForm = (initialValues, onSubmitCallback) => {
-  const [values, setValues] = useState(initialValues);
+export const useForm = (
+  initialValues,
+  initialErrors,
+  validationSchema,
+  onSubmitCallback,
+) => {
+  const [state, setState] = useState({
+    values: initialValues,
+    errors: initialErrors,
+    isSubmitting: false,
+  })
+  const isValid = Object.values(state.errors).findIndex(error => !!error) < 0
 
-  const handleInputChange = useCallback(
+  const handleChange = useCallback(
     (event, id) => {
-      setValues({
-        ...values,
-        [id ? id : event.target.id]: event.target.value
-      });
+      setState(ps => ({
+        ...ps,
+        values: {
+          ...ps.values,
+          [id ? id : event.target.id]: event.target.value,
+        },
+      }))
     },
-    [values]
-  );
+    [state],
+  )
 
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
-    if (onSubmitCallback) {
-      onSubmitCallback(values);
+  const validate = useCallback(
+    (nextValues, options) => {
+      setState(ps => ({
+        ...ps,
+        ...options,
+        errors: Object.entries(nextValues).reduce(
+          (acc, [key, value]) => ({ ...acc, ...validationSchema(key, value) }),
+          {},
+        ),
+      }))
+    },
+    [state],
+  )
+
+  const handleSubmit = useCallback(
+    event => {
+      event.preventDefault()
+      validate(state.values, { isSubmitting: true })
+    },
+    [state],
+  )
+
+  const handleReset = useCallback(() => {
+    setState({
+      values: initialValues,
+      errors: initialErrors,
+      isSubmitting: false,
+    })
+  }, [])
+
+  useEffect(() => {
+    if (onSubmitCallback && state.isSubmitting) {
+      onSubmitCallback(state.values, isValid)
     }
-  };
-
-  const handleFormReset = (event) => {
-    event.preventDefault();
-    setValues(initialValues);
-  };
+  }, [state.errors])
 
   return {
-    values,
-    handleInputChange,
-    handleFormSubmit,
-    handleFormReset,
-    setValues
-  };
-};
+    ...state,
+    isValid,
+    onChange: handleChange,
+    onSubmit: handleSubmit,
+    onFormReset: handleReset,
+  }
+}

@@ -1,117 +1,110 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
-import { useForm } from "./useForm";
-import classNames from "classnames";
-import styles from "!!raw-loader!sass-loader!./index.scss"
+import React, { useRef } from 'react'
+import { useForm } from './useForm'
+import classNames from 'classnames'
+import styles from '!!raw-loader!sass-loader!./index.scss'
 
 const initialValues = {
-  fullName: "",
-  email: "",
-  phoneNumber: "",
-  message: ""
-};
+  fullName: '',
+  email: '',
+  phoneNumber: '',
+  message: '',
+}
 
-const validateEmail = (email) =>
-  email.match(
-    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-  );
+const initialErrors = {
+  fullName: null,
+  email: null,
+  phoneNumber: null,
+  message: null,
+}
 
-const validatePhoneNumber = (phoneNumber) => {
-  if (phoneNumber === "") return true
+const validateEmail = email =>
+  !!email.match(
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+  )
 
-  return phoneNumber.match(
-    /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/
+const validatePhoneNumber = phoneNumber => {
+  if (phoneNumber === '') return true
+
+  return !!phoneNumber.match(
+    /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/,
   )
 }
+
+// validation schema returns errors as err messages in string
+const validationSchema = (id, value) => {
+  let errors = {}
+  if (id === 'fullName') {
+    errors.fullName = !value ? 'Please enter your full name.' : ''
+  } else if (id === 'phoneNumber' && value) {
+    errors.phoneNumber = validatePhoneNumber(value)
+      ? ''
+      : 'Please enter your phone number in the correct format.'
+  } else if (id === 'email') {
+    errors.email = validateEmail(value)
+      ? ''
+      : !value
+      ? 'Please enter your email address.'
+      : 'Please enter your email address in the correct format.'
+  } else if (id === 'message') {
+    errors.message = !value ? 'Please enter your message.' : ''
+  }
+
+  return errors
+}
+
 export default function Form() {
-  const { values, setValues, handleInputChange } = useForm(initialValues);
-  const [wasValidated, setWasValidated] = useState(false);
-  const [formValid, setFormValid] = useState(false);
-  const formRef = useRef(null);
-  const errorMessageRef = useRef(null);
-  const successMessageRef = useRef(null);
+  const formRef = useRef(null)
+  const successMessageRef = useRef(null)
 
-  const fullNameInvalid = useMemo(
-    () => wasValidated && !formValid && !values.fullName,
-    [wasValidated, formValid, values.fullName]
-  );
-
-  const emailInvalid = useMemo(
-    () => wasValidated && !formValid && !validateEmail(values.email),
-    [wasValidated, formValid, values.email]
-  );
-
-  const phoneNumberInvalid = useMemo(
-    () => wasValidated && !formValid && !validatePhoneNumber(values.phoneNumber),
-    [wasValidated, formValid, values.phoneNumber]
-  );
-
-  const messageInvalid = useMemo(
-    () => wasValidated && !formValid && !values.message,
-    [wasValidated, formValid, values.message]
-  );
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    setWasValidated(false);
-
-    if (values.fullName && validateEmail(values.email) && values.message) {
-      setFormValid(true);
-      setValues(initialValues);
-
-      successMessageRef.current.focus();
+  const handleSubmit = (_values, isFormValid) => {
+    if (isFormValid) {
+      // sends request with values
+      successMessageRef?.current?.focus()
     } else {
-      setFormValid(false);
-
-      // move focus to the error message
-      // errorMessageRef.current.focus();
-
-      // or move focus to the first invalid field
-      focusFirstInvalidField();
-    }
-
-    setWasValidated(true);
-  };
-
-  useEffect(() => {
-    if (wasValidated && !formValid) {
       // move focus to the first invalid field
-      focusFirstInvalidField();
-    }
-  }, [wasValidated, formValid]);
+      const firstInvalidField = formRef.current.querySelector(
+        '[aria-invalid="true"]',
+      )
 
-  const focusFirstInvalidField = () => {
-    const firstInvalidField = formRef.current.querySelector(
-      '[aria-invalid="true"]'
-    );
-    firstInvalidField && firstInvalidField.focus();
-  };
+      if (firstInvalidField) {
+        firstInvalidField.focus()
+      }
+    }
+  }
+
+  const {
+    values,
+    errors,
+    isValid,
+    isSubmitting,
+    onChange: handleChange,
+    onSubmit,
+  } = useForm(initialValues, initialErrors, validationSchema, handleSubmit)
 
   return (
     <>
-      <style dangerouslySetInnerHTML={{__html: styles}} />
+      <style dangerouslySetInnerHTML={{ __html: styles }} />
       <div>
         <h1>Drop us a message!</h1>
         <div ref={successMessageRef} tabIndex={-1}>
-          {wasValidated && formValid && (
+          {isSubmitting && isValid && (
             <div className="message message--success" role="alert">
               We have saved your message, thank you!
             </div>
           )}
         </div>
-        <div ref={errorMessageRef} tabIndex={-1}>
-          {wasValidated && !formValid && (
+        <div tabIndex={-1}>
+          {isSubmitting && !isValid && (
             <div className="message message--error" role="alert">
-              The form contains one or more errors. Below each invalid field, you
-              will find a hint on how to fix the error.
+              The form contains one or more errors. Below each invalid field,
+              you will find a hint on how to fix the error.
             </div>
           )}
         </div>
-        <p>All fields marked with * are required.</p>
-        <form className="form" onSubmit={handleSubmit} ref={formRef} noValidate>
+        <form className="form" onSubmit={onSubmit} ref={formRef} noValidate>
           <div className="form__row">
             <label className="form__label" htmlFor="fullName">
-              Full name *
+              Full name
             </label>
             <input
               type="text"
@@ -119,26 +112,27 @@ export default function Form() {
               name="fullName"
               className={classNames({
                 form__control: true,
-                "form__control--invalid": fullNameInvalid
+                'form__control--invalid': errors.fullName,
               })}
-              aria-invalid={fullNameInvalid}
+              aria-invalid={!!errors.fullName}
               required
               value={values.fullName}
-              onChange={handleInputChange}
-              {...(fullNameInvalid
-                ? { "aria-describedby": "fullNameError" }
+              onChange={handleChange}
+              autoComplete="name"
+              {...(errors.fullName
+                ? { 'aria-describedby': 'fullNameError' }
                 : {})}
             />
-            {fullNameInvalid && (
+            {errors.fullName && (
               <span className="form__error" id="fullNameError">
-                Please enter your full name.
+                {errors.fullName}
               </span>
             )}
           </div>
 
           <div className="form__row">
             <label className="form__label" htmlFor="email">
-              Email *
+              Email
             </label>
             <input
               type="email"
@@ -146,26 +140,25 @@ export default function Form() {
               name="email"
               className={classNames({
                 form__control: true,
-                "form__control--invalid": emailInvalid
+                'form__control--invalid': errors.email,
               })}
-              aria-invalid={emailInvalid}
+              aria-invalid={!!errors.email}
               required
               value={values.email}
-              onChange={handleInputChange}
-              {...(emailInvalid ? { "aria-describedby": "emailError" } : {})}
+              onChange={handleChange}
+              autoComplete="email"
+              {...(errors.email ? { 'aria-describedby': 'emailError' } : {})}
             />
-            {emailInvalid && (
+            {errors.email && (
               <span className="form__error" id="emailError">
-                {values.email === ""
-                  ? "Please enter your email address."
-                  : "Please enter your email address in the correct format."}
+                {errors.email}
               </span>
             )}
           </div>
 
           <div className="form__row">
             <label className="form__label" htmlFor="phoneNumber">
-              Phone number
+              Phone number (optional)
             </label>
             <input
               type="tel"
@@ -173,28 +166,32 @@ export default function Form() {
               name="phoneNumber"
               className={classNames({
                 form__control: true,
-                "form__control--invalid": phoneNumberInvalid
+                'form__control--invalid': errors.phoneNumber,
               })}
-              aria-invalid={phoneNumberInvalid}
+              aria-invalid={!!errors.phoneNumber}
               placeholder="+420 123 456 789"
               aria-describedby="phoneNumberHelp"
               value={values.phoneNumber}
-              onChange={handleInputChange}
-              {...(phoneNumberInvalid ? { "aria-describedby": "phoneNumberError" } : {})}
+              onChange={handleChange}
+              autoComplete="tel"
+              {...(errors.phoneNumber
+                ? { 'aria-describedby': 'phoneNumberError' }
+                : {})}
             />
-            {phoneNumberInvalid && (
+            {errors.phoneNumber && (
               <span className="form__error" id="phoneNumberError">
-                Please enter your phone number in the correct format.
+                {errors.phoneNumber}
               </span>
             )}
             <span className="form__help" id="phoneNumberHelp">
-              You can enter the phone number with or without the country code and space characters.
+              You can enter the phone number with or without the country code
+              and space characters.
             </span>
           </div>
 
           <div className="form__row">
             <label className="form__label" htmlFor="message">
-              Your message *
+              Your message
             </label>
             <textarea
               id="message"
@@ -202,17 +199,19 @@ export default function Form() {
               placeholder="Anything you would like to share with us..."
               className={classNames({
                 form__control: true,
-                "form__control--invalid": messageInvalid
+                'form__control--invalid': errors.message,
               })}
-              aria-invalid={messageInvalid}
+              aria-invalid={!!errors.message}
               required
               value={values.message}
-              onChange={handleInputChange}
-              {...(messageInvalid ? { "aria-describedby": "messageError" } : {})}
+              onChange={handleChange}
+              {...(errors.message
+                ? { 'aria-describedby': 'messageError' }
+                : {})}
             ></textarea>
-            {messageInvalid && (
+            {errors.message && (
               <span className="form__error" id="messageError">
-                Please enter your message.
+                {errors.message}
               </span>
             )}
           </div>
@@ -223,5 +222,5 @@ export default function Form() {
         </form>
       </div>
     </>
-  );
+  )
 }
