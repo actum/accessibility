@@ -1,6 +1,6 @@
 # 1.3.5 - Identify Input Purpose - AA
 
-(future video slot)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-C_ObQBxU-w" title="1.3.5 - Identify Input Purpose - WCAG Documents" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
 ## Intent
 
@@ -14,13 +14,11 @@ The purpose of each input field that collects information about the user can be 
 
 ## Input Purpose
 
-<img src="/img/1.3.3-sensory-characteristics.png" srcSet="/img/1.3.3-sensory-characteristics.png 1x, /img/1.3.3-sensory-characteristics-2x.png 2x" alt="" width="400" height="424" style={{aspectRatio: '400/424' }} />
-
 It is important to offer extra information about form inputs (such as those for address, phone, or password) in a way that a computer can understand, making it possible to present this information in various ways to users.
 
 Simply providing a label and a <code>type</code> attribute for relevant input fields is not sufficient to meet this success criterion. The <code>type</code> attribute alone may not clearly indicate the purpose of the input field. For instance, <code>type="text"</code> does not specify what kind of information is expected from users. The label describes it, but the information must be programmatically determined to ensure accessibility.
 
-To establish this programmatic connection, use the <code>autocomplete</code> attribute with an appropriate value for the input field. You can refer to the [Section 7 of the WCAG Recommendation](https://www.w3.org/TR/WCAG21/#input-purposes), titled "Input Purposes for User Interface Components," to find a list of possible values to use for this attribute.
+To establish this programmatic connection, use the <code>autocomplete</code> attribute with an appropriate value for the input field. You can refer to the Section 7 of the WCAG Recommendation, titled [Input Purposes for User Interface Components](https://www.w3.org/TR/WCAG21/#input-purposes), to find a list of possible values to use for this attribute.
 
 Browsers and assistive technologies use this information to help the user in various ways, including automatically completing forms, filling in usernames and passwords, but also pairing custom icons with form elements for users who prefer using images for communication or who have trouble understanding words. For instance, the assistive technology may place a credit card image near the field requesting the credit card number input, making it easier for users to input the number.
 
@@ -67,11 +65,15 @@ The first input is missing the programmatic association because the <code>autoco
 ## Test your knowledge
 
 <details>
-	<summary><span>Should all form inputs collecting the user data have appropriate images or symbols next to them?</span></summary>
+	<summary>
+		<span>Should all form inputs collecting the user data have appropriate images or symbols next to them?</span>
+	</summary>
   No, while you can use images or symbols to enhance accessibility, it is not required by this success criterion and is usually implemented by assistive technologies.
 </details>
 
 <details>
-	<summary><span>The <code>autofill</code> attribute should be used only for form inputs collecting the user's personal data. True or false?</span></summary>
+	<summary>
+		<span>The <code>autofill</code> attribute should be used only for form inputs collecting the user's personal data. True or false?</span>
+	</summary>
 	False, the <code>autocomplete</code> attribute should be used for that.
 </details>
