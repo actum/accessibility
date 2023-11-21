@@ -1,0 +1,63 @@
+# 1.3.4 - Orientation - AA
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KgVKgfb3uX4" title="1.3.4 - Orientation - WCAG Documents" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+
+## Intent
+
+Content displays in the orientation the user prefers (portrait or landscape).
+
+## Who Benefits
+
+- People with **dexterity impairments** who have the device mounted in a fixed orientation, such as on the arm of a wheelchair, can view the content in that orientation.
+- People with **low vision** can customize the view to suit their needs, such as switching to landscape mode to enlarge the text for easier reading.
+- People who **prefer one orientation** are not forced to view the content in the other.
+
+## Orientation
+
+<img src="/img/1.3.4-portrait-landscape.png" srcSet="/img/1.3.4-portrait-landscape.png 1x, /img/1.3.4-portrait-landscape-2x.png 2x" alt="" width="400" height="274" style={{aspectRatio: '400/274' }} />
+
+Orientation refers to how content is displayed on a screen, whether in a vertical (portrait) or horizontal (landscape) position. It can be problematic for users when a website locks content to a specific orientation, expecting users to adjust their devices accordingly.
+
+Avoid restricting the page orientation. Instead, let users control it.
+
+## Exceptions
+
+A webpage or an application can be locked in a specific orientation when it is essential, such as when it is not usable in the other orientation. An example could be a piano app, where the keys would be too small in the portrait mode.
+
+## Examples
+
+### Correct Usage
+
+The following example shows the correct usage or implementation of accessibility.
+
+#### Example 1: Responsive website
+
+A blog website allows users to view it on mobile, tablet, and desktop devices while it adapts its design and layout - it is responsive. Also, it does not lock orientation, so users of mobile devices can view it in their preferred mode - portrait or landscape. Fortunately, most websites today are built this way.
+
+### Incorrect Usage
+
+The following example shows incorrect usage or implementation of accessibility.
+
+#### Example 1: Please rotate your device!
+
+A documentation website allows users to view it only in landscape mode. As soon as users switch to portrait mode, the page shows only the message "Please rotate your device to view the page." Such a message forces users into a specific orientation, causing frustration for those who prefer or need to use their devices in portrait mode, especially if they have physical limitations or have mounted their devices in a fixed orientation, like on a wheelchair. It restricts their ability to access content.
+
+```html title="Landscape orientation experience"
+Please rotate your device to view the page.
+```
+
+## Test your knowledge
+
+<details>
+	<summary>
+		<span>Is it essential for websites to ensure content remains accessible and usable in different screen orientations to accommodate diverse user needs?</span>
+	</summary>
+  Yes, this success criterion emphasizes the importance of providing content in various orientations to meet the various user needs.
+</details>
+
+<details>
+	<summary>
+		<span>Implementing this success criterion means that all images and graphics must be locked in portrait mode for consistency. True or false?</span>
+	</summary>
+	False, this success criterion does not require images and graphics to be locked in a specific orientation. It encourages flexibility in orientation.
+</details>
