@@ -1,0 +1,53 @@
+# 1.4.1 - Audio Control - A
+
+(future video slot)
+
+## Intent
+
+If any audio plays automatically for more than 3 seconds, provide a way for users to stop it.
+
+## Who Benefits
+
+- People who use **screen readers** can hear its speech output without other sounds playing.
+- People who have **difficulty focusing on visual content** are not distracted when audio starts playing unexpectedly.
+- Anyone is not distracted when audio starts playing unexpectedly, especially if they have set high system volume.
+
+## Audio Control
+
+It is highly recommended that the sound should be started by an action from user. If the audio starts to play automatically, screen reader users may not find a way to stop it because of interfering sounds. Screen reader users can find it hard to hear the speech output if there is another audio playing at the same time, especially if both sounds have the same volume. And it may also scare users!
+
+If sound starts playing automatically on a webpage, it should either be shorter than 3 seconds, or there should be a simple way for users to pause or stop it.
+
+## Examples
+
+### Correct Usage
+
+The following example shows the correct usage or implementation of accessibility.
+
+#### Example 1: Online Quiz
+
+A website contains an online quiz. When you answer a question correctly, you hear a quick, happy sound (like a chime), and if you get it wrong, you hear a short, not-so-happy sound (like a buzzer). These sounds, each about 1 second long, let you know if you got the answer right or wrong. Even if you cannot see the screen, these sounds help everyone understand how they are doing in the quiz. Because these sounds happen as a result of a user action, like answering a question, and they are short, less than 3 seconds, it meets the Audio Control criterion. However, there is also a button giving users a way to turn sounds off completely to adjust things the way they prefer.
+
+### Incorrect Usage
+
+The following example shows incorrect usage or implementation of accessibility.
+
+#### Example 1: Christmas E-shop
+
+An online shopping website is offering festive items for Christmas. As soon as you visit the page, it starts playing Christmas carols over and over again, and you cannot turn it off. While the intention is to spread holiday cheer during the shopping experience, it might not be so great for everyone. Without any option to turn off the sound, it creates a potentially frustrating experience for users. The constant sound can be super frustrating for people who use screen readers because it is harder for them to focus on what they are trying to read or navigate. Despite the well-meaning effort to enhance the holiday mood, this implementation goes against the Audio Control criterion as it lacks user-friendly sound controls.
+
+## Test Your Knowledge
+
+<details>
+  <summary>
+    <span>Is it acceptable for a website to have a video with background music that plays for 7 seconds automatically upon page load, with no control options?</span>
+   </summary>
+   No, it is not acceptable. The automatic audio exceeds the 3-second limit, and no user controls are provided, violating the Audio Control criterion.
+</details>
+
+<details>
+   <summary>
+      <span>If a website plays a 2-second notification sound automatically when a user submits a form, is it compliant with the Audio Control criterion?</span>
+   </summary>
+   Yes, it is compliant. Since the sound is triggered by a user action (submitting a form) and is shorter than 3 seconds, it meets the Audio Control criterion.
+</details>
