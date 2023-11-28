@@ -151,6 +151,11 @@
       }
     }
   }
+
+  &__copyright a,
+  &__link-item:hover {
+    color: #cf382e; // Increase the contrast ratio on grey background
+  }
 }
 
 // Menu
