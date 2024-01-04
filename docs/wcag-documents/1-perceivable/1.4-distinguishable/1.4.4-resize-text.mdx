@@ -18,15 +18,18 @@ This criterion covers not only standard text like paragraphs, headings, and list
 
 ### Resizing Text
 
-Users must be able to resize text up to 200% without assistive technologies, including:
+Users must be able to resize text up to 200% without assistive technologies using the following:
 
 - **Operating system settings**: Adjusting text size settings in the device's operating system.
 - **Browser zoom**: Using the browser's zoom feature to enlarge webpage content.
 - **Browser font size settings**: Changing the default font size in browser settings.
+- **Webpage settings**: Adjusting the text size by controls on a webpage.
 
-Although not required by WCAG, testing even further, for example, with 500% increase, can help ensure even better accessibility.
+Although not required by WCAG, testing even further, for example, with 400% increase, can help ensure even better accessibility.
 
-Remember, using tools like screen magnifiers or third-party browser extensions are considered assistive technologies and do not count towards meeting this criterion.
+Remember, tools like screen magnifiers or third-party browser extensions are considered assistive technologies and achieving text resize using them do not count towards meeting this criterion.
+
+When text is scaled up to 200%, every webpage element, including navigational links, interactive forms, and informational content, should remain fully functional and accessible. This means that the page layout should adapt to the increased text size without causing any loss of information or functionality. The text should not be clipped or obscured, and all interactive elements should remain operable.
 
 ## Exceptions
 
@@ -39,13 +42,41 @@ Captions and images of text are not included in requirements of this criterion.
 The following example shows the correct usage or implementation of accessibility.
 
 #### Example 1: Relative Font Units
+
+A website uses relative (`rem`) units for defining font sizes. When users change their font size in the browser settings, the browser respects this setting and renders the font in the size the user sets. For instance, a user with low vision may adjust their browser settings to make the text larger.
+
 #### Example 2: Meta Viewport
+
+A website is designed to be fully responsive. In its HTML, it has the following <code>meta viewport</code> tag: <pre>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;</pre>
+
+This setting allows users to freely zoom in and out on the content, accommodating their needs for larger text.
 
 ### Incorrect Usage
 
 The following example shows incorrect usage or implementation of accessibility.
 
 #### Example 1: Fixed Height
+
+A news portal has its article sections styled with CSS, where the text containers have fixed heights. When a user with impaired vision increases the browser's default text size, the text within these containers overflows, becoming invisible or getting cut off. The fixed height of the containers doesn't allow the text to reflow, resulting in inaccessible content for users who need larger text.
+
 #### Example 2: Meta Viewport
 
+A website uses a restrictive meta viewport tag in its HTML: <pre>&lt;meta name=&quot;viewport&quot; content=&quot;user-scalable=no, maximum-scale=1&quot; /&gt;</pre>
+
+This prevents users from zooming into the web pages. A user trying to enlarge the text for better readability finds that they are unable to zoom in at all. This limitation makes using the website difficult for users with visual impairments.
+
 ## Test Your Knowledge
+
+<details>
+  <summary>
+    <span>Is a website compliant with WCAG 1.4.4 - Resize Text if its text can be resized, but certain text elements like buttons or navigation menus do not resize?</span>
+  </summary>
+  No, it is not compliant. WCAG 1.4.4 - Resize Text requires all text elements, including buttons and navigation menus, to be resizable. If certain elements do not resize, it can impact the usability of the website for users with visual impairments.
+</details>
+
+<details>
+  <summary>
+    <span>If a website allows text resizing up to 150%, and does so without losing content or functionality, is it compliant with WCAG 1.4.4 - Resize Text?</span>
+  </summary>
+  No, it is not compliant. WCAG 1.4.4 - Resize Text requires that text must be resizable up to 200% without loss of content or functionality.
+</details>
