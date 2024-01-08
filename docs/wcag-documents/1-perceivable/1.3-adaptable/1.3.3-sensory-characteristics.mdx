@@ -1,6 +1,6 @@
 # 1.3.3 - Sensory Characteristics - A
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Uaz-Wp6QaPQ" title="1.3.3 - Sensory Characteristics - WCAG Documents" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IRx6z4POPrk" title="1.3.3 - Sensory Characteristics - WCAG Documents" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
 ## Intent
 
@@ -21,9 +21,9 @@ Visual and auditory clues like shape, size, location, orientation, color, or sou
 
 ### Correct Usage
 
-The following examples show the correct usage or implementation of accessibility.
+The following example shows the correct usage or implementation of accessibility.
 
-#### Example 1: Page instructions
+#### Example 1: Page Instructions
 
 The instructions on the page say: "To access settings, click on the gear-shaped icon labeled 'Settings' at the top right corner."
 
@@ -33,19 +33,11 @@ To provide information about a shape and a location only would not be enough, bu
 To access settings, click on the gear-shaped icon labeled 'Settings' at the top right corner.
 ```
 
-#### Example 2: Form validation
-
-There is a form with two input fields for the full name and the e-mail address, plus the submit button saying "Send". The form validation shows the "E-mail address" label in a red color, the border of the input field also turned red, and there is an error message below saying "Please enter the e-mail address in a correct format. For example, john&#46;doe@email&#46;com.".
-
-There are visual clues that the form contains an error - that is represented by red color. Also, users are informed about the error in text and are advised how to fix it. Users who cannot see, for example, would not be able to perceive the visual clues, but because there is an error message, they get the same information as a visual user.
-
-<img src="/img/1.3.3-example-validation-with-text.jpg" srcSet="/img/1.3.3-example-validation-with-text.jpg 1x, /img/1.3.3-example-validation-with-text-2x.jpg 2x" alt="Form validation showing error states in red color and providing an error message in text." width="600" height="491" style={{aspectRatio: '600/491' }} />
-
 ### Incorrect Usage
 
-The following examples show incorrect usage or implementation of accessibility.
+The following example shows the incorrect usage or implementation of accessibility.
 
-#### Example 1: Form submit instructions
+#### Example 1: Form Submit Instructions
 
 The instructions in the form say: "Press the green button to submit the form.".
 
@@ -59,14 +51,6 @@ This is problematic for many users:
 Press the green button to submit the form.
 ```
 
-#### Example 2: Form validation
-
-There is again the same form with two input fields and the submit button. The form validation shows the "E-mail address" label in a red color and the border of the input field also turned red. But these are the only clues to identify the error in the form.
-
-Not only some users cannot or might not perceive this color change at all, such as blind or visually impaired users, but other users might not realize there is an error if there is no other indication, such as an error message.
-
-<img src="/img/1.3.3-example-validation-without-text.jpg" srcSet="/img/1.3.3-example-validation-without-text.jpg 1x, /img/1.3.3-example-validation-without-text-2x.jpg 2x" alt="Form validation showing error states in red color but lacking error message in text." width="600" height="491" style={{aspectRatio: '600/491' }} />
-
 ## Test your knowledge
 
 <details>
@@ -74,11 +58,4 @@ Not only some users cannot or might not perceive this color change at all, such 
     <span>When providing instructions for users, I cannot use shape, color, or visual location in my description. True or false?</span>
   </summary>
 	False, do use shape, color, or visual location in your description as it might help users. Just make sure these are not the only means of providing the description. Other indications need to be added, for example, a textual identification.
-</details>
-
-<details>
-	<summary>
-    <span>If a website uses a green button to indicate a positive action and a red button for a negative action, is it compliant with WCAG 1.3.3?</span>
-  </summary>
-  It is compliant only if there are also textual indications or other non-color-based methods to distinguish between the two actions.
 </details>

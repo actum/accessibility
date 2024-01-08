@@ -155,6 +155,10 @@
   &__copyright a,
   &__link-item:hover {
     color: #cf382e; // Increase the contrast ratio on grey background
+
+    @include dark-mode() {
+      color: var(--ifm-color-theme);
+    }
   }
 }
 
