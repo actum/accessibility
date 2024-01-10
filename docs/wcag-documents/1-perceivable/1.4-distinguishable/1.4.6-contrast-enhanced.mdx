@@ -1,0 +1,54 @@
+# 1.4.6 - Contrast (Enhanced) - AAA
+
+(future video slot)
+
+## Intent
+
+Text has enough contrast against its background color.
+
+:::info
+All of the points from the [1.4.3 Contrast (Minimum) - AA](./1.4.3-contrast-minimum.mdx) apply to this criterion; only the contrast ratio requirements are more strict.
+:::
+
+### Contrast Ratio
+
+The contrast ratio is a way to measure how much one color stands out from another.
+
+This criterion contains requirements for two types of text:
+
+- Normal text - text that has less than <strong>24px</strong> or <strong>18.5px in bold</strong> needs to have a contrast ratio at least <strong>7:1</strong>.
+- Large text - text that has at least <strong>24px</strong> or <strong>18.5px</strong> in bold needs to have a contrast ratio at least <strong>4.5:1</strong>.
+
+<img src="/img/1.4.6-contrast-ratio.jpg" srcSet="/img/1.4.6-contrast-ratio.jpg 1x, /img/1.4.6-contrast-ratio-2x.jpg 2x" alt="" width="900" height="300" style={{aspectRatio: '900/300' }} />
+
+These ratio requirements are the only difference between Contrast (Minimum) and Contrast (Enhanced) criteria. To sum it up:
+
+- In 1.4.3 - Contrast (Minimum) - AA, the contrast needs to be at least 4.5:1 for text and 3:1 for large text.
+- In 1.4.6 - Contrast (Enhanced) - AAA, the contrast needs to be at least 7:1 for text and 4.5:1 for large text.
+
+## Examples
+
+### Correct Usage
+
+The following example shows the correct usage or implementation of accessibility.
+
+#### Example 1: Sufficient Contrast
+
+Dark, almost black text is placed over a light, almost white background color. It has a large contrast ratio, way beyond the minimum requirements, and is easy to read.
+
+### Incorrect Usage
+
+The following example shows incorrect usage or implementation of accessibility.
+
+#### Example 1: Insufficient Contrast
+
+Dark red text is placed over a dark black background color. It has a very low contrast ratio below the minimum requirements and is hard to read.
+
+## Test Your Knowledge
+
+<details>
+  <summary>
+    <span>Is a website compliant with WCAG 1.4.6 - Contrast (Enhanced) if it uses black text on a white background for its main content?</span>
+  </summary>
+  Yes, it is compliant. Using black text on a white background creates the largest possible contrast ratio.
+</details>

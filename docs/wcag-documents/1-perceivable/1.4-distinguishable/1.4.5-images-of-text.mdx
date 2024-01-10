@@ -1,0 +1,55 @@
+# 1.4.5 - Images of Text - AA
+
+(future video slot)
+
+## Intent
+
+Use actual text instead of images of text.
+
+## Who Benefits
+
+- People with **low vision** can modify font family, font size, or color to read text comfortably.
+- People with **dyslexia or other reading disorders** can benefit from customized text settings like font size or spacing for easier reading.
+- People who use **assistive technologies** can access and interpret text content.
+- People who **do not understand the language** can translate the text into their preferred language.
+- People who **create web content** do not need to create different language versions and different responsive layouts of images.
+
+## Images of Text
+
+<img src="/img/1.4.5-image-of-text.jpg" srcSet="/img/1.4.5-image-of-text.jpg 1x, /img/1.4.5-image-of-text-2x.jpg 2x" alt="A text saying: 'Hi. I am a text inside an image. You cannot change my color, font family, font size, line height, letter spacing, or word spacing.'" width="868" height="48" style={{aspectRatio: '868/48' }} />
+
+If the same visual effect as on the image can be achieved with web technologies (HTML, CSS, and JavaScript), web authors should use real text rather than images of text.
+
+Some users need to have text in a certain font family, font size, letter spacing, line spacing, or color so they can read it well. When using images of text, none of this can be adjusted by users. Users who want to magnify or enlarge images would see it blurry or pixelated. Also, images are slower to download than text.
+
+## Exceptions
+
+You can use images of text when the image is:
+
+- **Decorative**: Where the image of text serves a purely decorative purpose without conveying essential information.
+- **Essential**: Where a specific presentation of text is crucial, such as in logos or branding.
+- **Customizable**: Where the image of text can be visually customized to the user's requirements, which is not common on the web.
+- **Non-Text-Centric**: Where the image includes text but primarily consists of significant other visual content, such as graphs, screenshots, and diagrams that convey information visually beyond the text itself.
+
+## Examples
+
+### Correct Usage
+
+The following example shows the correct usage or implementation of accessibility.
+
+#### Example 1: Styled Headings
+
+A website uses CSS to style headings in a specific font and size rather than using images of text. This allows users to adjust the text size and style according to their preferences.
+
+#### Example 2: Logotype
+
+A website contains a logotype of an organization. It consists of a logo and some text. Everything is one image, and the text cannot be adjusted by users, but because this is a part of branding, the image is essential here to preserve the design integrity. The image contains an alternative text so users of assistive technologies know what it represents.
+
+## Test Your Knowledge
+
+<details>
+  <summary>
+    <span>Can a company logo that includes stylized text be considered an exception for WCAG 1.4.5 - Images of Text?</span>
+  </summary>
+  Yes, it can be an exception. Logos often require specific typography as part of their branding, which is essential and permissible as an image of text.
+</details>

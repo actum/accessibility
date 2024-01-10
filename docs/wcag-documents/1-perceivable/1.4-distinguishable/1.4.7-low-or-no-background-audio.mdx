@@ -1,0 +1,65 @@
+# 1.4.7 - Low or No Background Audio - AAA
+
+(future video slot)
+
+## Intent
+
+Speech in audio content is not interfered with by background sound.
+
+## Who Benefits
+
+- People with **hearing impairments** can focus on the speech without being distracted or overwhelmed by background noise.
+- Individuals with **attention-deficit disorders** or **cognitive disabilities** can better concentrate on the primary content without auditory distractions.
+- **Non-native speakers** can understand the speech more easily when it's not competing with background sounds.
+- Anyone in a **noisy environment** (like a public space) can hear the speech without the need to overcome additional background noise from the audio content itself.
+
+## Background Audio
+
+Background audio in pre-recorded audio content containing speech can make it challenging for many users to focus on and comprehend the primary speech. This criterion aims to ensure that speech remains the dominant audio element, either by not including or minimizing background sounds or offering users control over their presence and volume.
+
+To satisfy this criterion, you can:
+
+- Choose or create audio without background noise.
+- Provide user control over background audio by implementing features in your audio player that allow users to mute or adjust the volume of background tracks independently from the speech.
+- Ensure that any background sounds are significantly quieter than the speech. Background audio should be at least 20 decibels lower than the primary speech content, making it approximately four times quieter.
+
+## Exceptions
+
+This criterion does not apply to audio content that:
+- contains primarily speech in the foreground
+- is a musical expression such as singing, where background sounds are integral to the experience
+- is an audio CAPTCHA
+
+## Examples
+
+### Correct Usage
+
+The following example shows the correct usage or implementation of accessibility.
+
+#### Example 1: Podcast with Adjustable Background Music
+
+A podcast offers a slider control for background music. Listeners can adjust the music volume or turn it off, allowing them to focus solely on the dialogue.
+
+### Incorrect Usage
+
+The following example shows incorrect usage or implementation of accessibility.
+
+#### Example 1: Audio Book with Constant Background Noise
+
+An audiobook has a continuous background sound (like rain) at a volume comparable to the narrator's voice, which distracts listeners and reduces comprehension.
+
+## Test Your Knowledge
+
+<details>
+  <summary>
+    <span>Is an audio guide compliant with WCAG 1.4.7 - Low or No Background Audio if it features background sounds at the same volume as the speech?</span>
+  </summary>
+  No, it is not compliant. For compliance, background sounds must be significantly quieter (at least 20 decibels lower) than the speech to not disrupt or mask the primary content.
+</details>
+
+<details>
+  <summary>
+    <span>If an educational video offers the option to control or mute background music, does it meet WCAG 1.4.7 - Low or No Background Audio criterion?</span>
+  </summary>
+  Yes, it meets the criterion as it provides users the ability to control or eliminate background audio, ensuring the speech remains the primary focus.
+</details>
