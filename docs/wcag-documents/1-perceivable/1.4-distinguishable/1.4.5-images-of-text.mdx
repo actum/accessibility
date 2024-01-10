@@ -4,22 +4,30 @@
 
 ## Intent
 
-Use real text instead of images of text.
+Use actual text instead of images of text.
 
 ## Who Benefits
 
-People with low vision can easily modify font size, color, and contrast to read text comfortably.
-People with dyslexia or other reading disorders can benefit from customized text settings like font type, size, and spacing for easier reading.
-People who use assistive technologies can seamlessly access and interpret text content
+- People with **low vision** can modify font family, font size, or color to read text comfortably.
+- People with **dyslexia or other reading disorders** can benefit from customized text settings like font size or spacing for easier reading.
+- People who use **assistive technologies** can access and interpret text content.
+- People who **do not understand the language** can translate the text into their preferred language.
+- People who **create web content** do not need to create different language versions and different responsive layouts of images.
 
-- People with **low vision** can increase the text size and are able to read it.
-- People with **tired eyes** can increase the text size so reading is more comfortable.
-- People having devices with a **small screen** or a **distant screen** (such as a TV) can increase the text size to be able to read it.
+## Images of Text
 
-##
+If the same visual effect as on the image can be achieved with web technologies (HTML, CSS, and JavaScript), web authors should use real text rather than images of text.
+
+Some users need to have text in a certain font family, font size, letter spacing, line spacing, or color so they can read it well. When using images of text, none of this can be adjusted by users. Users who want to magnify or enlarge images would see it blurry or pixelated. Also, images are slower to download than text.
+
 ## Exceptions
 
-Captions and images of text are not included in requirements of this criterion.
+You can use images of text when the image is:
+
+- **Decorative**: Where the image of text serves a purely decorative purpose without conveying essential information.
+- **Essential**: Where a specific presentation of text is crucial, such as in logos or branding.
+- **Customizable**: Where the image of text can be visually customized to the user's requirements, which is not common on the web.
+- **Non-Text-Centric**: Where the image includes text but primarily consists of significant other visual content, such as graphs, screenshots, and diagrams that convey information visually beyond the text itself.
 
 ## Examples
 
@@ -27,42 +35,19 @@ Captions and images of text are not included in requirements of this criterion.
 
 The following example shows the correct usage or implementation of accessibility.
 
-#### Example 1: Relative Font Units
+#### Example 1: Styled Headings
 
-A website uses relative (`rem`) units for defining font sizes. When users change their font size in the browser settings, the browser respects this setting and renders the font in the size the user sets. For instance, a user with low vision may adjust their browser settings to make the text larger.
+A website uses CSS to style headings in a specific font and size rather than using images of text. This allows users to adjust the text size and style according to their preferences.
 
-#### Example 2: Meta Viewport
+#### Example 2: Logotype
 
-A website is designed to be fully responsive. In its HTML, it has the following <code>meta viewport</code> tag: <pre>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;</pre>
-
-This setting allows users to freely zoom in and out on the content, accommodating their needs for larger text.
-
-### Incorrect Usage
-
-The following example shows incorrect usage or implementation of accessibility.
-
-#### Example 1: Fixed Height
-
-A news portal has its article sections styled with CSS, where the text containers have fixed heights. When a user with impaired vision increases the browser's default text size, the text within these containers overflows, becoming invisible or getting cut off. The fixed height of the containers doesn't allow the text to reflow, resulting in inaccessible content for users who need larger text.
-
-#### Example 2: Meta Viewport
-
-A website uses a restrictive meta viewport tag in its HTML: <pre>&lt;meta name=&quot;viewport&quot; content=&quot;user-scalable=no, maximum-scale=1&quot; /&gt;</pre>
-
-This prevents users from zooming into the web pages. A user trying to enlarge the text for better readability finds that they are unable to zoom in at all. This limitation makes using the website difficult for users with visual impairments.
+A website contains a logotype of an organization. It consists of a logo and some text. Everything is one image, and the text cannot be adjusted by users, but because this is a part of branding, the image is essential here to preserve the design integrity. The image contains an alternative text so users of assistive technologies know what it represents.
 
 ## Test Your Knowledge
 
 <details>
   <summary>
-    <span>Is a website compliant with WCAG 1.4.4 - Resize Text if its text can be resized, but certain text elements like buttons or navigation menus do not resize?</span>
+    <span>Can a company logo that includes stylized text be considered an exception for WCAG 1.4.5 - Images of Text?</span>
   </summary>
-  No, it is not compliant. WCAG 1.4.4 - Resize Text requires all text elements, including buttons and navigation menus, to be resizable. If certain elements do not resize, it can impact the usability of the website for users with visual impairments.
-</details>
-
-<details>
-  <summary>
-    <span>If a website allows text resizing up to 150%, and does so without losing content or functionality, is it compliant with WCAG 1.4.4 - Resize Text?</span>
-  </summary>
-  No, it is not compliant. WCAG 1.4.4 - Resize Text requires that text must be resizable up to 200% without loss of content or functionality.
+  Yes, it can be an exception. Logos often require specific typography as part of their branding, which is essential and permissible as an image of text.
 </details>
