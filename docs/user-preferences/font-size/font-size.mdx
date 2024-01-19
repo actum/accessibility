@@ -70,9 +70,28 @@ The solution to the pixels problem lies in using relative units like <code>rem</
 
 ## Implementation
 
-The following example compares font sizes defined by <code>px</code> and <code>rem</code> units. It demonstrates how you can implement a font size that will respect users's browser settings.
+The following example demonstrates how you can implement font size in relative units. Users can benefit from their font size browser's settings only when the website has implemented the support for it.
 
-[Adjust the font size of your browser](#font-size-instructions-browser) and compare the following two texts to see the results.
+<details>
+  <summary>
+    <span>See the implementation details.</span>
+  </summary>
+  This snippet includes a paragraph of text accompanied by CSS styling. The style rules set the <code>font-size</code> to <code>100%</code> for the <code>html</code> element, aligning the entire document's base font size with the browser's settings.
+
+Additionally, there's a <code>.description</code> class which specifies a <code>font-size</code> of <code>1.25rem</code>. This means the font size for elements with the <code>.description</code> class will be 1.25 times the base font size. For instance, if the base font size is <code>16px</code>, then the text in the <code>.description</code> class will be rendered at <code>20px</code>.
+
+```
+<style>
+  html { font-size: 100%; }
+
+  .description { font-size: 1.25rem; }
+</style>
+
+<p class="description">This text has font size in rem units. It does respect the font size settings of the browser.</p>  
+```
+</details>
+
+[Adjust the font size of your browser](#font-size-instructions-browser) and compare the following two texts defined by <code>px</code> and <code>rem</code> units to see how the units respect your browser settings.
 
 <PreviewWrapper title="Font size implementation example" codeHref="https://codesandbox.io/s/font-size-mh6424">
   <FontSize />
