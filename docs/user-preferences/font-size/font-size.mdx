@@ -1,0 +1,79 @@
+import PreviewWrapper from './../../../src/components/PreviewWrapper'
+import FontSize from './'
+
+# Font size
+
+(future video slot)
+
+Font size refers to how big or small the text appears on the screen. It is an important part of web design, affecting how easily people can read and interact with online content.
+
+## Benefits
+
+The ability to adjust the font size has several advantages:
+
+- **Better readability**: Bigger text is easier to read, especially for people with vision impairments.
+- **User preference**: Everyone has their own comfort level with text size, depending on their eyesight or the device they are using.
+- **Eye comfort**: Adjusting font size to a comfortable level can decrease eye strain and fatigue, particularly during long periods of reading or screen use.
+
+## Adjusting Font Size
+
+Users can change font sizes in several ways:
+
+- **Operating System Scale**: Changes the scale of everything, including text, across the entire system.
+- **Browser Zoom**: Enlarges or shrinks everything on a webpage.
+- **Browser Font Size Option**: Specifically changes text size but may not work on all websites.
+- **Assistive Technology**: Tools like screen magnifiers or readers help people with vision impairments by enlarging everything on a webpage.
+
+<details>
+  <summary>
+    <span>See the instructions on where to set the font size in the operating system.</span>
+  </summary>
+  <ul>
+    <li><strong>Windows</strong>: Open Settings > System > Display, and adjust the scale under "Scale and layout."</li>
+    <li><strong>macOS</strong>: Open System Preferences > Accessibility > Zoom, and adjust the options.</li>
+    <li><strong>Android</strong>: Go to Settings > Accessibility > Font size, and use the slider to adjust the font size to your preference.</li>
+    <li><strong>iOS</strong>: Go to Settings > Display & Brightness > Text Size, and drag the slider to adjust the font size as desired.</li>
+  </ul>
+
+  You should be able to find the settings at similar places as listed above when you use a different device, system, application, or version.
+</details>
+
+<details>
+  <summary>
+    <span>See the instructions on how to adjust the zoom in the browser.</span>
+  </summary>
+
+  Press <code>Ctrl</code> (<code>Cmd</code> on Mac) and <code>+</code> to zoom in, or <code>Ctrl</code> (<code>Cmd</code> on Mac) and <code>-</code> to zoom out.
+</details>
+
+<details>
+  <summary id="font-size-instructions-browser">
+    <span>See the instructions on where to set the font size in the browser.</span>
+  </summary>
+  <ul>
+    <li><strong>Chrome</strong>: Open Settings > Appearance > Font size, and choose your preferred size using the dropdown menu.</li>
+    <li><strong>Firefox</strong>: Open Settings > Language and Appearance > Fonts, and select your desired font size from the "Size" dropdown menu.</li>
+    <li><strong>Safari (macOS)</strong>: Open Settings > Advanced > Accessibility. Check "Never use font sizes smaller than" and set your preferred minimum font size using the dropdown menu.</li>
+    <li><strong>Edge</strong>: Open Settings > Appearance > Fonts, and choose your desired font size from the "Font size" dropdown menu.</li>
+  </ul>
+
+  You should be able to find the settings at similar places as listed above when you use a different device, system, application, or version.
+</details>
+
+## The Problem of Pixels
+
+While the methods above usually work, there is a catch with the browser font size option. If a website uses pixel (<code>px</code>) units for text, it might ignore the browser's font size settings. This is because pixels are a fixed size - they do not change when you adjust browser settings. So, if a developer does not code their site to work with these settings, the text will not resize as it should, making the site less accessible.
+
+## The Solution of Relative Units
+
+The solution to the pixels problem lies in using relative units like <code>rem</code> for font sizes. Unlike pixels, <code>rem</code> (root em) units are relative to the root element's font size. This means that if the root font size changes (like when a user adjusts their browser's font size settings), the text size defined in <code>rem</code> will scale accordingly.
+
+## Implementation
+
+The following example compares font sizes defined by <code>px</code> and <code>rem</code> units. It demonstrates how you can implement a font size that will respect users's browser settings.
+
+[Adjust the font size of your browser](#font-size-instructions-browser) and compare the following two texts to see the results.
+
+<PreviewWrapper title="Font size implementation example" codeHref="https://codesandbox.io/s/font-size-mh6424">
+  <FontSize />
+</PreviewWrapper>
