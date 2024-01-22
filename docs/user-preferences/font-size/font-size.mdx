@@ -21,7 +21,7 @@ Users can change font sizes in several ways:
 
 - **Operating System Scale**: Changes the scale of everything, including text, across the entire system.
 - **Browser Zoom**: Enlarges or shrinks everything on a webpage.
-- **Browser Font Size Option**: Specifically changes text size but may not work on all websites.
+- **Browser Font Size Option**: Specifically changes text size but <strong>does not work on all websites</strong>.
 - **Assistive Technology**: Tools like screen magnifiers or readers help people with vision impairments by enlarging everything on the scren.
 
 <details>
@@ -43,7 +43,7 @@ Users can change font sizes in several ways:
     <span>See the instructions on how to adjust the zoom in the browser.</span>
   </summary>
 
-  Press <code>Ctrl</code> (<code>Cmd</code> on Mac) and <code>+</code> to zoom in, or <code>Ctrl</code> (<code>Cmd</code> on Mac) and <code>-</code> to zoom out.
+  Press `Ctrl` (`Cmd` on Mac) and `+` to zoom in, or `Ctrl` (`Cmd` on Mac) and `-` to zoom out.
 </details>
 
 <details>
@@ -62,11 +62,25 @@ Users can change font sizes in several ways:
 
 ## The Problem of Pixels
 
-While the methods above usually work, there is a catch with the browser font size option. If a website uses pixel (<code>px</code>) units for text, it might ignore the browser's font size settings. This is because pixels are a fixed size - they do not change when you adjust browser settings. So, if a developer does not code their site to work with these settings, the text will not resize as it should, making the site less accessible.
+While the methods above usually work, there is a catch with the browser font size option. If a website uses pixel units (`px`) for text, it might ignore the browser's font size settings. This is because pixels are a fixed size - they do not change when you adjust browser settings. So, if a developer does not code their site to work with these settings, the text will not resize as it should, making the site less accessible.
 
 ## The Solution of Relative Units
 
-The solution to the pixels problem lies in using relative units like <code>rem</code> for font sizes. Unlike pixels, <code>rem</code> (root em) units are relative to the root element's font size. This means that if the root font size changes (like when a user adjusts their browser's font size settings), the text size defined in <code>rem</code> will scale accordingly.
+The solution to the pixels problem lies in using relative units like `rem` for font sizes. Unlike pixels, `rem` (root em) units are relative to the root element's font size. This means that if the root font size changes (like when a user adjusts their browser's font size settings), the text size defined in `rem` will scale accordingly.
+
+:::warning Important
+Avoid setting the root element's font size in pixels. This would cause elements with relative font sizes to behave like they are in pixels, because the root font size would be fixed.
+
+A good practice is to set the following style in CSS that will make the root element's font size 100% of the browser's settings:
+
+```css
+html {
+  font-size: 100%;
+}
+```
+
+You do not have to define the `font-size` at the root element at all, as the result would the same, but when you do define it, it is more explicit.
+:::
 
 ## Implementation
 
@@ -76,9 +90,9 @@ The following example demonstrates how you can implement font size in relative u
   <summary>
     <span>See the implementation details.</span>
   </summary>
-  This snippet includes a paragraph of text accompanied by CSS styling. The style rules set the <code>font-size</code> to <code>100%</code> for the <code>html</code> element, aligning the entire document's base font size with the browser's settings.
+  This snippet includes a paragraph of text accompanied by CSS styling. The style rules set the `font-size` to `100%` for the `html` element, aligning the entire document's base font size with the browser's settings.
 
-Additionally, there's a <code>.description</code> class which specifies a <code>font-size</code> of <code>1.25rem</code>. This means the font size for elements with the <code>.description</code> class will be 1.25 times the base font size. For instance, if the base font size is <code>16px</code>, then the text in the <code>.description</code> class will be rendered at <code>20px</code>.
+Additionally, there's a `.description` class which specifies a `font-size` of `1.25rem`. This means the font size for elements with the `.description` class will be 1.25 times the base font size. For instance, if the base font size is `16px`, then the text in the `.description` class will be rendered at `20px`.
 
 ```
 <style>
@@ -87,11 +101,11 @@ Additionally, there's a <code>.description</code> class which specifies a <code>
   .description { font-size: 1.25rem; }
 </style>
 
-<p class="description">This text has font size in rem units. It does respect the font size settings of the browser.</p>  
+<p class="description">This text has font size in rem units. It does respect the font size settings of the browser.</p>
 ```
 </details>
 
-[Adjust the font size of your browser](#font-size-instructions-browser) and compare the following two texts defined by <code>px</code> and <code>rem</code> units to see how the units respect your browser settings.
+[Adjust the font size of your browser](#font-size-instructions-browser) and compare the following two texts defined by `px` and `rem` units to see how the units respect your browser settings.
 
 <PreviewWrapper title="Font size implementation example" codeHref="https://codesandbox.io/s/font-size-mh6424">
   <FontSize />
