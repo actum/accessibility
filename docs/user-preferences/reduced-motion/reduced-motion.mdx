@@ -1,0 +1,88 @@
+import PreviewWrapper from './../../../src/components/PreviewWrapper'
+import ColorMode from './'
+
+# Reduced Motion
+
+Reduced motion is a user preference and accessibility feature that minimizes the amount of animation and automatic movement in a digital interface. This feature is essential for people with various disabilities but also beneficial for more users by respecting their needs and preferences.
+
+## Benefits
+
+The benefits of reduced motion settings are significant, especially for users with motion sensitivities. These settings help in creating a more accessible and comfortable digital environment. By understanding the types of motion effects that can be triggering and the importance of context and user expectations, designers can craft experiences that are safe and enjoyable for all users.
+
+- **Accessibility**: Addresses a range of sensitivities to on-screen motion, promoting a healthier and more comfortable interaction with digital content.
+- **Concentration**: Minimizes visual distractions, helping users maintain focus on the content without the interference or annoyance of unnecessary motion.
+
+## The Problem of Motion
+
+Motion and animation in digital interfaces enhances user experience, engagement, and improves the overall storytelling experience. However, it may also lead to discomfort or health issues for many users:
+
+- **Vestibular disorders and dizziness**: People with balance disorders might feel dizzy with fast motion. For example, a website with parallax effects could make someone feel unsteady.
+
+- **Nausea and headaches**: Moving or complex animations might make some people feel sick or give them headaches, similar to car sickness. Think of how an image that keeps spinning on a website.
+
+- **Risk of seizures**: Quick flashing lights or fast-changing images can be dangerous for people with a condition like epilepsy, as they might cause seizures. An example could be a rapidly flashing ad on a website.
+
+- **Cognitive distractions**: Too much movement on a screen can be overwhelming and distracting, especially for people who have trouble focusing. Animated ads placed inbetween paragraphs in articles make it hard to concentrate on reading.
+
+- **General discomfort**: Some people just find too much movement on screens annoying or uncomfortable. This could be something like a background video that plays automatically on a website.
+
+:::tip
+Read the article [Your Interactive Makes Me Sick](https://source.opennews.org/articles/motion-sick/) by Eileen Webb for insights into how web animations can impact users with motion sensitivities and practical guidelines for creating more accessible digital experiences.
+
+<blockquote cite="https://source.opennews.org/articles/motion-sick/">
+  <p>Picture this: you’re short on sleep, your head feels tight, you ate something funky yesterday, and everything in the world just seems too loud. Lights are too bright, colors are too colorful, and the clink of silverware against plates makes your eardrums throb. Imagine that you feel like this all the time.</p>
+  — <cite>Eileen Webb</cite>
+</blockquote>
+:::
+
+## The Solution of Reduced Motion
+
+Dealing with motion-related issues in digital design is all about using animations and motion smartly. We can still make creative and innovative animations, but we need to do it in a way that works well for all users. This means giving them options and using design strategies that consider their comfort. By doing this, we can make digital experiences that everyone enjoys without causing discomfort from too much motion. Here are some practical ways to do this:
+
+- **Use 'prefers-reduced-motion' media query**: This CSS media query detects if a user has set their system preferences to reduce motion. Web developers can adjust or eliminate animations and transitions, providing a more comfortable experience for users who are sensitive to motion.
+
+- **Consider autoplaying videos**: Autoplaying videos can be particularly jarring for many users. A better practice is to avoid the autoplay altogether or, at the very least, provide clear controls for users to play and pause videos. This gives users the autonomy to decide when and if they want to engage with moving content.
+
+- **Provide animation controls**: Offering users the ability to control the presence or even the speed of animations can significantly enhance their experience. This could mean providing controls to stop or slow down animations based on user preference.
+
+- **Consider animated GIFs**: Similar to videos, animated GIFs can also be a source of discomfort. Implementing controls to stop animated GIFs can be a great way to reduce motion.
+
+- **Providing alternatives**: For features that rely heavily on motion, offering a static alternative can be beneficial. For instance, if a site uses animated charts to display data, providing an option to view this data in a static graph or table can be helpful.
+
+## Real-world Examples
+
+See how the following websites handle reduced motion by providing accessible animation options (accurate as of February 2024):"
+
+Here's an overview of how the following websites handle reduced motion, providing accessible animation options (accurate as of February 2024):
+
+- [Apple AirPods Pro](https://www.apple.com/airpods-pro/) - the page features scrolling animations that enhance the user experience. However, when the reduced motion mode is activated, the website turns off these animations, switching to a static yet still engaging version. This approach respects users' preferences for less motion while maintaining the site's aesthetic appeal.
+
+- [Harvard University - The Accessible World](https://www.harvard.edu/in-focus/the-accessible-world/) - the page includes an autoplaying video with pause/play controls, making it user-friendly for people who do not prefer motion. Notably, if the reduced motion mode is enabled, the video does not autoplay, adhering to the user's settings for reduced motion. This ensures that visitors, regardless of their motion preferences, can access and engage with that content based on their preferences.
+
+- [Giffer](https://krasimir.github.io/gifffer/) - a JavaScript library designed to prevent the autoplaying of animated GIFs. It provides a user-friendly solution for stopping and playing GIF animations, allowing users to have control over motion.
+
+## Set a Reduced Motion Mode in the System
+
+The ability to turn on the reduced motion mode can typically be found in the accessibility options of most operating systems:
+
+- **Windows**: Open Settings > Accessibility > Visual effects, and toggle the <em>Animation effects</em> option.
+- **macOS**: Open System Settings > Accessibility > Display, and toggle the <em>Reduce motion</em> option.
+- **iOS**: Open Settings > Accessibility > Motion, and toggle the <em>Reduce Motion</em> option.
+- **Android**: Open Settings > Additional settings > Accessibility > Vision, and toggle the <em>Remove animations</em> option.
+
+## Set Reduced Motion on the Website
+
+On websites, the control for reduced motion may be found in the header section, or somewhere close to the elements that contain motion.
+
+## Implementation
+
+TODO:
+- prefers-reduced-motion
+- autoplay video
+- autoplay carousel
+- GIFs
+- smooth scroll
+
+<PreviewWrapper title="Color mode implementation example" codeHref="https://codesandbox.io/s/color-mode-zmgmrx">
+  <ColorMode />
+</PreviewWrapper>
