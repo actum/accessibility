@@ -1,0 +1,60 @@
+# 1.4.9 - Images of Text (No Exception) - AAA
+
+(future video slot)
+
+## Intent
+
+Use actual text instead of images of text.
+
+:::info
+This criterion closely aligns with [1.4.5 Images of Text - AA](./1.4.5-images-of-text.mdx); only the requirements are more strict.
+:::
+
+## Images of Text
+
+<img src="/img/1.4.5-image-of-text.jpg" srcSet="/img/1.4.5-image-of-text.jpg 1x, /img/1.4.5-image-of-text-2x.jpg 2x" alt="A text saying: 'Hi. I am a text inside an image. You cannot change my color, font family, font size, line height, letter spacing, or word spacing.'" width="868" height="48" style={{aspectRatio: '868/48' }} />
+
+Some users need to have text in a certain font family, font size, letter spacing, line spacing, or color so they can read it well. When using images of text, none of this can be adjusted by users. Users who want to magnify or enlarge images would see it blurry or pixelated. Also, images are slower to download than text.
+
+## Exceptions
+
+For this criterion, you can use images of text when the image is:
+
+- **Decorative**: Where the image of text serves a purely decorative purpose without conveying essential information.
+- **Essential**: Where a specific presentation of text is crucial, such as in logos or branding.
+- **Non-Text-Centric**: Where the image includes text but primarily consists of significant other visual content, such as graphs, screenshots, and diagrams that convey information visually beyond the text itself.
+
+## Comparison with the Previous Criterion
+
+The difference between 1.4.5 and 1.4.9 criteria is that you cannot use images of text even in situations where the visual effect cannot be achieved with HTML and CSS, or where the image of text can be visually customized to the user's requirements, as was permissible under 1.4.5.
+
+## Examples
+
+### Correct Usage
+
+The following example shows the correct usage or implementation of accessibility.
+
+#### Example 1: Accessible Event Flyer
+
+An event flyer is created using HTML and CSS, allowing text like date, time, and location to be resized and recolored according to user preferences, rather than as a static image.
+
+<img src="/img/1.4.9-example-correct.jpg" srcSet="/img/1.4.9-example-correct.jpg 1x, /img/1.4.9-example-correct-2x.jpg 2x" alt="An event flyer titled Accessvale Arts & Crafts Festival, showing event description, date, and location." width="600" height="430" style={{aspectRatio: '600/430' }} />
+
+### Incorrect Usage
+
+The following example shows incorrect usage or implementation of accessibility.
+
+#### Example 1: Important Information in an Image
+
+A web page displays its contact information as an image containing fancy-styled text. This method does not allow users to adjust the text properties, such as font family, font size, or color, potentially making the information inaccessible to those with visual impairments.
+
+<img src="/img/1.4.9-example-incorrect.jpg" srcSet="/img/1.4.9-example-incorrect.jpg 1x, /img/1.4.9-example-incorrect-2x.jpg 2x" alt="Contact information displayed in fancy font showing e-mail, phone, and address." width="600" height="255" style={{aspectRatio: '600/255' }} />
+
+## Test Your Knowledge
+
+<details>
+  <summary>
+    <span>How can you make an infographic accessible if it contains images of text?</span>
+  </summary>
+  To make an infographic accessible, provide a text-based version of all the content that is presented within the infographic. This can include a descriptive summary or a detailed textual alternative that covers all the information and data conveyed in the infographic. When a text-based version is present, the infographic becomes a decorative content.
+</details>

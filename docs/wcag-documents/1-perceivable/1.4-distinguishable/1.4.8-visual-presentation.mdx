@@ -1,0 +1,88 @@
+# 1.4.8 - Visual Presentation - AAA
+
+(future video slot)
+
+## Intent
+
+Allow users to adjust the appearance of textual content according to their needs.
+
+## Who Benefits
+
+- People with **visual impairments** can read more effectively by resizing text or adjusting its alignment, and they also benefit from selecting specific color combinations.
+- Individuals with **cognitive disabilities**, such as dyslexia, can navigate dense blocks of text more easily.
+- Anyone can reduce **eye strain**, increase **comprehension**, and accommodate **personal preferences** by customizing their reading experience.
+
+## Visual Presentation
+
+This criterion focuses on the visual presentation of text to ensure it can be customized to meet the needs of users with visual or cognitive impairments. It includes the following requirements:
+
+- **Foreground and background colors**: Users must have the ability to select the colors of text and the background. This helps them with comprehension.
+- **Width of text blocks**: Text blocks should not exceed 80 characters or glyphs (40 if CJK - Chinese, Japanese, and Korean) to prevent the difficulty of tracking long lines.
+- **Text alignment**: Text must not be fully justified, as uneven spacing can create "rivers of white" space that disrupt reading flow.
+- **Line and paragraph spacing**: Line spacing within paragraphs must be at least space-and-a-half, and paragraph spacing must be at least 1.5 times the line spacing to improve readability.
+- **Text resizing**: Text must be resizable up to 200 percent in a way that does not require the user to scroll horizontally to read a line of text on laptops and desktops.
+
+:::note
+Content does not necessarily need to implement customization features, such as a color picker; it should simply support user adjustments through browser or system settings.
+:::
+
+## Implementation
+
+To achieve compliance with this success criterion, the content should be designed to support these visual adjustments either natively or through browser capabilities. Here are some ways to meet these requirements:
+
+- **Avoid setting only color or only background color of text** on the page. Always specify either both or none. Setting only the text or background color can clash with users' system-adjusted preferences, resulting in poor contrast with their chosen colors.
+- **Use CSS to control text width**, ensuring blocks do not exceed the specified character limit.
+- **Avoid fully justified text**; instead, align text to the left or right.
+- **Specify line and paragraph spacing in CSS** to meet the required ratios.
+- **Ensure content is responsive**, allowing text to be resized and reflowed within the viewport without horizontal scrolling.
+
+## Examples
+
+### Correct Usage
+
+The following example shows the correct usage or implementation of accessibility.
+
+#### Example 1: Responsive Layout
+
+A layout container with text inside is styled to have `width` of `90%` and `max-width` of `70rem`. This approach ensures that as the browser window is resized or as text size is increased up to 200%, the content within the container remains at an optimal width for reading, preventing lines from extending beyond 80 characters. By using relative measurements in CSS, we can create layouts that adapt to user preferences and screen sizes.
+
+```html
+<style>
+  .container { width: 90%; max-width: 70rem; }
+</style>
+
+<body>
+  <div class="container">
+    <p>This text is part of a responsive layout, adapting to screen width and text size.</p>
+  </div>
+</body>
+```
+
+### Incorrect Usage
+
+The following example shows incorrect usage or implementation of accessibility.
+
+#### Example 1: Specifying Only Foreground Color
+
+A text is placed on a page that has its `body` styled to only have grey color. In this example, the absence of a specified background color means that if a user has set a light grey background via their system or browser settings, the grey text may not provide sufficient contrast, making the content difficult to read.
+
+Specifying only the foreground color in CSS without defining the background color can lead to accessibility issues, as it does not consider users' system or browser color preferences. This can result in a web page that is difficult or impossible for some users to read due to poor contrast.
+
+```html
+<style>
+  body { color: grey; } /* Background color is not specified */
+</style>
+
+<body>
+  <p>This text has not defined background color, risking poor contrast with user-selected background colors.</p>
+</body>
+```
+
+## Test Your Knowledge
+
+<details>
+   <summary>
+      <span>Is it a violation of WCAG 1.4.8 - Visual Presentation, if the web author does not set any text or background color?</span>
+   </summary>
+   No, it is not a violation. This approach avoids the risk of clashing with the user's system-adjusted preferences. By not setting these colors, users' browser or system settings for colors will take precedence, ensuring they can apply their preferred color schemes for optimal contrast and readability.
+</details>
