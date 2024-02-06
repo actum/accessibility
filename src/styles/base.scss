@@ -6,6 +6,11 @@ body {
   padding: 0;
 }
 
+html {
+  // Stop anchor navigation from scrolling page below the sticky header
+  scroll-padding-top: 65px;
+}
+
 *,
 *::before,
 *::after {

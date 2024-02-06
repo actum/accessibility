@@ -31,7 +31,7 @@ This page contains a list of terms that might not be immediately obvious to read
   <dd>any content that is not a sequence of characters - for instance, images, charts, graphs, or audio/video content.</dd>
 
   <dt id="programmatically-determined">programmatically determined</dt>
-  <dd>marked up content having semantic structure and relationships that allows various technologies to programmatically retrieve it and present it to users in different ways. For instance, putting text into the <code>&lt;h1&gt;</code> element allows the browser to create the page heading outline, CSS to apply different styles to it, and screen readers to announce the element as "heading level one".</dd>
+  <dd>marked up content having semantic structure and relationships that allows various technologies to programmatically retrieve it and present it to users in different ways. For instance, putting text into the <code>&lt;h1&gt;</code> element allows the browser to create the page heading outline, CSS to apply different styles to it, and <a href="#screen-reader">screen readers</a> to announce the element as "heading level one".</dd>
 
   <dt id="screen-reader">screen reader</dt>
   <dd>an assistive technology software that renders text and image content as speech or braille output.</dd>
@@ -42,12 +42,3 @@ This page contains a list of terms that might not be immediately obvious to read
   <dt id="transcript">transcript</dt>
   <dd>a text version of audio content; it must have identified speakers (if there is more than one) and must cover all dialogues and important sound effects. It may also contain timestamps when necessary.</dd>
 </dl>
-
-<!--
-  Stop anchor navigation from scrolling page below the sticky header:
--->
-<style dangerouslySetInnerHTML={{
-  __html: `html {
-  scroll-padding-top: 65px;
-}`
-}} />
