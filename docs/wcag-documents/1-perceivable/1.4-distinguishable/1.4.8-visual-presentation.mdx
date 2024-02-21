@@ -1,6 +1,14 @@
 # 1.4.8 - Visual Presentation - AAA
 
-(future video slot)
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/b_syQUjr6Dg"
+  title="1.4.8 - Visual Presentation - WCAG Documents"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+></iframe>
 
 ## Intent
 
@@ -48,12 +56,18 @@ A layout container with text inside is styled to have `width` of `90%` and `max-
 
 ```html
 <style>
-  .container { width: 90%; max-width: 70rem; }
+  .container {
+    width: 90%;
+    max-width: 70rem;
+  }
 </style>
 
 <body>
   <div class="container">
-    <p>This text is part of a responsive layout, adapting to screen width and text size.</p>
+    <p>
+      This text is part of a responsive layout, adapting to screen width and
+      text size.
+    </p>
   </div>
 </body>
 ```
@@ -70,19 +84,30 @@ Specifying only the foreground color in CSS without defining the background colo
 
 ```html
 <style>
-  body { color: grey; } /* Background color is not specified */
+  body {
+    color: grey;
+  } /* Background color is not specified */
 </style>
 
 <body>
-  <p>This text has not defined background color, risking poor contrast with user-selected background colors.</p>
+  <p>
+    This text has not defined background color, risking poor contrast with
+    user-selected background colors.
+  </p>
 </body>
 ```
 
 ## Test Your Knowledge
 
 <details>
-   <summary>
-      <span>Is it a violation of WCAG 1.4.8 - Visual Presentation, if the web author does not set any text or background color?</span>
-   </summary>
-   No, it is not a violation. This approach avoids the risk of clashing with the user's system-adjusted preferences. By not setting these colors, users' browser or system settings for colors will take precedence, ensuring they can apply their preferred color schemes for optimal contrast and readability.
+  <summary>
+    <span>
+      Is it a violation of WCAG 1.4.8 - Visual Presentation, if the web author
+      does not set any text or background color?
+    </span>
+  </summary>
+  No, it is not a violation. This approach avoids the risk of clashing with the user's
+  system-adjusted preferences. By not setting these colors, users' browser or system
+  settings for colors will take precedence, ensuring they can apply their preferred
+  color schemes for optimal contrast and readability.
 </details>
