@@ -1,0 +1,87 @@
+# 1.4.11 - Non-text Contrast - AA
+
+(future video slot)
+
+## Intent
+
+User interface components and graphics have enough contrast against surrounding colors.
+
+## Who Benefits
+
+- People with **visual impairments** can see and recognize visual elements.
+- Anyone can see contrasting user interface better.
+
+## Non-text Contrast
+
+Non-text contrast is contrast of user interface components, graphical objects, and their states against the surrounding colors. To meet this criterion, you need to ensure contrast ratio of at least **3:1**.
+
+## User Interface Components
+
+User interface components, or UI components, are the elements that make up the graphical layout of an application or website, enabling interaction between the user and the software. These include buttons, text fields, checkboxes, sliders, and menus, among others, which are essential for users to navigate, input, and control the software's functions.
+
+Users must be able to recognize the component thanks to the sufficient contrast ratio between the color of the component and the color around it. This applies for all component states, such as focus, hover, or active - adjacent colors in all these states must have enough contrast ratio.
+
+## Graphical Objects
+
+Graphical objects are visual elements like icons, charts, and images used to represent information or concepts in a more intuitive way. They complement text by visually conveying messages or data, making it easier to understand or interact with the content.
+
+Not every graphical object needs to contrast with its surroundings - only those that are required for users to understand what the graphic is conveying.
+
+## Exceptions
+
+The 3:1 contrast ratio requirement does not need apply for the following:
+
+- Inactive (disabled) components.
+- When the appearance of the component is set by the user agent (browser) and not modified by author. However, if you aim for good accessibility and not just compliance, you ensure enough contrast for these too.
+- When the particular presentation of graphical objects is essential to the information being conveyed - such as logos, photographs or screenshots.
+- When the information is available in another form - such as in text or inside the table.
+- Pure decorational content.
+
+## Tips
+
+## Examples
+
+### Correct Usage
+
+The following example shows the correct usage or implementation of accessibility.
+
+#### Example 1: Accessible Event Flyer
+
+An event flyer is created using HTML and CSS, allowing text like date, time, and location to be resized and recolored according to user preferences, rather than as a static image.
+
+<img
+  src="/img/1.4.9-example-correct.jpg"
+  srcSet="/img/1.4.9-example-correct.jpg 1x, /img/1.4.9-example-correct-2x.jpg 2x"
+  alt="An event flyer titled Accessvale Arts & Crafts Festival, showing event description, date, and location."
+  width="600"
+  height="430"
+  style={{ aspectRatio: '600/430' }}
+/>
+
+### Incorrect Usage
+
+The following example shows incorrect usage or implementation of accessibility.
+
+#### Example 1: Important Information in an Image
+
+A web page displays its contact information as an image containing fancy-styled text. This method does not allow users to adjust the text properties, such as font family, font size, or color, potentially making the information inaccessible to those with visual impairments.
+
+## Test Your Knowledge
+
+<details>
+  <summary>
+    <span>
+      Does a decorative graphic need to meet the 3:1 contrast ratio requirements?
+    </span>
+  </summary>
+  No, decorative content is not subject to this criterion.
+</details>
+
+<details>
+  <summary>
+    <span>
+      Is a user interface component that is inactive and does not interact with the user required to meet the 3:1 contrast ratio?
+    </span>
+  </summary>
+  No, inactive components are an exception to this criterion.
+</details>
