@@ -1,3 +1,7 @@
+---
+sidebar_position: 11
+---
+
 # 1.4.11 - Non-text Contrast - AA
 
 (future video slot)
@@ -31,13 +35,11 @@ Not every graphical object needs to contrast with its surroundings - only those 
 
 The 3:1 contrast ratio requirement does not need apply for the following:
 
-- Inactive (disabled) components.
-- When the appearance of the component is set by the user agent (browser) and not modified by author. However, if you aim for good accessibility and not just compliance, you ensure enough contrast for these too.
+- Inactive (disabled) components. However, if you aim for good accessibility and not just compliance, you ensure enough contrast for these too.
+- When the appearance of the component is set by the user agent (browser) and not modified by author. But again, we recommend to go beyond WCAG and ensure enough contrast for these too.
 - When the particular presentation of graphical objects is essential to the information being conveyed - such as logos, photographs or screenshots.
 - When the information is available in another form - such as in text or inside the table.
 - Pure decorational content.
-
-## Tips
 
 ## Examples
 
@@ -45,26 +47,21 @@ The 3:1 contrast ratio requirement does not need apply for the following:
 
 The following example shows the correct usage or implementation of accessibility.
 
-#### Example 1: Accessible Event Flyer
+#### Example 1: Inputs with enough contrast
 
-An event flyer is created using HTML and CSS, allowing text like date, time, and location to be resized and recolored according to user preferences, rather than as a static image.
+The form contains two input fields for e-mail and password. Users can recognize the inputs thanks to the black border that exceeds the minimum requirements for contrast. Users with vision impairments or users in challenging lighting conditions should be able to see it well.
 
-<img
-  src="/img/1.4.9-example-correct.jpg"
-  srcSet="/img/1.4.9-example-correct.jpg 1x, /img/1.4.9-example-correct-2x.jpg 2x"
-  alt="An event flyer titled Accessvale Arts & Crafts Festival, showing event description, date, and location."
-  width="600"
-  height="430"
-  style={{ aspectRatio: '600/430' }}
-/>
+<img src="/img/1.4.11-example-correct.jpg" srcSet="/img/1.4.11-example-correct.jpg 1x, /img/1.4.11-example-correct-2x.jpg 2x" alt="E-mail and password input fields with very low contrasting border color." width="600" height="600" style={{aspectRatio: '600/600' }} />
 
 ### Incorrect Usage
 
 The following example shows incorrect usage or implementation of accessibility.
 
-#### Example 1: Important Information in an Image
+#### Example 1: Inputs with insufficient contrast
 
-A web page displays its contact information as an image containing fancy-styled text. This method does not allow users to adjust the text properties, such as font family, font size, or color, potentially making the information inaccessible to those with visual impairments.
+The form contains two input fields for e-mail and password. Users would have troubles recognize the inputs because of the light gray border that does not meet the minimum requirements for contrast. Users with vision impairments or users in challenging lighting conditions might not see the input at all, not knowing there is a form.
+
+<img src="/img/1.4.11-example-incorrect.jpg" srcSet="/img/1.4.11-example-incorrect.jpg 1x, /img/1.4.11-example-incorrect-2x.jpg 2x" alt="E-mail and password input fields with very low contrasting border color." width="600" height="600" style={{aspectRatio: '600/600' }} />
 
 ## Test Your Knowledge
 

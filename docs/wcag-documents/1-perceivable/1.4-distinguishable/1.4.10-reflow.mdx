@@ -1,3 +1,7 @@
+---
+sidebar_position: 10
+---
+
 # 1.4.10 - Reflow - AA
 
 (future video slot)
@@ -15,9 +19,11 @@ Ensure content adapts to screen size without two-dimensional scrolling.
 
 Reflow refers to the ability of web content to adjust and adapt to various screen sizes and zoom levels. It ensures that content can be presented in a single column (or space that fits the viewport) without the need for scrolling horizontally. This process involves dynamically rearranging, resizing, and repositioning content to maintain readability and usability across different devices and conditions. Such as when the text size is increased up to 400%. This is called responsive web design.
 
+All content and functionality must remain available in all screen sizes and zoom levels - either directly, or revealed via accessible controls, or accessible via direct links.
+
 ## Exceptions
 
-Two-dimensional scrolling is acceptable for content that requires it for usage or meaning, such s maps, diagrams, videos, or games.
+Two-dimensional scrolling is acceptable for content that requires it for usage or meaning, such as maps, diagrams, videos, or games.
 
 ## Tips
 
@@ -32,26 +38,17 @@ To meet this success criterion, you can follow these tips:
 
 The following example shows the correct usage or implementation of accessibility.
 
-#### Example 1: Accessible Event Flyer
+#### Example 1: Responsive Website
 
-An event flyer is created using HTML and CSS, allowing text like date, time, and location to be resized and recolored according to user preferences, rather than as a static image.
-
-<img
-  src="/img/1.4.9-example-correct.jpg"
-  srcSet="/img/1.4.9-example-correct.jpg 1x, /img/1.4.9-example-correct-2x.jpg 2x"
-  alt="An event flyer titled Accessvale Arts & Crafts Festival, showing event description, date, and location."
-  width="600"
-  height="430"
-  style={{ aspectRatio: '600/430' }}
-/>
+See the [example of a responsive website](https://dequeuniversity.com/library/responsive/1-responsive) from [dequeuniversity.com](https://dequeuniversity.com/). It demonstrates how to make web content accessible and legible across various devices by using a viewport meta tag for scaling, setting breakpoints for desktop, tablet, and phone views, adjusting menu item visibility and layout, and ensuring images and content reflow properly to maintain readability and usability at different screen sizes.
 
 ### Incorrect Usage
 
 The following example shows incorrect usage or implementation of accessibility.
 
-#### Example 1: Important Information in an Image
+#### Example 1: Non-responsive Website
 
-A web page displays its contact information as an image containing fancy-styled text. This method does not allow users to adjust the text properties, such as font family, font size, or color, potentially making the information inaccessible to those with visual impairments.
+See the [example of a non-responsive website](https://dequeuniversity.com/library/responsive/1-non-responsive) from [dequeuniversity.com](https://dequeuniversity.com/): This site illustrates common pitfalls of non-responsive design, such as fixed-width layouts that don't adjust to different screen sizes, leading to a poor user experience on mobile devices and tablets. The content and images do not reflow or resize, demonstrating the importance of responsive design practices for accessibility and usability across various devices.
 
 ## Test Your Knowledge
 
