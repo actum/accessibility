@@ -1,0 +1,70 @@
+---
+sidebar_position: 10
+---
+
+# 1.4.10 - Reflow - AA
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/o-QorhbXEMI"
+  title="1.4.10 - Reflow - WCAG Documents"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+></iframe>
+
+## Intent
+
+Ensure content adapts to screen size without two-dimensional scrolling.
+
+## Who Benefits
+
+- People with **low vision** can enlarge content and view it without the need to scroll horizontally and reading long lines.
+- Anyone, but especially users who **struggle with reading**, do not need to navigate in both directions to read content.
+
+## Reflow
+
+Reflow refers to the ability of web content to adjust and adapt to various screen sizes and zoom levels. It ensures that content can be presented in a single column (or space that fits the viewport) without the need for scrolling horizontally. This process involves dynamically rearranging, resizing, and repositioning content to maintain readability and usability across different devices and conditions. Such as when the text size is increased up to 400%. This is called responsive web design.
+
+All content and functionality must remain available in all screen sizes and zoom levels - either directly, or revealed via accessible controls, or accessible via direct links.
+
+## Exceptions
+
+Two-dimensional scrolling is acceptable for content that requires it for usage or meaning, such as maps, diagrams, videos, or games.
+
+## Tips
+
+To meet this success criterion, you can follow these tips:
+- **Implement responsive web design principles** to ensure content reflows appropriately. Use CSS media queries to adjust content layout at different zoom levels or screen sizes.
+- **Avoid fixed-width** containers that can prevent content from reflowing.
+- **Test your website at various zoom levels**, especially at 400%, to ensure content reflows to a single column without horizontal scrolling.
+
+## Examples
+
+### Correct Usage
+
+The following example shows the correct usage or implementation of accessibility.
+
+#### Example 1: Responsive Website
+
+See the [example of a responsive website](https://dequeuniversity.com/library/responsive/1-responsive) from [dequeuniversity.com](https://dequeuniversity.com/). It demonstrates how to make web content accessible and legible across various devices by using a viewport meta tag for scaling, setting breakpoints for desktop, tablet, and phone views, adjusting menu item visibility and layout, and ensuring images and content reflow properly to maintain readability and usability at different screen sizes.
+
+### Incorrect Usage
+
+The following example shows incorrect usage or implementation of accessibility.
+
+#### Example 1: Non-responsive Website
+
+See the [example of a non-responsive website](https://dequeuniversity.com/library/responsive/1-non-responsive) from [dequeuniversity.com](https://dequeuniversity.com/): This site illustrates common pitfalls of non-responsive design, such as fixed-width layouts that don't adjust to different screen sizes, leading to a poor user experience on mobile devices and tablets. The content and images do not reflow or resize, demonstrating the importance of responsive design practices for accessibility and usability across various devices.
+
+## Test Your Knowledge
+
+<details>
+  <summary>
+    <span>
+      Website hides main navigation under the hamburger menu on small screen resolutions, making the content invisible without opening the menu. Is this a violation of WCAG 1.4.10 - Reflow?
+    </span>
+  </summary>
+  No, it is not a violation. The content is still accessible in the menu, it was just moved elsewhere since there is not enough reasonable space on small screens to render the main navigation.
+</details>
